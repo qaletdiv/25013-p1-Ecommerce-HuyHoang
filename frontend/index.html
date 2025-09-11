@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vietravel - Tour Du Lịch & Vé Máy Bay Giá Rẻ</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Vietravel</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="alltour.html">Tour Du Lịch</a></li>
+                    <li><a href="#">Combo & Khuyến Mãi</a></li>
+                    <li><a href="#">Tin Tức</a></li>
+                    <li><a href="#">Liên Hệ</a></li>
+                    <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li><a href="login.html"><i class="fa-regular fa-user"></i></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-banner">
+            <div class="container">
+            </div>
+        </section>
+
+        <section class="tour-search-container">
+            <div class="search-box">
+                <div class="search-tabs">
+                    <div class="tab-item">
+                        <i class="fas fa-passport"></i>
+                        <span>Visa</span>
+                    </div>
+                    <div class="tab-item active">
+                        <i class="fas fa-suitcase-rolling"></i>
+                        <span>Tour trọn gói</span>
+                    </div>
+                    <div class="tab-item">
+                        <i class="fas fa-hotel"></i>
+                        <span>Khách sạn</span>
+                    </div>
+                    <div class="tab-item">
+                        <i class="fas fa-plane"></i>
+                        <span>Vé máy bay</span>
+                    </div>
+                    <div class="tab-item">
+                        <i class="fas fa-car"></i>
+                        <span>Xe</span>
+                    </div>
+                    <div class="tab-item">
+                        <i class="fas fa-plus"></i>
+                        <span>Combo</span>
+                    </div>
+                    <div class="tab-item">
+                        <i class="fas fa-ellipsis-h"></i>
+                        <span>Dịch vụ cộng thêm</span>
+                    </div>
+                </div>
+
+                <div class="search-form">
+                    <div class="form-group destination">
+                        <label for="destination">Bạn muốn đi đâu?</label>
+                        <input type="text" id="destination" placeholder="Ví dụ: Đà Nẵng, Phú Quốc">
+                    </div>
+                    <div class="form-group departure-date">
+                        <label for="departure-date">Ngày đi</label>
+                        <input type="text" id="departure-date" placeholder="Th 6, 22 thg 8, 2025">
+                    </div>
+                    <div class="form-group budget">
+                        <label for="budget">Ngân sách</label>
+                        <select id="budget">
+                            <option value="">Chọn mức giá</option>
+                            <option value="1">Dưới 5 triệu</option>
+                            <option value="2">5 - 10 triệu</option>
+                            <option value="3">Trên 10 triệu</option>
+                            <option value="4">Khác</option>
+                        </select>
+                    </div>
+                    <div class="search-btn-wrapper">
+                        <button type="button" class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="running-text-container">
+            <p class="running-text">Lựa chọn của bạn chính là trách nhiệm của chúng tôi - Nếu bạn chưa biết những ngày
+                nghỉ phải làm gì, Hãy đến với chúng tôi - Vietravel nơi đem lại niềm tin cho bạn ✈️🎉</p>
+        </div>
+
+        <section class="tour-list">
+            <div class="container">
+                <h2>Tour Du Lịch Nổi Bật</h2>
+                <div id="tour-noi-bat" class="tours-grid">
+                </div>
+                <h2>Tour Du Lịch Trong Nước</h2>
+                <div id="tour-trong-nuoc" class="tours-grid">
+                </div>
+                <h2>Tour Du Lịch Nước Ngoài</h2>
+                <div id="tour-nuoc-ngoai" class="tours-grid">
+                </div>
+            </div>
+        </section>
+
+        <footer class="vietravel-footer">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <h4>Du lịch trong nước</h4>
+                    <div class="column-content">
+                        <ul>
+                            <li><a href="#">Hà Nội</a></li>
+                            <li><a href="#">Hạ Long</a></li>
+                            <li><a href="#">Đà Nẵng</a></li>
+                            <li><a href="#">Nha Trang</a></li>
+                            <li><a href="#">Phan Thiết</a></li>
+                            <li><a href="#">Phú Quốc</a></li>
+                            <li><a href="#">Bắc Kạn</a></li>
+                            <li><a href="#">Quy Nhơn</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Huế</a></li>
+                            <li><a href="#">Quảng Bình</a></li>
+                            <li><a href="#">Quảng Nam</a></li>
+                            <li><a href="#">Đà Lạt</a></li>
+                            <li><a href="#">Bà Rịa - Vũng Tàu</a></li>
+                            <li><a href="#">Cần Thơ</a></li>
+                            <li><a href="#">Hà Giang</a></li>
+                            <li><a href="#">Côn Đảo</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Du lịch nước ngoài</h4>
+                    <div class="column-content">
+                        <ul>
+                            <li><a href="#">Trung Quốc</a></li>
+                            <li><a href="#">Malaysia</a></li>
+                            <li><a href="#">Hàn Quốc</a></li>
+                            <li><a href="#">Mỹ</a></li>
+                            <li><a href="#">Ấn Độ</a></li>
+                            <li><a href="#">Đài Loan</a></li>
+                            <li><a href="#">Na Uy</a></li>
+                            <li><a href="#">Hà Lan</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Thái Lan</a></li>
+                            <li><a href="#">Singapore</a></li>
+                            <li><a href="#">Úc</a></li>
+                            <li><a href="#">Nhật Bản</a></li>
+                            <li><a href="#">Nga</a></li>
+                            <li><a href="#">Maldives</a></li>
+                            <li><a href="#">Tây Ban Nha</a></li>
+                            <li><a href="#">Đức</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-column mobile-app-column">
+                    <h4>Ứng dụng di động</h4>
+                    <div class="qr-codes">
+                        <div class="qr-code-item">
+                            <img src="https://travel.com.vn/_next/static/media/android.1dfd2bf5.png" alt="Google Play">
+                            <img src="https://travel.com.vn/_next/static/media/googlePlay.0041517a.png"
+                                alt="QR Google Play">
+                        </div>
+                        <div class="qr-code-item">
+                            <img src="https://travel.com.vn/_next/static/media/ios.fca19e7c.png" alt="App Store">
+                            <img src="https://travel.com.vn/_next/static/media/appStore.0bf3a946.png"
+                                alt="QR App Store">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="footer-bottom">
+                <div class="footer-column contact-column">
+                    <link rel="stylesheet"
+                        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                    <h4>Liên hệ</h4>
+                    <p>Phường Xuân Hoà, TP. Hồ Chí Minh, Việt Nam</p>
+                    <p>(+84 28) 3822 8888</p>
+                    <p>(+84 28) 3829 9142</p>
+                    <p>info@vietravel.com</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="#"><i class="fa-brands fa-square-whatsapp"></i></a>
+                    </div>
+                    <p>Từ 8:00 - 23:00 hàng ngày</p>
+                </div>
+
+                <div class="footer-column info-column">
+                    <h4>Thông tin</h4>
+                    <ul>
+                        <li><a href="#">Khảo sát tỷ lệ đặt visa</a></li>
+                        <li><a href="#">Tại chỗ du lịch</a></li>
+                        <li><a href="#">Tin tức</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                        <li><a href="#">Trợ giúp</a></li>
+                        <li><a href="#">Chính sách riêng tư</a></li>
+                        <li><a href="#">Thỏa thuận sử dụng</a></li>
+                        <li><a href="#">Chính sách bảo vệ dữ liệu cá nhân</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column certification-column">
+                    <h4>Chứng nhận</h4>
+                    <img src="https://travel.com.vn/_next/static/media/boCongThuong.7694ea55.png"
+                        alt="Chứng nhận Bộ Công Thương">
+                    <img src="https://travel.com.vn/_next/static/media/DMCA.9cae11ea.png" alt="DMCA Protected">
+                </div>
+
+                <div class="footer-column payment-column">
+                    <h4>Chấp nhận thanh toán</h4>
+                    <div class="payment-methods">
+                        <img src="https://travel.com.vn/_next/static/media/visa.299c65a0.png" alt="Visa">
+                        <img src="https://travel.com.vn/_next/static/media/mastercard.7b4e0444.png" alt="Mastercard">
+                        <img src="https://travel.com.vn/_next/static/media/vnpay.2a25e56f.png" alt="VNPAY">
+                        <img src="https://travel.com.vn/_next/static/media/verifiedByVisa.a320b2a4.png" alt="JCB">
+                        <img src="https://travel.com.vn/_next/static/media/JCB.41ec6f14.png" alt="Samsung Pay">
+                        <img src="https://travel.com.vn/_next/static/media/shopeePay.a3da5594.png" alt="S Pay">
+                        <img src="https://travel.com.vn/_next/static/media/momo.11f49354.png" alt="Momo">
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <p>Bản quyền của Vietravel ® 2024. Bảo lưu mọi quyền.</p>
+                <p>Ghi rõ nguồn "www.travel.com.vn" khi sử dụng lại thông tin từ website này.</p>
+                <p>Số giấy phép kinh doanh lữ hành quốc tế: 79-234/2022/TCDL-GP LHQT.</p>
+            </div>
+        </footer>
+        <script src="main.js"></script>
+</body>
+
+</html>

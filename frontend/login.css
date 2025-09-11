@@ -1,0 +1,220 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f6fa;
+  color: #333;
+}
+
+/* Header */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    background-color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 20px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-weight: bold;
+}
+
+.main-nav ul li a:hover {
+    color: #007bff;
+}
+
+/* Login */
+.login-container {
+  width: 350px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.login-container h2 {
+  margin-bottom: 20px;
+  color: #004080;
+}
+.login-container label {
+  display: block;
+  text-align: left;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  background: #004080;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.login-container button:hover {
+  background: #0066cc;
+}
+
+.register-link{
+    margin-top: 15px;
+}
+
+.register-link a {
+  text-decoration: none;
+  color: #004080;
+}
+
+.social-icons1 a,
+.social-icons1 i {
+    font-size: 2rem;
+}
+
+.social-icons .fa-brands, .fa-facebook { 
+    background-color: #FFFFFF; 
+    color: #1877F2; 
+    border-radius: 50%; 
+    padding: 5px; 
+}
+
+.social-icons .fa-solid, .fa-at { 
+    background-color: #FFFFFF; 
+    color: #DB4437; 
+    border-radius: 50%; 
+    padding: 5px; 
+}
+
+.vietravel-footer {
+    background-color: #e3f2fd;
+    color: #333;
+    font-family: Arial, sans-serif;
+    padding: 40px 20px 20px;
+}
+
+.footer-top,
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footter-column, .column-content ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.social-icons2 .fa-brands{
+    background-color: #fff;
+    color: #333;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #c9e2f5;
+    margin: 30px auto;
+    max-width: 1200px;
+}
+
+/* Cột "Ứng dụng di động" */
+.qr-codes {
+    display: flex;
+    gap: 20px;
+}
+
+.qr-code-item img:first-child {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.qr-code-item img:last-child {
+    width: 200px;
+    height: 200px;
+}
+
+/* Cột "Liên hệ" */
+.contact-column p {
+    margin: 0 0 5px;
+    font-size: 14px;
+}
+
+.social-icons i {
+    width: 30px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.footer-column, .info-column ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Cột "Chứng nhận" */
+.certification-column img {
+    display: block;
+    margin-bottom: 10px;
+    max-width: 120px;
+}
+
+/* Cột "Chấp nhận thanh toán" */
+.payment-methods img {
+    width: 50px;
+    margin: 5px;
+}
+
+/* Copyright */
+.footer-copyright {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #c9e2f5;
+}
+
+.footer-copyright p {
+    font-size: 12px;
+    margin: 5px 0;
+}
