@@ -62,7 +62,8 @@ sortPrice.addEventListener("change", () => {
       break;
 
     default:
-      console.log("mặc định")
+      tours.sort((a,b) => a.id - b.id);
+      renderTours(tours);
       break;
   }
 })

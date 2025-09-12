@@ -38,7 +38,7 @@ body {
     height: 50px;
 }
 
-.shop {
+/* .shop {
     position: absolute;
     top: 2px;
     right: 1px;
@@ -54,9 +54,9 @@ body {
 
 }
 
-.shop i {
+.shop i{
     color: black;
-    transform: scaleX(-1);
+    transform: scaleX(-1); 
 }
 
 .signup a i {
@@ -71,7 +71,7 @@ body {
     justify-content: center;
     align-items: center;
 
-}
+} */
 
 
 .main-nav ul {
