@@ -1,3 +1,10 @@
+const user = JSON.parse(localStorage.getItem("user"));
+console.log(user);
+const account = document.getElementById('account');
+if (user) {
+    account.innerHTML = user.fullname;
+    account.setAttribute('href', 'profile.html')
+}
 async function laySanPham(api) {
     try {
         const response = await fetch(api);
@@ -5,7 +12,7 @@ async function laySanPham(api) {
             throw new Error(`Lỗi : ${response.status}`);
         }
         const products = await response.json();
-        console.log(products);
+        // console.log(products);
         return products;
     } catch (error) {
         console.error("Lỗi khi lấy danh sách sản phẩm:", error);
@@ -15,8 +22,8 @@ async function laySanPham(api) {
 
 const renderProducts = (tours, listTour) => {
     const tourNoiBat = document.getElementById(listTour);
-    console.log(tourNoiBat);
-    console.log(tours);
+    // console.log(tourNoiBat);
+    // console.log(tours);
     tours.forEach(tour => {
         tourNoiBat.innerHTML += `
         <div class="tour-card">
@@ -39,5 +46,20 @@ laySanPham('http://localhost:3000/products?categoryid=1&_limit=6').then(tours =>
 laySanPham('http://localhost:3000/products?categoryid=2&_limit=6').then(tours => renderProducts(tours, "tour-nuoc-ngoai"))
 
 let cart = JSON.parse(localStorage.getItem("gio-hang"));
-console.log(cart);
+// console.log(cart);
+
+const popup = document.getElementById('popup')
+const closeBtn = document.getElementById('closeBtn')
+
+closeBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+});
+
+popup.addEventListener('click', (e) => {
+    if (e.target === popup) {
+        popup.style.display = 'none';
+    }
+});
+
+
 
