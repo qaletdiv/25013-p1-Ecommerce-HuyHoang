@@ -9,27 +9,26 @@
 </head>
 
 <header class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">Vietravel</a>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Trang Chủ</a></li>
-                    <li><a href="alltour.html">Tour Du Lịch</a></li>
-                    <li><a href="#">Combo & Khuyến Mãi</a></li>
-                    <li><a href="#">Tin Tức</a></li>
-                    <li><a href="#">Liên Hệ</a></li>
-                    <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-                    <a href="login.html"><i class="fa-regular fa-user"></i></i></a>
-                </ul>
-            </nav>
+    <div class="container">
+        <div class="logo">
+            <a href="index.html">Vietravel</a>
         </div>
-    </header>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="alltour.html">Tour Du Lịch</a></li>
+                <li><a href="#">Combo & Khuyến Mãi</a></li>
+                <li><a href="#">Tin Tức</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+                <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                <li><a href="login.html" id="account"><i class="fa-regular fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
 <body>
     <div class="container">
-        <!-- Thanh tiến trình đặt tour -->
         <div class="booking-process-bar">
             <div class="step active" data-step="1">
                 <div class="icon">1</div>
@@ -48,7 +47,6 @@
         </div>
 
         <div class="booking-container">
-            <!-- Bước 1: Nhập thông tin -->
             <div class="booking-form-section step-content active" id="step-1">
                 <h2 class="section-title">Thông tin liên lạc</h2>
                 <div class="contact-info-form">
@@ -74,38 +72,71 @@
                     </div>
                 </div>
                 <h2>Phương thức thanh toán</h2>
-                <select name="" id="">
-                    <option value="Thanh toán khi nhận hàng">Thanh toán khi nhận hàng</option>
-                    <option value="Thanh toán qua chuyển khoản">Thanh toán qua chuyển khoản</option>
-                </select>
+                <div class="payment-methods">
+                    <div class="payment-option" data-method="bank">
+                        <div class="icon-box">
+                            <img src="https://cdn-icons-png.flaticon.com/512/483/483361.png" alt="Bank">
+                        </div>
+                        <span>Chuyển khoản ngân hàng</span>
+                    </div>
+                    <div class="payment-option" data-method="momo">
+                        <div class="icon-box">
+                            <img src="https://upload.wikimedia.org/wikipedia/vi/f/fe/MoMo_Logo.png" alt="Momo">
+                        </div>
+                        <span>Ví Momo</span>
+                    </div>
+                </div>
+
+                Phần cam kết dưới
+                <div class="extra-info">
+                    <h3>✈️ Vietravel cam kết</h3>
+                    <ul>
+                        <li>✔ Giá tour tốt nhất thị trường</li>
+                        <li>✔ Hỗ trợ 24/7 trước - trong - sau chuyến đi</li>
+                        <li>✔ Hoàn tiền 100% nếu tour bị hủy do lỗi nhà tổ chức</li>
+                        <li>✔ Đảm bảo khởi hành đúng lịch trình</li>
+                    </ul>
+                </div>
+
             </div>
 
-            <!-- Bước 2: Thanh toán -->
             <div class="booking-form-section step-content" id="step-2">
                 <h2 class="section-title">Phương thức thanh toán</h2>
-                <p>Nội dung thanh toán sẽ được thêm vào đây...</p>
-                <img src="/frontend/images/z6986611940867_d468780456cf516b4177abfdd75553b7.jpg" alt="maTT" width="300">
+
+                <div id="bankContent" class="payment-section" style="display: none;">
+                    <h3>Chuyển khoản ngân hàng</h3>
+                    <ul>
+                        <li>Ngân hàng: Vietcombank - CN Hà Nội</li>
+                        <li>Số tài khoản: 123 456 789</li>
+                        <li>Chủ TK: CÔNG TY DU LỊCH VIETRAVEL</li>
+                        <li>Nội dung CK: [Mã đơn hàng] - [Họ tên]</li>
+                    </ul>
+                </div>
+
+                <div id="momoContent" class="payment-section" style="display: none;">
+                    <h3>Thanh toán qua ví Momo</h3>
+                    <img src="/frontend/images/z6986611940867_d468780456cf516b4177abfdd75553b7.jpg" alt="QR Momo"
+                        width="300">
+                    <p>Quét mã để thanh toán nhanh chóng qua Momo.</p>
+                </div>
             </div>
 
-            <!-- Bước 3: Hoàn tất -->
             <div class="booking-form-section step-content" id="step-3">
                 <h2 class="section-title">Hoàn tất</h2>
                 <p>Đặt tour thành công. Cảm ơn quý khách!</p>
-                <!-- Hiển thị thông tin hoàn tất ở đây -->
             </div>
 
-            <!-- Cột tóm tắt chuyến đi -->
             <div class="booking-summary-section">
                 <h2 class="section-title">Tóm tắt chuyến đi</h2>
                 <div id="summary-items">
-                    <!-- Dữ liệu từ giỏ hàng sẽ được thêm vào đây -->
+
                 </div>
                 <hr>
                 <div class="summary-line total">
                     <span>Tổng tiền</span>
                     <span class="price-value" id="total-price">0 VNĐ</span>
                 </div>
-                <button class="continue-btn active" id="finish-btn">Hoàn Tất</button>
+                <button class="continue-btn active" id="next-btn">Hoàn Tất</button>
             </div>
         </div>
     </div>
