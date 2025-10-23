@@ -1,3 +1,10 @@
+const user = JSON.parse(localStorage.getItem("user"));
+console.log(user);
+const account = document.getElementById('account');
+if (user) {
+    account.innerHTML = user.fullname;
+    account.setAttribute('href', 'profile.html')
+}
 const API_URL = "http://localhost:3000/products";
 let tours = [];
 async function fetchTours() {
@@ -47,10 +54,10 @@ document.getElementById("searchInput").addEventListener("input", function (e) {
 
 fetchTours();
 
-const sortPrice = document.getElementById("sortPrice")
-sortPrice.addEventListener("change", () => {
+const selectPrice = document.getElementById("select-price")
+selectPrice.addEventListener("change", () => {
   console.log(tours);
-  switch (sortPrice.value) {
+  switch (selectPrice.value) {
     case "asc":
       tours.sort((a,b) => a.price - b.price)
       renderTours(tours);
