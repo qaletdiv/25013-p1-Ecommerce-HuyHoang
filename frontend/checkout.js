@@ -1,38 +1,38 @@
-// Hàm lấy dữ liệu giỏ hàng từ Local Storage    
+const user = JSON.parse(localStorage.getItem("user"));
+const account = document.getElementById("account");
+
+if (user) {
+    account.innerHTML = user.fullname;
+    account.setAttribute("href", "profile.html");
+} else {
+    window.location.href = "login.html";
+}
+
 function getCart() {
     return JSON.parse(localStorage.getItem("gio-hang")) || [];
 }
 
-// Hàm để hiển thị tóm tắt đơn hàng và tính tổng tiền
 function renderOrderSummary() {
     const cart = getCart();
     const summaryItemsContainer = document.getElementById("summary-items");
     const summaryTotal = document.getElementById("total-price");
     let total = 0;
 
-    if (summaryItemsContainer) {
-        summaryItemsContainer.innerHTML = '';
-    }
+    if (!summaryItemsContainer) return;
+    summaryItemsContainer.innerHTML = "";
 
     if (cart.length === 0) {
-        if (summaryItemsContainer) {
-            summaryItemsContainer.innerHTML = '<p>Giỏ hàng trống.</p>';
-        }
-        if (summaryTotal) {
-            summaryTotal.innerText = '0 VNĐ';
-        }
+        summaryItemsContainer.innerHTML = "<p>Giỏ hàng trống.</p>";
+        summaryTotal.innerText = "0 VNĐ";
         return;
     }
 
     cart.forEach(item => {
-        const price = item.price
-        if (isNaN(price)) {
-            console.error("Lỗi: Giá sản phẩm không hợp lệ:", item.price);
-            return;
-        }
+        const price = Number(item.price);
+        if (isNaN(price)) return;
         total += price;
 
-        const itemHTML = `
+        summaryItemsContainer.innerHTML += `
             <div class="summary-item">
                 <img src="${item.image}" alt="${item.name}">
                 <div class="summary-item-info">
@@ -41,119 +41,137 @@ function renderOrderSummary() {
                 </div>
             </div>
         `;
-        if (summaryItemsContainer) {
-            summaryItemsContainer.innerHTML += itemHTML;
-        }
     });
 
-    if (summaryTotal) {
-        summaryTotal.innerText = total.toLocaleString() + ' VNĐ';
-    }
+    summaryTotal.innerText = total.toLocaleString() + " VNĐ";
 }
 
+let currentStep = 1;
+let selectedPaymentMethod = null;
 let customerInfo = {};
-// Hàm để xử lý chuyển đổi giữa các bước
+
 function setupStepNavigation() {
-    const steps = document.querySelectorAll('.booking-process-bar .step');
-    const stepContents = document.querySelectorAll('.step-content');
-    const continueBtn = document.getElementById('continue-btn');
+    const steps = document.querySelectorAll(".booking-process-bar .step");
+    const stepContents = document.querySelectorAll(".step-content");
+    const nextBtn = document.getElementById("next-btn");
 
-    let currentStep = 1;
-
-    continueBtn.addEventListener('click', () => {
+    nextBtn.addEventListener("click", () => {
         const formSection = document.getElementById(`step-${currentStep}`);
-        const inputs = formSection.querySelectorAll('input[required]');
-        let allInputsValid = true;
+        const inputs = formSection.querySelectorAll("input[required]");
+        let valid = true;
 
         inputs.forEach(input => {
             if (!input.checkValidity()) {
-                allInputsValid = false;
+                input.reportValidity();
+                valid = false;
             }
         });
 
-        if (allInputsValid) {
-            if (currentStep === 1) {
-                customerInfo.fullName = document.getElementById('fullname').value;
-                customerInfo.phoneNumber = document.getElementById('phoneNumber').value;
-                customerInfo.email = document.getElementById('email').value;
-                customerInfo.address = document.getElementById('address').value;
-                // Có thể lưu vào localStorage nếu cần
-                localStorage.setItem('customerInfo', JSON.stringify(customerInfo));
-            }
-            currentStep++;
-            // các đoạn code chuyển bước tiếp theo 
+        if (!valid) return;
 
-            if (currentStep > steps.length) {
-                // Hoàn tất đặt tour
-                alert("Đơn hàng đã được đặt thành công!");
-                localStorage.removeItem("gio-hang");
+        if (currentStep === 1) {
+            customerInfo.fullName = document.getElementById("full-name").value;
+            customerInfo.phoneNumber = document.getElementById("phone").value;
+            customerInfo.email = document.getElementById("email").value;
+            customerInfo.address = document.getElementById("address").value;
+            localStorage.setItem("customerInfo", JSON.stringify(customerInfo));
+
+            currentStep = 2;
+            updateStepUI(steps, stepContents, nextBtn);
+            return;
+        }
+
+        if (currentStep === 2) {
+            if (!selectedPaymentMethod) {
+                alert("Vui lòng chọn phương thức thanh toán.");
                 return;
             }
 
-            steps.forEach(step => step.classList.remove('active'));
-            document.querySelector(`.step[data-step="${currentStep}"]`).classList.add('active');
-
-            stepContents.forEach(content => content.classList.remove('active'));
-            document.getElementById(`step-${currentStep}`).classList.add('active');
-
-            if (currentStep === 3) {
-                continueBtn.innerText = "Hoàn tất đặt tour";
-            } else if (currentStep === 2) {
-                continueBtn.innerText = "Thanh toán";
-            }
-        } else {
-            alert('Vui lòng điền đầy đủ thông tin bắt buộc.');
+            currentStep = 3;
+            updateStepUI(steps, stepContents, nextBtn);
+            handleOrderFinish();
+            return;
         }
+
     });
+}
+
+function updateStepUI(steps, stepContents, nextBtn) {
+    steps.forEach(step => step.classList.remove("active"));
+    const currentStepEl = document.querySelector(`.step[data-step="${currentStep}"]`);
+    if (currentStepEl) currentStepEl.classList.add("active");
+
+    stepContents.forEach(content => content.classList.remove("active"));
+    const activeContent = document.getElementById(`step-${currentStep}`);
+    if (activeContent) activeContent.classList.add("active");
+
+    if (currentStep === 1) {
+        nextBtn.innerText = "Tiếp tục";
+    } else if (currentStep === 2) {
+        nextBtn.innerText = "Thanh toán";
+    } else {
+        nextBtn.innerText = "Hoàn tất";
+    }
+
+    showPaymentContent(selectedPaymentMethod);
+}
+
+const paymentOptions = document.querySelectorAll(".payment-option");
+
+paymentOptions.forEach(option => {
+    option.addEventListener("click", () => {
+        paymentOptions.forEach(o => o.classList.remove("active"));
+        option.classList.add("active");
+        selectedPaymentMethod = option.dataset.method;
+        showPaymentContent(selectedPaymentMethod);
+    });
+});
+
+function showPaymentContent(method) {
+    const bankContent = document.getElementById("bankContent");
+    const momoContent = document.getElementById("momoContent");
+
+    bankContent.style.display = "none";
+    momoContent.style.display = "none";
+
+    if (method === "bank") bankContent.style.display = "block";
+    if (method === "momo") momoContent.style.display = "block";
+}
+
+async function handleOrderFinish() {
+    const customerInfo = JSON.parse(localStorage.getItem("customerInfo"));
+    const cart = getCart();
+    const total = document.getElementById("total-price").innerText;
+
+    const orderData = {
+        customer: customerInfo,
+        items: cart,
+        total: total,
+        paymentMethod: selectedPaymentMethod,
+        status: "pending",
+        createdAt: new Date().toISOString()
+    };
+
+    try {
+        const res = await fetch("http://localhost:3000/orders", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(orderData)
+        });
+
+        if (res.ok) {
+            localStorage.removeItem("gio-hang");
+            localStorage.removeItem("customerInfo");
+            alert("Đặt tour thành công! Cảm ơn bạn đã tin tưởng Vietravel ❤️");
+        } else {
+            alert("Có lỗi khi gửi đơn hàng!");
+        }
+    } catch (err) {
+        console.error("Lỗi khi gửi đơn hàng:", err);
+    }
 }
 
 window.onload = () => {
     renderOrderSummary();
     setupStepNavigation();
 };
-
-const finishBtn = document.getElementById("finish-btn");
-console.log(finishBtn);
-finishBtn.addEventListener('click', async () => {
-    // Lấy thông tin khách hàng từ localStorage
-    const customerInfo = JSON.parse(localStorage.getItem('customerInfo'));
-
-    // Lấy thông tin giỏ hàng từ localStorage
-    const cart = JSON.parse(localStorage.getItem("gio-hang"));
-
-    // Tạo đối tượng dữ liệu hoàn chỉnh để gửi lên server
-    const orderData = {
-        customer: customerInfo,
-        items: cart,
-        // Có thể thêm tổng tiền, phương thức thanh toán...
-        total: document.getElementById("total-price").innerText // Lấy giá trị đã hiển thị
-    };
-
-    console.log("Dữ liệu đơn hàng:", orderData);
-
-    try {
-        // Gửi dữ liệu đơn hàng đến API
-        const response = await fetch('http://localhost:3000/orders', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(orderData),
-        });
-
-        const result = await response.json();
-        if (response.ok) {
-            console.log("Đơn hàng đã được đặt thành công:", result);
-            alert("Đơn hàng đã được đặt thành công!");
-            localStorage.removeItem("gio-hang");
-            localStorage.removeItem("customerInfo");
-            // Chuyển hướng người dùng về trang chủ hoặc trang xác nhận
-        } else {
-            console.error("Lỗi khi đặt đơn hàng:", result);
-            alert("Có lỗi xảy ra khi đặt đơn hàng. Vui lòng thử lại.");
-        }
-    } catch (error) {
-        console.error("Lỗi:", error);
-        alert("Lỗi kết nối. Vui lòng kiểm tra lại.");
-    }
-});
