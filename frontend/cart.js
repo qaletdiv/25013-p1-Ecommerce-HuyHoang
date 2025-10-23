@@ -1,3 +1,10 @@
+const user = JSON.parse(localStorage.getItem("user"));
+console.log(user);
+const account = document.getElementById('account');
+if (user) {
+    account.innerHTML = user.fullname;
+    account.setAttribute('href', 'profile.html')
+}
 function getCart() {
   return JSON.parse(localStorage.getItem("gio-hang")) || [];
 }
@@ -63,7 +70,7 @@ async function renderRelatedProducts() {
   container.innerHTML = 'Đang tải sản phẩm...';
 
   try {
-    const response = await fetch('http://localhost:3000/products?categoryid=1&_limit=8');
+    const response = await fetch('http://localhost:3000/products?categoryid=1&_limit=7');
     if (!response.ok) {
       throw new Error('Lỗi khi tải dữ liệu sản phẩm.');
     }
