@@ -1,3 +1,10 @@
+const user = JSON.parse(localStorage.getItem("user"));
+console.log(user);
+const account = document.getElementById('account');
+if (user) {
+    account.innerHTML = user.fullname;
+    account.setAttribute('href', 'profile.html')
+}
 const registerForm = document.getElementById("registerForm");
 registerForm.addEventListener("submit", async (event) => {
     const fullname = document.getElementById("fullname").value;
