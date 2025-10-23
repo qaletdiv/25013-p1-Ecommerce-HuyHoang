@@ -1,3 +1,10 @@
+const user = JSON.parse(localStorage.getItem("user"));
+console.log(user);
+const account = document.getElementById('account');
+if (user) {
+  account.innerHTML = user.fullname;
+  account.setAttribute('href', 'profile.html')
+}
 const loginForm = document.getElementById("loginForm");
 
 loginForm.addEventListener("submit", async (event) => {
@@ -24,6 +31,7 @@ loginForm.addEventListener("submit", async (event) => {
   const user = await response.json();
   if (user.length > 0) {
     msg.textContent = "Đăng Nhập Thành Công"
+    localStorage.setItem("user", JSON.stringify(user[0]));
     window.location.href = 'index.html';
   } else {
     msg.textContent = "Mật khẩu hoặc Email chưa đúng"
