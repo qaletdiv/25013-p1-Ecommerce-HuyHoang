@@ -1,31 +1,10 @@
-// const slides = document.querySelectorAll('.slide');
-// const prevBtn = document.querySelector('.prev');
-// const nextBtn = document.querySelector('.next');
-// let currentIndex = 0;
-
-// function showSlide(index) {
-//   slides.forEach(slide => slide.classList.remove('active'));
-//   slides[index].classList.add('active');
-// }
-
-// prevBtn.addEventListener('click', () => {
-//   currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-//   showSlide(currentIndex);
-// });
-
-// nextBtn.addEventListener('click', () => {
-//   currentIndex = (currentIndex + 1) % slides.length;
-//   showSlide(currentIndex);
-// });
-
-// // Accordion toggle
-// document.querySelectorAll('.accordion-btn').forEach(btn => {
-//     btn.addEventListener('click', () => {
-//         btn.classList.toggle('active');
-//         const panel = btn.nextElementSibling;
-//         panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
-//     });
-// });
+const user = JSON.parse(localStorage.getItem("user"));
+console.log(user);
+const account = document.getElementById('account');
+if (user) {
+    account.innerHTML = user.fullname;
+    account.setAttribute('href', 'profile.html')
+}
 
 const params = new URLSearchParams(window.location.search);
 const productId = parseInt(params.get("id"));
@@ -89,4 +68,6 @@ const addCart = (tour) => {
   console.log(cart);
   localStorage.setItem("gio-hang", JSON.stringify(cart));
 } 
+
+
 
