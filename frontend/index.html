@@ -11,6 +11,12 @@
 </head>
 
 <body>
+    <div id="popup">
+        <div class="popup-container">
+            <button class="close-btn" id="closeBtn">X</button>
+            <img src="https://media.vietravel.com/images/news/960-640119.png" alt="popup image">
+        </div>
+    </div>
     <header class="header">
         <div class="container">
             <div class="logo">
@@ -24,7 +30,7 @@
                     <li><a href="#">Tin Tức</a></li>
                     <li><a href="#">Liên Hệ</a></li>
                     <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                    <li><a href="login.html"><i class="fa-regular fa-user"></i></i></a></li>
+                    <li><a href="login.html" id="account"><i class="fa-regular fa-user"></i></a></li>
                 </ul>
             </nav>
         </div>
@@ -72,7 +78,14 @@
                 <div class="search-form">
                     <div class="form-group destination">
                         <label for="destination">Bạn muốn đi đâu?</label>
-                        <input type="text" id="destination" placeholder="Ví dụ: Đà Nẵng, Phú Quốc">
+                        <input list="suggest-destinations" id="destination" placeholder="Nhập điểm đến...">
+                        <datalist id="suggest-destinations">
+                            <option value="Đà Nẵng">
+                            <option value="Nha Trang">
+                            <option value="Phú Quốc">
+                            <option value="Hà Nội">
+                        </datalist>
+
                     </div>
                     <div class="form-group departure-date">
                         <label for="departure-date">Ngày đi</label>
