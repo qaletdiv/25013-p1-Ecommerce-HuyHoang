@@ -2,7 +2,7 @@ const user = JSON.parse(localStorage.getItem("user"));
 console.log(user);
 const account = document.getElementById('account');
 if (user) {
-    account.innerHTML = user.fullname;
+    account.innerHTML = "Tài khoản của tôi";
     account.setAttribute('href', 'profile.html')
 }
 

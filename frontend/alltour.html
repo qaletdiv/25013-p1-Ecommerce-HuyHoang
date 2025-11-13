@@ -23,8 +23,8 @@
                     <li><a href="#">Combo & Khuyến Mãi</a></li>
                     <li><a href="#">Tin Tức</a></li>
                     <li><a href="#">Liên Hệ</a></li>
+                    <li><a href="login.html" id="account"><i class="fa-regular fa-user"></i></a></li>
                     <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                    <li><a href="login.html" id="account"><i class="fa-regular fa-user"></i></a></li>  
                 </ul>
             </nav>
         </div>
@@ -32,16 +32,57 @@
 
   <main class="container">
     <h1 class="page-title">Tất cả Tour Du Lịch</h1>
+    <div id="pagination" class="pagination"></div>
 
     <div class="search-box">
       <input type="text" id="searchInput" placeholder="Tìm kiếm tour...">
     </div>
+    <div class="filter-box">
+    <h3>Bộ lọc chi tiết</h3>
 
-    <select name="" id="select-price">
-        <option value="default">Mặc định</option>
-        <option value="asc">Giá thấp đến cao</option>
-        <option value="desc">Giá cao đến thấp</option>
+    <label>Điểm khởi hành:</label>
+    <select id="filter-origin">
+        <option value="">Tất cả</option>
+        <option value="TP.HCM">TP.HCM</option>
+        <option value="Hà Nội">Hà Nội</option>
+        <option value="Đà Nẵng">Đà Nẵng</option>
     </select>
+
+    <label>Điểm đến:</label>
+    <select id="filter-destination">
+        <option value="">Tất cả</option>
+        <option value="Trung Quốc">Trung Quốc</option>
+        <option value="Đà Lạt">Đà Lạt</option>
+        <option value="Phú Quốc">Phú Quốc</option>
+    </select>
+
+    <label>Khoảng giá:</label>
+    <input type="number" id="min-price" placeholder="Giá từ…">
+    <input type="number" id="max-price" placeholder="Giá đến…">
+
+    <label>Số ngày:</label>
+    <select id="filter-days">
+        <option value="">Tất cả</option>
+        <option value="1-2">1–2 ngày</option>
+        <option value="3-5">3–5 ngày</option>
+        <option value="6-7">6–7 ngày</option>
+        <option value="8+">Trên 7 ngày</option>
+    </select>
+
+    <label>Loại tour:</label>
+    <select id="filter-type">
+        <option value="">Tất cả</option>
+        <option value="1">Nội địa</option>
+        <option value="2">Quốc tế</option>
+        <option value="3">Nghỉ dưỡng</option>
+        <option value="4">Khám phá</option>
+        <option value="5">Mạo hiểm</option>
+    </select>
+
+    <button id="applyFilterBtn">Áp dụng</button>
+    <button id="resetFilters">Xóa bộ lọc</button>
+</div>
+
 
     <div id="tourList" class="tour-list"></div>
   </main>

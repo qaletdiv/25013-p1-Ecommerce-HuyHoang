@@ -410,6 +410,35 @@
       "paymentMethod": "bank",
       "status": "pending",
       "createdAt": "2025-10-14T13:33:10.537Z"
+    },
+    {
+      "id": "d720",
+      "customer": {
+        "fullName": "Nguyễn Huy Hoàng",
+        "phoneNumber": "0326893368",
+        "email": "lamthithutrang05@gmail.com",
+        "address": "Cẩm Thủy"
+      },
+      "items": [
+        {
+          "id": "207",
+          "categoryid": 2,
+          "code": "INT-CN-207",
+          "name": "Tour Trung Quốc",
+          "price": 15800000,
+          "duration": " 6N5Đ",
+          "departure": "Hà Nội",
+          "departureDate": "15/11/2025",
+          "availableSeats": 21,
+          "description": "Bắc Kinh, Vạn Lý Trường Thành, Tử Cấm Thành và Thượng Hải.",
+          "rating": 4.7,
+          "image": "https://dulichcoguu.com/wp-content/uploads/2024/02/tour-trung-quoc-7n7d-5-sao-toan-chang.jpg"
+        }
+      ],
+      "total": "15.800.000 VNĐ",
+      "paymentMethod": "momo",
+      "status": "pending",
+      "createdAt": "2025-11-13T15:11:31.459Z"
     }
   ],
   "payment": {

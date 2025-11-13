@@ -1,9 +1,14 @@
 const user = JSON.parse(localStorage.getItem("user"));
 console.log(user);
 const account = document.getElementById('account');
+const register = document.getElementById('register')
+const shop = document.getElementById('shop')
 if (user) {
-    account.innerHTML = user.fullname;
+    account.innerHTML = "Tài khoản của tôi";
     account.setAttribute('href', 'profile.html')
+    register.style.display = "none";
+} else {
+    shop.style.display = "none";
 }
 async function laySanPham(api) {
     try {
@@ -27,7 +32,7 @@ const renderProducts = (tours, listTour) => {
     tours.forEach(tour => {
         tourNoiBat.innerHTML += `
         <div class="tour-card">
-                        <img src="${tour.image}" alt="Tour Đà Nẵng">
+                        <img src="${tour.image}">
                         <div class="card-content">
                             <a><h3>${tour.name}</h3></a>
                             <p><i class="fa-solid fa-ticket"></i> ${tour.code}</p>
@@ -48,18 +53,19 @@ laySanPham('http://localhost:3000/products?categoryid=2&_limit=6').then(tours =>
 let cart = JSON.parse(localStorage.getItem("gio-hang"));
 // console.log(cart);
 
-const popup = document.getElementById('popup')
-const closeBtn = document.getElementById('closeBtn')
-
-closeBtn.addEventListener('click', () => {
-    popup.style.display = 'none';
-});
-
-popup.addEventListener('click', (e) => {
-    if (e.target === popup) {
-        popup.style.display = 'none';
+window.onload = function() {
+    if (!sessionStorage.getItem('promo_popup_shown')) {
+        document.getElementById('promo-popup').style.display = 'block';
+        document.getElementById('promo-bg').style.display = 'block';
     }
-});
+};
+
+document.getElementById('closeBtn').onclick = function() {
+    document.getElementById('promo-popup').style.display = 'none';
+    document.getElementById('promo-bg').style.display = 'none';
+    sessionStorage.setItem('promo_popup_shown', 'yes');
+};
+
 
 
 

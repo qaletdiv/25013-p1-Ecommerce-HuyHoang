@@ -97,84 +97,168 @@ body {
 
 .tour-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
-    margin-bottom: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* Rộng hơn */
+    gap: 2rem;
+    margin-bottom: 2.5rem;
 }
 
-.tour-card {
+.tour-item {
     background: #fff;
-    border-radius: 16px;
+    border: 1px solid #e9effa;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(1, 91, 166, 0.07);
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Đảm bảo ảnh và text không tràn ra ngoài card */
     display: flex;
     flex-direction: column;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    height: 100%;
+    /* Card full height nếu cần, có thể bỏ nếu grid tự cân */
+    position: relative;
+    transition: box-shadow 0.2s, border 0.2s;
 }
 
-.tour-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.tour-card img {
+.tour-image {
     width: 100%;
     height: 200px;
+    /* Cố định chiều cao ảnh hoặc có thể tăng giảm */
     object-fit: cover;
+    /* Ảnh crop, vừa khít khung */
+    display: block;
+    border-bottom: 1px solid #e9effa;
+    border-radius: 8px 8px 0 0;
+    background: #f1f6fc;
+}
+
+/* Nếu dùng phần text riêng sau ảnh, nên gói class tour-info */
+.tour-info {
+    padding: 1.2em 1em 1em;
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    justify-content: flex-start;
+}
+
+/* Đảm bảo text không chồng lên ảnh và icon/brand/logo (nếu có) đúng vị trí */
+.tour-item h2,
+.tour-info h2 {
+    font-size: 1.15em;
+    color: #015ba6;
+    font-weight: 700;
+    margin: 0.3em 0 0.2em 0;
+}
+
+/* Nếu có nút bên dưới, như đặt tour hoặc chi tiết */
+.tour-item .tour-book,
+.tour-info .tour-book {
+    margin-top: auto;
+}
+
+/* Responsive cho ảnh */
+@media (max-width: 600px) {
+    .tour-image {
+        height: 160px;
+    }
+
+    .tour-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Nếu ảnh bị lỗi không load = trống, thêm background/màu chờ */
+.tour-image {
+    background: linear-gradient(120deg, #e9effa 50%, #f2f6fc 100%);
+}
+
+.tour-item {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 22px rgba(16,74,177,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.22s cubic-bezier(.36,.07,.19,.97), box-shadow 0.22s;
+  border: none;
+  min-height: 420px;
+  cursor: pointer;
+}
+.tour-item:hover {
+  transform: translateY(-8px) scale(1.021);
+  box-shadow: 0 12px 36px rgba(16,74,177,0.13);
+}
+
+.tour-image {
+  border-radius: 18px 18px 0 0;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border: none;
+  box-shadow: 0 2px 7px rgba(16,74,177,0.04);
 }
 
 .tour-info {
-    padding: 18px 20px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  padding: 18px 20px 14px 20px;
+  background: linear-gradient(100deg,#f1f6fc 90%,#e6ecfa 100%);
+  border-radius: 0 0 14px 14px;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
 }
 
-.tour-info a {
-    text-decoration: none;
+.tour-info h2 {
+  font-size: 1.1em;
+  color: #1560cc;
+  font-weight: 700;
+  margin-bottom: 5px;
 }
 
-.tour-info h3 {
-    font-size: 20px;
-    color: #004080;
-    margin-bottom: 12px;
-    font-weight: 700;
+.tour-info .tour-hot {
+  display: inline-block;
+  background: #ffd834;
+  color: #e63946;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 14px;
+  padding: 3px 10px;
+  margin-bottom:6px;
+  margin-left: 8px;
 }
 
 .tour-info p {
-    font-size: 14px;
-    color: #444;
-    margin: 5px 0;
+  font-size: 15px;
+  color: #404850;
+  margin-bottom: 4px;
+  margin-top: 0;
 }
-
-.tour-info strong {
-    color: #222;
-}
-
-
 .tour-info .price {
-    font-size: 20px;
-    font-weight: 700;
-    color: #e63946;
-    margin-top: 12px;
+  color: #e63946;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-
-.tour-info .btn-detail {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 18px;
-    background: #004080;
-    color: #fff;
-    border-radius: 25px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: background 0.3s;
+.tour-info .rating {
+  color: #ff9800;
+  font-size: 15px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
-.tour-info .btn-detail:hover {
-    background: #e63946;
+.tour-info .rating i {
+  color: #ff9800;
+  font-size: 17px;
+}
+
+@media (max-width: 600px) {
+  .tour-item {
+    min-height: 320px;
+  }
+  .tour-info {
+    padding: 14px 11px;
+  }
 }
 
 .vietravel-footer {
@@ -262,6 +346,7 @@ hr {
     font-size: 12px;
     margin: 5px 0;
 }
+
 #select-price {
     appearance: none;
     -webkit-appearance: none;
@@ -296,4 +381,153 @@ hr {
 
 #select-price::-ms-expand {
     display: none;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 35px;
+    margin-top: 10px;
+}
+
+.pagination-btn {
+    background: #fff;
+    color: #004080;
+    border: 2px solid #ddeaff;
+    min-width: 40px;
+    padding: 8px 15px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 22px;
+    cursor: pointer;
+    outline: none;
+    transition:
+        background 0.18s,
+        color 0.18s,
+        border 0.18s,
+        box-shadow 0.18s;
+    box-shadow: 0 2px 6px rgba(0, 64, 128, 0.05);
+}
+
+.pagination-btn.active,
+.pagination-btn:focus {
+    background: #004080;
+    color: #fff;
+    border-color: #004080;
+    box-shadow: 0 4px 12px rgba(0, 64, 128, 0.12);
+}
+
+.pagination-btn:hover {
+    background: #e3f2fd;
+    color: #007bff;
+    border-color: #6ba6ff;
+    box-shadow: 0 2px 8px rgba(107, 166, 255, 0.07);
+}
+
+.pagination-btn[aria-label] {
+    font-size: 15px;
+}
+
+@media (max-width: 600px) {
+    .pagination {
+        gap: 5px;
+    }
+
+    .pagination-btn {
+        padding: 7px 10px;
+        font-size: 13px;
+        min-width: 28px;
+    }
+}
+
+.pagination-btn:disabled {
+    opacity: 0.32;
+    cursor: not-allowed;
+    background: #f2f4f8;
+    color: #cccccc;
+    border-color: #ddeaff;
+}
+
+.filter-box {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.filter-box select,
+.filter-box input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.filter-box select:focus,
+.filter-box input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 3px rgba(0,123,255,0.4);
+}
+
+#resetFilters {
+  grid-column: span 5;
+  padding: 10px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+#resetFilters:hover {
+  background: #c82333;
+}
+
+
+#tourList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.tour-item {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  padding-bottom: 15px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.tour-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+.tour-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.tour-item h2 {
+  font-size: 18px;
+  padding: 10px;
+  color: #333;
+}
+
+.tour-item p {
+  padding: 0 10px;
+  margin: 3px 0;
+  color: #555;
 }

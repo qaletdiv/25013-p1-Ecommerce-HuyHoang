@@ -105,102 +105,81 @@ body {
 }
 
 .tour-search-container {
-    background-color: #f0f4f9;
-    padding-top: 50px;
-    padding-bottom: 20px;
-    position: relative;
-    z-index: 10;
-}
-
-.search-box {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: #fff;
     padding: 20px;
-    max-width: 900px;
-    margin: -100px auto 0;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 30px auto;
 }
 
 .search-tabs {
     display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid #e0e0e0;
+    justify-content: space-between;
+    flex-wrap: wrap;
     margin-bottom: 20px;
 }
 
 .tab-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 15px;
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
     cursor: pointer;
-    transition: all 0.3s ease;
-    border-bottom: 2px solid transparent;
+    color: #666;
+    transition: 0.3s;
 }
 
-.tab-item.active {
-    border-bottom: 2px solid #007bff;
-    color: #007bff;
-    font-weight: bold;
-}
-
+.tab-item.active,
 .tab-item:hover {
     color: #007bff;
-}
-
-.tab-item i {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
+    font-weight: 600;
 }
 
 .search-form {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 15px;
-    flex-wrap: wrap;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    flex: 1;
-    min-width: 200px;
 }
 
-.form-group label {
-    font-size: 0.9rem;
-    color: #666;
+label {
+    font-weight: 600;
     margin-bottom: 5px;
+    color: #333;
 }
 
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
+input,
+select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
 }
 
 .search-btn-wrapper {
-    flex-shrink: 0;
+    display: flex;
+    align-items: end;
 }
 
 .search-btn {
+    width: 100%;
     background-color: #007bff;
     color: #fff;
     border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
+    padding: 10px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 16px;
+    transition: 0.3s;
 }
 
 .search-btn:hover {
     background-color: #0056b3;
 }
-
 
 
 .running-text-container {
@@ -405,43 +384,88 @@ hr {
     margin: 5px 0;
 }
 
-#popup {
+/* Overlay mờ nền */
+#promo-bg {
+    display: none;
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    animation: fadeInBg 0.4s;
+}
+
+@keyframes fadeInBg {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.6;
+    }
+}
+
+/* Popup chính */
+#promo-popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 1001;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.28);
+    overflow: hidden;
+    max-width: 600px;
+    width: 95vw;
+    animation: fadeInPopup 0.35s;
+}
+
+@keyframes fadeInPopup {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 60%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Nội dung bên trong */
+.promo-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    z-index: 999;
+    background: #fff;
+    padding: 0;
+    border-radius: 14px;
 }
 
-.popup-container {
-    position: relative;
-    display: inline-block;
-
-}
-
-#popup-container img {
-    width: 400px;
-    max-width: 90%;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+.promo-img {
+    max-width: 100%;
+    height: auto;
     display: block;
 }
 
-.close-btn { 
-    position: absolute;
-    top: 8px; right: 8px;
-    background-color: rgba(0, 0, 0, 0.7);
+/* Nút Đóng */
+.close-btn {
+    margin: 0 auto 22px auto;
+    margin-top: 10px;
+    background: #ff9600;
     color: white;
     border: none;
     font-size: 18px;
-    border-radius: 50%;
-    width: 30px; height: 30px;
+    border-radius: 8px;
+    padding: 10px 32px;
     cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+    outline: none;
 }
 
-.close-btn:hover{
-    background: crimson;
+.close-btn:hover {
+    background: #e47c00;
 }
+
