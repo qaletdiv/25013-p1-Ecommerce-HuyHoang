@@ -1,23 +1,89 @@
 const user = JSON.parse(localStorage.getItem("user"));
 console.log(user);
 const account = document.getElementById('account');
+const register = document.getElementById('register')
+const shop = document.getElementById('shop')
 if (user) {
   account.innerHTML = "Tài khoản của tôi";
   account.setAttribute('href', 'profile.html')
+  register.innerHTML = "Đăng xuất";
+  register.setAttribute('href', '#');
+  register.addEventListener("click", () => {
+    localStorage.removeItem("user");
+    alert("Bạn đã đăng xuất thành công")
+    window.location.href = "login.html"
+  });
+} else {
+  shop.style.display = "none";
+}
+const tours = [];
+const tourList = document.getElementById("tourList");
+
+const applyFilterBtn = document.getElementById("applyFilterBtn");
+applyFilterBtn.addEventListener("click", () => {
+  // Lấy giá trị từ các trường lọc
+  const departure = document.getElementById("departure").value;
+  const destination = document.getElementById("destination").value;
+  const minPrice = document.getElementById("min-price").value;
+  const maxPrice = document.getElementById("max-price").value;
+  // const days = document.getElementById("filter-days").value;
+  // const startDay = days.split('-')[0];
+  // const endDay = days.split('-')[1];
+  const type = document.getElementById("filter-type").value;
+  console.log({ departure, destination, minPrice, maxPrice, type });
+  fetch(`http://localhost:3000/products?departure=${departure}&name=${destination}&price_gte=${minPrice}&price_lte=${maxPrice}&categoryid=${type}`)
+    .then(response => response.json())
+    .then(data => {
+      console.log('Kết quả lọc:', data);
+      renderTourList(data);
+    });
+});
+
+fetch('http://localhost:3000/products')
+  .then(response => response.json())
+  .then(data => {
+    data.forEach(tour => tours.push(tour));
+    console.log('Tất cả tours:', tours);
+    renderTourList(tours);
+  });
+
+const renderTourList = (tours) => {
+  let html = '';
+  tours.forEach(tour => {
+    html += `
+      <div class="tour-card">
+                        <img src="${tour.image}">
+                        <div class="card-content">
+                            <a><h3>${tour.name}</h3></a>
+                            <p><i class="fa-solid fa-ticket"></i> ${tour.code}</p>
+                            <p><i class="fa-solid fa-calendar-days"></i> Ngày khởi hành: ${tour.departureDate}</p>
+                            <p><i class="fa-solid fa-location-dot"></i> Khởi hành: ${tour.departure}</p>
+                            <p><i class="fa-solid fa-clock"></i> ${tour.duration}</p>
+                            <span class="price">${tour.price}</span>
+                            <a href="product.html?id=${tour.id}" class="btn-detail">Xem chi tiết</a>
+                        </div>
+                    </div>
+    `
+
+  })
+  tourList.innerHTML = html;
 }
 
-
-document.getElementById("searchInput").addEventListener("input", function (e) {
-  const keyword = e.target.value.toLowerCase();
-  const cards = document.querySelectorAll(".tour-card");
-
-  cards.forEach(card => {
-    const text = card.innerText.toLowerCase();
-    card.style.display = text.includes(keyword) ? "block" : "none";
-  });
+//reset filter
+const resetFilterBtn = document.getElementById("resetFiltersBtn");
+resetFilterBtn.addEventListener("click", () => {
+  document.getElementById("departure").value = "";
+  document.getElementById("destination").value = "";
+  document.getElementById("min-price").value = "";
+  document.getElementById("max-price").value = "";
+  document.getElementById("filter-type").value = "";
+  // Tải lại tất cả tour
+  renderTourList(tours);
 });
-fetchTours();
 
+
+
+// Pagination
 const toursPerPage = 6;
 let currentPage = 1;
 let toursData = [];
@@ -51,15 +117,18 @@ function renderTours(page) {
 
   const tourListEl = document.getElementById('tourList');
   tourListEl.innerHTML = pagedTours.map(tour => `
-    <div class="tour-item">
-      <img src="${tour.image}" alt="${tour.name}" class="tour-image"/>
-      <h2>${tour.name}</h2>
-      <p>Giá: ${tour.price.toLocaleString()} VNĐ</p>
-      <p>Thời gian: ${tour.duration} | Khởi hành: ${tour.departure} (${tour.departureDate})</p>
-      <p>Còn lại: ${tour.availableSeats} chỗ</p>
-      <p>${tour.description}</p>
-      <p>Đánh giá: ${tour.rating}/5</p>
-    </div>
+    <div class="tour-card">
+                        <img src="${tour.image}">
+                        <div class="card-content">
+                            <a><h3>${tour.name}</h3></a>
+                            <p><i class="fa-solid fa-ticket"></i> ${tour.code}</p>
+                            <p><i class="fa-solid fa-calendar-days"></i> Ngày khởi hành: ${tour.departureDate}</p>
+                            <p><i class="fa-solid fa-location-dot"></i> Khởi hành: ${tour.departure}</p>
+                            <p><i class="fa-solid fa-clock"></i> ${tour.duration}</p>
+                            <span class="price">${tour.price}</span>
+                            <a href="product.html?id=${tour.id}" class="btn-detail">Xem chi tiết</a>
+                        </div>
+                    </div>
   `).join('');
 
   renderPagination();
@@ -106,63 +175,4 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   fetchTours();
 });
-
-function getDays(duration) {
-    const match = duration.match(/(\d+)N/);
-    return match ? parseInt(match[1]) : 0;
-}
-function applyFilters() {
-    const origin = document.getElementById("filter-origin").value;
-    const destination = document.getElementById("filter-destination").value;
-    const minPrice = document.getElementById("min-price").value;
-    const maxPrice = document.getElementById("max-price").value;
-    const days = document.getElementById("filter-days").value;
-    const type = document.getElementById("filter-type").value;
-
-    let filtered = toursData.filter(tour => {
-
-        // Điểm khởi hành
-        if (origin && tour.departure.trim() !== origin) return false;
-
-        // Điểm đến 
-        if (destination && tour.destination?.trim() !== destination) return false;
-
-        // Khoảng giá
-        if (minPrice && tour.price < Number(minPrice)) return false;
-        if (maxPrice && tour.price > Number(maxPrice)) return false;
-
-        // Số ngày
-        const totalDays = getDays(tour.duration);
-
-        if (days === "1-2" && !(totalDays >= 1 && totalDays <= 2)) return false;
-        if (days === "3-5" && !(totalDays >= 3 && totalDays <= 5)) return false;
-        if (days === "6-7" && !(totalDays >= 6 && totalDays <= 7)) return false;
-        if (days === "8+" && totalDays < 8) return false;
-
-        // Loại tour theo categoryid
-        if (type && tour.categoryid != type) return false;
-
-        return true;
-    });
-
-    toursData = filtered;
-    currentPage = 1;
-    renderTours(currentPage);
-}
-document.getElementById("applyFilterBtn").addEventListener("click", () => {
-    applyFilters();
-});
-let originalTours = []; 
-
-async function fetchTours() {
-  try {
-    const res = await fetch('http://localhost:3000/products');
-    const data = await res.json();
-    originalTours = Array.isArray(data) ? data : data.products || data.tours;
-    toursData = [...originalTours];
-    renderTours(currentPage);
-  } catch (err) {
-    console.error(err);
-  }
-}
 

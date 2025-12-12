@@ -1,53 +1,64 @@
 const user = JSON.parse(localStorage.getItem("user"));
 console.log(user);
-// const account = document.getElementById('account');
-// if (user) {
-//     account.innerHTML = user.fullname;
-//     account.setAttribute('href', 'profile.html')
-// }
 
-document.getElementById("logoutBtn").addEventListener("click", ()=>{
-    localStorage.removeItem("user");
-    alert("Bạn đã đăng xuất thành công")
-    window.location.href = "login.html"
-});
+const account = document.getElementById('account');
+const register = document.getElementById('register');
+const shop = document.getElementById('shop');
 
+if (user) {
+    account.innerHTML = "Tài khoản của tôi";
+    account.setAttribute('href', 'profile.html');
+
+    register.innerHTML = "Đăng xuất";
+    register.setAttribute('href', '#');
+
+    register.addEventListener("click", () => {
+        localStorage.removeItem("user");
+        alert("Bạn đã đăng xuất thành công");
+        window.location.href = "login.html";
+    });
+} else {
+    shop.style.display = "none";
+    alert("Bạn cần đăng nhập để xem trang này");
+    window.location.href = "login.html";
+}
+
+// Hiển thị thông tin cá nhân
 document.getElementById("userName").textContent = user.fullname;
 document.getElementById("userEmail").textContent = user.email;
+
 
 const renderBookings = (orders, containerId) => {
     const container = document.getElementById(containerId);
     container.innerHTML = "";
 
-    if(!orders.length){
-        container.innerHTML = `<p>Bạn chưa có booking nào</p>`
+    if (!orders.length) {
+        container.innerHTML = `<p>Bạn chưa có booking nào</p>`;
         return;
     }
 
     orders.forEach(order => {
+        // console.log(order.addTour.departureDate);
         container.innerHTML += `
         <div class="booking-card">
-        <h3>${order.tourName}</h3>
-        <p><strong>Mã Booking:</strong> ${order.id}</p>
-        <p><strong>Ngày khởi hành:</strong> ${new Date(order.departureDate).toLocaleDateString("vi-VN")}</p>
-        <p><strong>Tổng tiền:</strong> ${Number(order.total).toLocaleDateString("vi-VN")}₫</p>
+        <h3 style="color:red"><p><strong>Ngày đặt:</strong> ${new Date(order.date).toLocaleDateString("vi-VN")}</h3>
+            <h3>${order.addTour.name}</h3>
+            <p><strong>Mã Booking:</strong> ${order.id}</p>
+            <p><strong>Ngày khởi hành:</strong> ${(order.addTour.departureDate)}</p>
+            <p><strong>Tổng tiền:</strong> ${Number(order.addTour.price).toLocaleString("vi-VN")}₫</p>
         </div>
         `;
     });
 };
 
-fetch (`http://localhost:3000/orders?userid=${user.id}`)
-.then(res => res.json())
-.then(data => {
-    console.log(data);
-    // const user = JSON.parse(localStorage.getItem("user"));
-    // const userOrders = data.fiter(o => o.userID == user.id);
-    // renderBookings(userOrders, "bookingSection");
-})
-.catch(err => {
-    console.error("Lỗi khi tải dữ liệu:", err);
-    document.getElementById("bookingSection").innerHTML = "Không thể tải dữ liệu booking";
-});
 
-
-
+fetch(`http://localhost:3000/orders?userid=${user.id}`)
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+        renderBookings(data, "bookingList");
+    })
+    .catch(err => {
+        console.error("Lỗi khi tải dữ liệu:", err);
+        document.getElementById("bookingList").innerHTML = "Không thể tải dữ liệu booking";
+    });

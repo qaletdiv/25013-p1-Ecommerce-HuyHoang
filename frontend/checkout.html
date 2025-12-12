@@ -20,7 +20,8 @@
                 <li><a href="#">Combo & Khuyến Mãi</a></li>
                 <li><a href="#">Tin Tức</a></li>
                 <li><a href="#">Liên Hệ</a></li>
-                <li><a href="login.html" id="account"><i class="fa-regular fa-user"></i></a></li>           
+                <li><a href="login.html" id="account">Đăng Nhập</a></li>
+                <li><a href="register.html" id="register">Đăng Ký</a></li>   
             </ul>
         </nav>
     </div>
@@ -28,23 +29,6 @@
 
 <body>
     <div class="container">
-        <div class="booking-process-bar">
-            <div class="step active" data-step="1">
-                <div class="icon">1</div>
-                <span>Nhập thông tin</span>
-            </div>
-            <div class="separator"></div>
-            <div class="step" data-step="2">
-                <div class="icon">2</div>
-                <span>Thanh toán</span>
-            </div>
-            <div class="separator"></div>
-            <div class="step" data-step="3">
-                <div class="icon">3</div>
-                <span>Hoàn tất</span>
-            </div>
-        </div>
-
         <div class="booking-container">
             <div class="booking-form-section step-content active" id="step-1">
                 <h2 class="section-title">Thông tin liên lạc</h2>
@@ -69,20 +53,37 @@
                             <input type="text" id="address" placeholder="Nhập địa chỉ">
                         </div>
                     </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="adult">Số lượng người lớn</label>
+                            <input type="adult" id="adult" placeholder="Nhập số lượng" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="child">Số lượng trẻ em</label>
+                            <input type="text" id="child" placeholder="Nhập số lượng">
+                        </div>
+                    </div>
                 </div>
+                <h2 id="adultInformation" style="display: none;">Thông tin của người lớn</h2>
+                <div id="form-adult"></div>
+                <h2 id="childInformation" style="display: none;">Thông tin của trẻ em</h2>
+                <div id="form-child"></div>
                 <h2>Phương thức thanh toán</h2>
                 <div class="payment-methods">
-                    <div class="payment-option" data-method="bank">
-                        <div class="icon-box">
-                            <img src="https://cdn-icons-png.flaticon.com/512/483/483361.png" alt="Bank">
-                        </div>
-                        <span>Chuyển khoản ngân hàng</span>
+                    <div class="payment-option">
+                        <input type="radio" id="bankTransfer" name="paymentMethod" value="bankTransfer">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXUliDrHR49b7f9paFBxXWEuQqylcp_2Prjw&s" alt="">
+                        <label for="bankTransfer">Thanh toán qua ngân hàng</label>
                     </div>
-                    <div class="payment-option" data-method="momo">
-                        <div class="icon-box">
-                            <img src="https://upload.wikimedia.org/wikipedia/vi/f/fe/MoMo_Logo.png" alt="Momo">
-                        </div>
-                        <span>Ví Momo</span>
+                    <div class="payment-option">
+                        <input type="radio" id="momo" name="paymentMethod" value="momoTransfer">
+                        <img src="https://cdn.tgdd.vn/2020/03/GameApp/Untitled-2-200x200.jpg" alt="">
+                        <label for="momoTransfer">Thanh toán qua ví Momo</label>
+                    </div>
+                    <div class="payment-option">
+                        <input type="radio" id="vnpay" name="paymentMethod" value="vnpayTransfer">
+                        <img src="https://yt3.googleusercontent.com/JM1m2wng0JQUgSg9ZSEvz7G4Rwo7pYb4QBYip4PAhvGRyf1D_YTbL2DdDjOy0qOXssJPdz2r7Q=s900-c-k-c0x00ffffff-no-rj" alt="">
+                        <label for="vnpayTransfer">Thanh toán qua VNPay</label>
                     </div>
                 </div>
 
@@ -98,7 +99,7 @@
                 </div>
 
             </div>
-
+<!-- 
             <div class="booking-form-section step-content" id="step-2">
                 <h2 class="section-title">Phương thức thanh toán</h2>
 
@@ -123,18 +124,14 @@
             <div class="booking-form-section step-content" id="step-3">
                 <h2 class="section-title">Hoàn tất</h2>
                 <p>Đặt tour thành công. Cảm ơn quý khách!</p>
-            </div>
+            </div> -->
 
             <div class="booking-summary-section">
-                <h2 class="section-title">Tóm tắt chuyến đi</h2>
+                <h2 class="section-title">Tour bạn đã chọn</h2>
                 <div id="summary-items">
 
                 </div>
                 <hr>
-                <div class="summary-line total">
-                    <span>Tổng tiền</span>
-                    <span class="price-value" id="total-price">0 VNĐ</span>
-                </div>
                 <button class="continue-btn active" id="next-btn">Hoàn Tất</button>
             </div>
         </div>

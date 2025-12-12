@@ -16,30 +16,116 @@
             <div class="logo">
                 <a href="index.html">Vietravel</a>
             </div>
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="index.html">Trang Chủ</a></li>
-                        <li><a href="alltour.html">Tour Du Lịch</a></li>
-                        <li><a href="#">Combo & Khuyến Mãi</a></li>
-                        <li><a href="#">Tin Tức</a></li>
-                        <li><a href="#">Liên Hệ</a></li>
-                        <li><a href="login.html" id="account"><i class="fa-regular fa-user"></i></a></li>
-                        <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                    </ul>
-                </nav>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="alltour.html">Tour Du Lịch</a></li>
+                    <li><a href="#">Combo & Khuyến Mãi</a></li>
+                    <li><a href="#">Tin Tức</a></li>
+                    <li><a href="#">Liên Hệ</a></li>
+                    <li><a href="login.html" id="account">Đăng Nhập</a></li>
+                    <li><a href="register.html" id="register">Đăng Ký</a></li>
+                </ul>
+            </nav>
     </header>
 
     <!-- Hero Section -->
-    <main class="container hero" id="tour-details">
+    <main>
+        <div class="container hero" id="tour-details">
 
+        </div>
+        <div class="tab-container">
+            <button class="tablink" onclick="openPage('Lich_Trinh', this, 'red')">Lịch Trình</button>
+            <button class="tablink" onclick="openPage('Gia_Va_Phu_Thu', this, 'green')" id="defaultOpen">Giá & Phụ
+                Thu</button>
+            <button class="tablink" onclick="openPage('Chinh_Sach', this, 'blue')">Chính Sách</button>
+            <div id="Lich_Trinh" class="tabcontent">
+                <h3>Lịch Trình</h3>
+            </div>
+
+            <div id="Gia_Va_Phu_Thu" class="tabcontent" aria-labelledby="tab-gia-phuthu">
+                <h3 id="tab-gia-phuthu">Giá &amp; Phụ thu</h3>
+                <div class="price-summary">
+                    <p><strong>Phụ thu tiêu biểu:</strong></p>
+                    <ul>
+                        <li>Phụ thu phòng đơn: 200.000 VNĐ (cho phòng đơn)</li>
+                        <li>Phụ thu lễ/Tết: <span>áp dụng theo thông báo (+15%–25%)</span></li>
+                        <li>Phụ thu trẻ em: <span>5–9 tuổi: 50%–75% giá; &lt;5 tuổi: miễn phí (chi phí phát sinh tự
+                                túc)</span></li>
+                        <li>Phụ thu không bao gồm vé tham quan: áp dụng với hoạt động ngoài chương trình</li>
+                    </ul>
+                </div>
+
+                <div class="price-details">
+                    <h4>Giá tour bao gồm</h4>
+                    <ul>
+                        <li>Vé khứ hồi/di chuyển theo chương trình (nếu có)</li>
+                        <li>Khách sạn tiêu chuẩn (02 khách/phòng)</li>
+                        <li>Xe vận chuyển theo lịch trình, hướng dẫn viên, các bữa ăn theo chương trình</li>
+                        <li>Vé tham quan đã ghi trong chương trình và bảo hiểm du lịch</li>
+                    </ul>
+
+                    <h4>Giá tour không bao gồm</h4>
+                    <ul>
+                        <li>Chi phí cá nhân: giặt ủi, điện thoại, minibar, mua sắm</li>
+                        <li>Visa (nếu tour quốc tế không bao gồm)</li>
+                        <li>Tiền tip cho hướng dẫn viên &amp; tài xế</li>
+                        <li>Phí phát sinh do hoãn/chậm chuyến hoặc lý do bất khả kháng</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Chính Sách -->
+            <div id="Chinh_Sach" class="tabcontent" aria-labelledby="tab-chinh-sach">
+                <h3 id="tab-chinh-sach">Chính Sách</h3>
+
+                <div class="policy-summary">
+                    <h4>Thanh toán</h4>
+                    <ul>
+                        <li>Đặt cọc: 30% khi đăng ký.</li>
+                        <li>Thanh toán còn lại: 100% trước khởi hành 7–10 ngày tùy tour.</li>
+                    </ul>
+
+                    <h4>Hủy tour (khách hủy)</h4>
+                    <ul>
+                        <li>Hủy trước 15 ngày: phí 20% giá tour.</li>
+                        <li>Hủy trước 10–14 ngày: phí 50% giá tour.</li>
+                        <li>Hủy trước 7–9 ngày: phí 70% giá tour.</li>
+                        <li>Hủy trước 0–6 ngày hoặc không đến: phí 100% giá tour.</li>
+                    </ul>
+
+                    <h4>Hủy tour (công ty)</h4>
+                    <p>Hoàn 100% chi phí nếu tour không đủ khách khởi hành hoặc do sự cố bất khả kháng; công ty không
+                        chịu trách nhiệm cho chi phí cá nhân phát sinh của khách.</p>
+
+                    <h4>Chính sách trẻ em</h4>
+                    <ul>
+                        <li>Dưới 5 tuổi: miễn phí, ngủ chung bố mẹ (chi phí phát sinh do bé tự túc).</li>
+                        <li>5–9 tuổi: 50%–75% giá tour (tùy điều kiện, ngủ chung bố mẹ).</li>
+                        <li>10 tuổi trở lên: tính như người lớn.</li>
+                    </ul>
+
+                    <h4>Lưu ý chung</h4>
+                    <ul>
+                        <li>Lịch trình có thể thay đổi do thời tiết, giao thông hoặc yếu tố bất khả kháng nhưng vẫn đảm
+                            bảo các điểm chính.</li>
+                        <li>Khách chịu trách nhiệm giấy tờ hợp lệ (CCCD/hộ chiếu); hộ chiếu phải còn hạn tối thiểu 6
+                            tháng cho tour quốc tế.</li>
+                        <li>Trẻ em đi cùng người không phải cha mẹ phải có giấy ủy quyền hợp lệ.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
     </main>
 
+
     <section class="might-also-like">
-        <h2 class="section-title">Bạn có thể thích</h2>
+        <h2 class="section-title">Các Tour Liên Quan</h2>
         <div class="product-suggestions-container" id="product-suggestions">
         </div>
     </section>
-    
+
     <footer class="vietravel-footer">
         <div class="footer-top">
             <div class="footer-column">

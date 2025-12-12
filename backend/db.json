@@ -18,13 +18,23 @@
       "code": "INT-CN-207",
       "name": "Tour Trung Quốc",
       "price": 15800000,
-      "duration": " 6N5Đ",
+      "duration": "6N5Đ",
+      "days": 6,
       "departure": "Hà Nội",
       "departureDate": "15/11/2025",
       "availableSeats": 21,
       "description": "Bắc Kinh, Vạn Lý Trường Thành, Tử Cấm Thành và Thượng Hải.",
       "rating": 4.7,
-      "image": "https://dulichcoguu.com/wp-content/uploads/2024/02/tour-trung-quoc-7n7d-5-sao-toan-chang.jpg"
+      "image": "https://dulichcoguu.com/wp-content/uploads/2024/02/tour-trung-quoc-7n7d-5-sao-toan-chang.jpg",
+      "surcharge": 3500000,
+      "itinerary": [
+        "Ngày 1: Hà Nội – Bắc Kinh, thăm Quảng trường Thiên An Môn.",
+        "Ngày 2: Khám phá Tử Cấm Thành – Di Hòa Viên.",
+        "Ngày 3: Tham quan Vạn Lý Trường Thành – sân vận động Tổ Chim.",
+        "Ngày 4: Bay đến Thượng Hải – tham quan Bến Thượng Hải.",
+        "Ngày 5: Tháp truyền hình Đông Phương Minh Châu – phố Nam Kinh.",
+        "Ngày 6: Tự do mua sắm – bay về Việt Nam."
+      ]
     },
     {
       "id": "203",
@@ -32,13 +42,23 @@
       "code": "INT-KR-203",
       "name": "Tour Hàn Quốc",
       "price": 16900000,
-      "duration": " 6N5Đ",
+      "duration": "6N5Đ",
+      "days": 6,
       "departure": "Hà Nội",
       "departureDate": "01/11/2025",
       "availableSeats": 14,
       "description": "Seoul, đảo Nami, Everland, tháp Namsan và phố Myeongdong.",
       "rating": 4.8,
-      "image": "https://vietmytravel.com/wp-content/uploads/2018/08/tour-du-lich-han-quoc-mua-thu-vietmytravel.jpg"
+      "image": "https://vietmytravel.com/wp-content/uploads/2018/08/tour-du-lich-han-quoc-mua-thu-vietmytravel.jpg",
+      "surcharge": 3800000,
+      "itinerary": [
+        "Ngày 1: Hà Nội – Seoul, tham quan suối Cheonggyecheon.",
+        "Ngày 2: Đảo Nami – Tháp Namsan.",
+        "Ngày 3: Công viên Everland – Safari World.",
+        "Ngày 4: Cung điện Gyeongbok – bảo tàng truyền thống.",
+        "Ngày 5: Mua sắm tại Myeongdong – chợ Dongdaemun.",
+        "Ngày 6: Tự do – bay về Việt Nam."
+      ]
     },
     {
       "id": "113",
@@ -46,13 +66,19 @@
       "code": "VN-SD-DT-113",
       "name": "Tour Sa Đéc - Đồng Tháp",
       "price": 2800000,
-      "duration": " 2N1Đ",
+      "duration": "2N1Đ",
+      "days": 2,
       "departure": "TP.HCM",
       "departureDate": "22/09/2025",
       "availableSeats": 26,
       "description": "Khám phá làng hoa Sa Đéc, chùa cổ và ẩm thực đặc sản miền Tây.",
       "rating": 4.3,
-      "image": "https://phongcachviettravel.vn/wp-content/uploads/2023/11/phongcachviettravel.vn-tour-sa-dec-1n.jpg"
+      "image": "https://phongcachviettravel.vn/wp-content/uploads/2023/11/phongcachviettravel.vn-tour-sa-dec-1n.jpg",
+      "surcharge": 800000,
+      "itinerary": [
+        "Ngày 1: TP.HCM – Sa Đéc, tham quan làng hoa – nhà cổ Huỳnh Thủy Lê.",
+        "Ngày 2: Đồng Tháp – chùa cổ – thưởng thức đặc sản – về TP.HCM."
+      ]
     },
     {
       "id": "109",
@@ -60,13 +86,19 @@
       "code": "VN-CT-109",
       "name": "Tour Cần Thơ - Chợ nổi Cái Răng",
       "price": 2900000,
-      "duration": " 2N1Đ",
+      "duration": "2N1Đ",
+      "days": 2,
       "departure": "TP.HCM",
       "departureDate": "18/09/2025",
       "availableSeats": 28,
       "description": "Khám phá miền Tây sông nước, trải nghiệm chợ nổi và ẩm thực miệt vườn.",
       "rating": 4.4,
-      "image": "https://vietnamtouristvn.com/thumbs/1200x800x2/upload/product/cho-noi-cai-rang-con-son-5063.png"
+      "image": "https://vietnamtouristvn.com/thumbs/1200x800x2/upload/product/cho-noi-cai-rang-con-son-5063.png",
+      "surcharge": 800000,
+      "itinerary": [
+        "Ngày 1: TP.HCM – Cần Thơ, tham quan bến Ninh Kiều – cầu Cần Thơ.",
+        "Ngày 2: Chợ nổi Cái Răng – miệt vườn – về TP.HCM."
+      ]
     },
     {
       "id": "208",
@@ -74,13 +106,22 @@
       "code": "INT-DU-208",
       "name": "Tour Dubai",
       "price": 25900000,
-      "duration": " 5N4Đ",
+      "duration": "5N4Đ",
+      "days": 5,
       "departure": "TP.HCM",
       "departureDate": "01/12/2025",
       "availableSeats": 16,
       "description": "Khám phá thành phố xa hoa Dubai, sa mạc Safari và Burj Khalifa.",
       "rating": 4.9,
-      "image": "https://danatravel.vn/data/tour/900/du-lich-dubai-1658998081.jpg"
+      "image": "https://danatravel.vn/data/tour/900/du-lich-dubai-1658998081.jpg",
+      "surcharge": 5200000,
+      "itinerary": [
+        "Ngày 1: TP.HCM – Dubai, khám phá phố cổ Old Dubai.",
+        "Ngày 2: Chợ vàng Gold Souk – sa mạc Safari.",
+        "Ngày 3: Burj Khalifa – Dubai Mall – nhạc nước Fountain Show.",
+        "Ngày 4: Palm Jumeirah – Atlantis – Dubai Marina.",
+        "Ngày 5: Tự do mua sắm – bay về Việt Nam."
+      ]
     },
     {
       "id": "204",
@@ -88,13 +129,24 @@
       "code": "INT-JP-204",
       "name": "Tour Nhật Bản",
       "price": 28900000,
-      "duration": " 7N6Đ",
+      "duration": "7N6Đ",
+      "days": 7,
       "departure": "Hà Nội",
       "departureDate": "10/11/2025",
       "availableSeats": 12,
       "description": "Tokyo, Kyoto, núi Phú Sĩ, Osaka và văn hóa trà đạo Nhật Bản.",
       "rating": 4.9,
-      "image": "https://vietsensetravel.com/nview-800/at_tour-nhat-ban-6-ngay_9c755bdf8102b6167bca49d43d24aef9.jpg"
+      "image": "https://vietsensetravel.com/nview-800/at_tour-nhat-ban-6-ngay_9c755bdf8102b6167bca49d43d24aef9.jpg",
+      "surcharge": 6000000,
+      "itinerary": [
+        "Ngày 1: Hà Nội – Tokyo.",
+        "Ngày 2: Tokyo Tower – đền Asakusa – Shibuya Crossing.",
+        "Ngày 3: Núi Phú Sĩ – làng cổ Oshino Hakkai.",
+        "Ngày 4: Kyoto – chùa Vàng Kinkakuji – trà đạo.",
+        "Ngày 5: Osaka – lâu đài Osaka – phố Dotonbori.",
+        "Ngày 6: Mua sắm – tự do tham quan.",
+        "Ngày 7: Bay về Việt Nam."
+      ]
     },
     {
       "id": "108",
@@ -102,13 +154,20 @@
       "code": "VN-DL-108",
       "name": "Tour Đà Lạt",
       "price": 3500000,
-      "duration": " 3N2Đ",
+      "duration": "3N2Đ",
+      "days": 3,
       "departure": "TP.HCM",
       "departureDate": "28/09/2025",
       "availableSeats": 15,
       "description": "Thành phố ngàn hoa với hồ Xuân Hương, thác Datanla, vườn hoa và khí hậu mát mẻ.",
       "rating": 4.5,
-      "image": "https://latourdalat.com/upload/images/6915220.png"
+      "image": "https://latourdalat.com/upload/images/6915220.png",
+      "surcharge": 1000000,
+      "itinerary": [
+        "Ngày 1: TP.HCM – Đà Lạt – Đồi chè Cầu Đất.",
+        "Ngày 2: Thác Datanla – Hồ Tuyền Lâm – vườn hoa Đà Lạt.",
+        "Ngày 3: Chợ Đà Lạt – mua đặc sản – về TP.HCM."
+      ]
     },
     {
       "id": "111",
@@ -116,13 +175,20 @@
       "code": "VN-MC-SL-111",
       "name": "Tour Mộc Châu - Sơn La",
       "price": 3900000,
-      "duration": " 3N2Đ",
+      "duration": "3N2Đ",
+      "days": 3,
       "departure": "Hà Nội",
       "departureDate": "30/09/2025",
       "availableSeats": 20,
       "description": "Khám phá cao nguyên Mộc Châu, đồi chè, thác Dải Yếm và bản làng dân tộc.",
       "rating": 4.5,
-      "image": "https://wintravelninhthuan.com/wp-content/uploads/2024/11/8.png"
+      "image": "https://r2.nucuoimekong.com/wp-content/uploads/moc-chau-son-la-1.jpg",
+      "surcharge": 1000000,
+      "itinerary": [
+        "Ngày 1: Hà Nội – Mộc Châu – đồi chè trái tim.",
+        "Ngày 2: Thác Dải Yếm – cầu kính – bản Áng.",
+        "Ngày 3: Mua đặc sản – về Hà Nội."
+      ]
     },
     {
       "id": "106",
@@ -131,13 +197,20 @@
       "name": "Tour Nha Trang - Đảo Bình Ba",
       "price": 4200000,
       "feature": true,
-      "duration": " 3N2Đ",
+      "duration": "3N2Đ",
+      "days": 3,
       "departure": "TP.HCM",
       "departureDate": "02/10/2025",
       "availableSeats": 25,
       "description": "Tận hưởng biển xanh cát trắng tại Nha Trang và tham quan đảo Bình Ba hoang sơ.",
       "rating": 4.6,
-      "image": "https://tiimtravel.vn/uploads/files/2023/05/11/binh-ba.jpeg"
+      "image": "https://tiimtravel.vn/uploads/files/2023/05/11/binh-ba.jpeg",
+      "surcharge": 1000000,
+      "itinerary": [
+        "Ngày 1: TP.HCM – Nha Trang – tháp Bà Ponagar.",
+        "Ngày 2: Đảo Bình Ba – lặn biển ngắm san hô.",
+        "Ngày 3: Tắm bùn – mua sắm – về TP.HCM."
+      ]
     },
     {
       "id": "114",
@@ -146,13 +219,20 @@
       "name": "Tour Bình Định - Kỳ Co - Eo Gió",
       "price": 4600000,
       "feature": false,
-      "duration": " 3N2Đ",
+      "duration": "3N2Đ",
+      "days": 3,
       "departure": "TP.HCM",
       "departureDate": "05/11/2025",
       "availableSeats": 20,
       "description": "Khám phá biển Kỳ Co hoang sơ, Eo Gió kỳ vĩ và ẩm thực Bình Định đặc sắc.",
       "rating": 4.6,
-      "image": "https://www.icisequynhon.com/wp-content/uploads/2020/05/quynhon-binhdinh.jpg"
+      "image": "https://www.icisequynhon.com/wp-content/uploads/2020/05/quynhon-binhdinh.jpg",
+      "surcharge": 1000000,
+      "itinerary": [
+        "Ngày 1: TP.HCM – Quy Nhơn – Tháp Đôi.",
+        "Ngày 2: Kỳ Co – Eo Gió – làng chài.",
+        "Ngày 3: Chợ Quy Nhơn – về TP.HCM."
+      ]
     },
     {
       "id": "110",
@@ -160,13 +240,21 @@
       "code": "VN-QN-PY-110",
       "name": "Tour Quy Nhơn - Phú Yên",
       "price": 4700000,
-      "duration": " 4N3Đ",
+      "duration": "4N3Đ",
+      "days": 4,
       "departure": "Hà Nội",
       "departureDate": "15/10/2025",
       "availableSeats": 17,
       "description": "Chiêm ngưỡng Ghềnh Đá Đĩa, Eo Gió, Kỳ Co và bãi biển hoang sơ miền Trung.",
       "rating": 4.7,
-      "image": "https://happytour.com.vn/public/userfiles/QUYNHON/tourquynhon2025.jpg"
+      "image": "https://happytour.com.vn/public/userfiles/QUYNHON/tourquynhon2025.jpg",
+      "surcharge": 1200000,
+      "itinerary": [
+        "Ngày 1: Hà Nội – Quy Nhơn – Eo Gió.",
+        "Ngày 2: Kỳ Co – đồi cát.",
+        "Ngày 3: Ghềnh Đá Đĩa – Mũi Điện – Phú Yên.",
+        "Ngày 4: Mua sắm – bay về Hà Nội."
+      ]
     },
     {
       "id": "105",
@@ -175,13 +263,21 @@
       "name": "Tour Đà Nẵng - Hội An - Huế",
       "price": 4900000,
       "feature": true,
-      "duration": " 4N3Đ",
+      "duration": "4N3Đ",
+      "days": 4,
       "departure": "Đà Nẵng",
       "departureDate": "25/09/2025",
       "availableSeats": 18,
       "description": "Tham quan phố cổ Hội An, Ngũ Hành Sơn, Cố đô Huế và bãi biển Mỹ Khê.",
       "rating": 4.7,
-      "image": "https://dulichyenviet.com/wp-content/uploads/2023/03/DA-NANG-HUE-4N3D.png"
+      "image": "https://dulichyenviet.com/wp-content/uploads/2023/03/DA-NANG-HUE-4N3D.png",
+      "surcharge": 1200000,
+      "itinerary": [
+        "Ngày 1: Đà Nẵng – Ngũ Hành Sơn – biển Mỹ Khê.",
+        "Ngày 2: Hội An – Chùa Cầu – phố đèn lồng.",
+        "Ngày 3: Huế – Đại Nội – chùa Thiên Mụ.",
+        "Ngày 4: Mua sắm – trả khách."
+      ]
     },
     {
       "id": "209",
@@ -189,13 +285,27 @@
       "code": "INT-EU-209",
       "name": "Tour Pháp - Ý - Thụy Sĩ",
       "price": 49900000,
-      "duration": " 10N9Đ",
+      "duration": "10N9Đ",
+      "days": 10,
       "departure": "Hà Nội",
       "departureDate": "10/12/2025",
       "availableSeats": 10,
       "description": "Paris, Rome, Venice và dãy Alps tuyệt đẹp.",
       "rating": 5,
-      "image": "https://hanhhuonghoasen.com.vn/upload/product/tour-phap-thuy-si-y-2024-5580.jpg"
+      "image": "https://hanhhuonghoasen.com.vn/upload/product/tour-phap-thuy-si-y-2024-5580.jpg",
+      "surcharge": 6500000,
+      "itinerary": [
+        "Ngày 1: Hà Nội – Paris.",
+        "Ngày 2: Tháp Eiffel – Khải Hoàn Môn – Champs-Élysées.",
+        "Ngày 3: Louvre – du thuyền sông Seine.",
+        "Ngày 4: Rome – đấu trường Colosseum.",
+        "Ngày 5: Vatican – quảng trường Thánh Peter.",
+        "Ngày 6: Venice – đảo Murano.",
+        "Ngày 7: Milan – nhà thờ Duomo.",
+        "Ngày 8: Thụy Sĩ – dãy Alps – hồ Lucerne.",
+        "Ngày 9: Tự do mua sắm – chuẩn bị về.",
+        "Ngày 10: Bay về Việt Nam."
+      ]
     },
     {
       "id": "112",
@@ -203,13 +313,20 @@
       "code": "VN-CD-112",
       "name": "Tour Côn Đảo",
       "price": 5200000,
-      "duration": " 3N2Đ",
+      "duration": "3N2Đ",
+      "days": 3,
       "departure": "TP.HCM",
       "departureDate": "20/10/2025",
       "availableSeats": 12,
-      "description": "Tham quan Côn Đảo huyền bí, bãi biển trong xanh, di tích lịch sử và nghĩa trang Hàng Dương.",
+      "description": "Tham quan Côn Đảo huyền bí, biển trong xanh và nghĩa trang Hàng Dương.",
       "rating": 4.6,
-      "image": "https://vietnamtouristvn.com/thumbs/1200x800x2/upload/product/dulichcondao-3024.png"
+      "image": "https://vietnamtouristvn.com/thumbs/1200x800x2/upload/product/dulichcondao-3024.png",
+      "surcharge": 1200000,
+      "itinerary": [
+        "Ngày 1: TP.HCM – Côn Đảo – bãi Đầm Trầu.",
+        "Ngày 2: Nhà tù Côn Đảo – nghĩa trang Hàng Dương.",
+        "Ngày 3: Tự do – mua đặc sản – bay về."
+      ]
     },
     {
       "id": "206",
@@ -217,13 +334,20 @@
       "code": "INT-LA-206",
       "name": "Tour Lào",
       "price": 5400000,
-      "duration": " 3N2Đ",
+      "duration": "3N2Đ",
+      "days": 3,
       "departure": "Hà Nội",
       "departureDate": "29/09/2025",
       "availableSeats": 22,
       "description": "Tham quan Vientiane, Luang Prabang và thác Kuang Si.",
       "rating": 4.4,
-      "image": "https://www.vietnambooking.com/wp-content/uploads/2018/11/tour-dac-biet-dulich-lao4n3d-kham-pha-song-mekong-pakse-cao-nguyen-bolaven-29112018-7.jpg"
+      "image": "https://www.vietnambooking.com/wp-content/uploads/2018/11/tour-dac-biet-dulich-lao4n3d-kham-pha-song-mekong-pakse-cao-nguyen-bolaven-29112018-7.jpg",
+      "surcharge": 2500000,
+      "itinerary": [
+        "Ngày 1: Hà Nội – Vientiane – That Luang.",
+        "Ngày 2: Luang Prabang – thác Kuang Si.",
+        "Ngày 3: Chợ sáng – bay về Việt Nam."
+      ]
     },
     {
       "id": "101",
@@ -232,13 +356,21 @@
       "name": "Tour Hà Nội - Hạ Long - Sapa",
       "price": 5500000,
       "feature": true,
-      "duration": " 4N3Đ",
+      "duration": "4N3Đ",
+      "days": 4,
       "departure": "Hà Nội",
       "departureDate": "20/09/2025",
       "availableSeats": 20,
       "description": "Khám phá Hạ Long - Sapa - Hà Nội với phong cảnh núi rừng và di sản thế giới.",
       "rating": 4.8,
-      "image": "https://sinhcafetourist.vn/assets/news/2023_04/1_2.jpg"
+      "image": "https://sinhcafetourist.vn/assets/news/2023_04/1_2.jpg",
+      "surcharge": 1200000,
+      "itinerary": [
+        "Ngày 1: Hà Nội – Hạ Long – du thuyền.",
+        "Ngày 2: Hang Sửng Sốt – Titop – về Hà Nội.",
+        "Ngày 3: Hà Nội – Sapa – bản Cát Cát.",
+        "Ngày 4: Fansipan – trở về."
+      ]
     },
     {
       "id": "107",
@@ -246,13 +378,21 @@
       "code": "VN-PQ-107",
       "name": "Tour Phú Quốc",
       "price": 5600000,
-      "duration": " 4N3Đ",
+      "duration": "4N3Đ",
+      "days": 4,
       "departure": "TP.HCM",
       "departureDate": "10/10/2025",
       "availableSeats": 22,
-      "description": "Khám phá đảo ngọc Phú Quốc, Vinpearl Safari, GrandWorld và bãi Sao tuyệt đẹp.",
+      "description": "Khám phá đảo ngọc Phú Quốc, Vinpearl Safari, GrandWorld và bãi Sao.",
       "rating": 4.9,
-      "image": "https://phuquoctravel.vn/wp-content/uploads/2023/10/311791127_540022854795866_1532164650908642042_n.jpeg"
+      "image": "https://phuquoctravel.vn/wp-content/uploads/2023/10/311791127_540022854795866_1532164650908642042_n.jpeg",
+      "surcharge": 1200000,
+      "itinerary": [
+        "Ngày 1: TP.HCM – Phú Quốc – check-in GrandWorld.",
+        "Ngày 2: Vinpearl Safari – tắm biển.",
+        "Ngày 3: Bãi Sao – lặn ngắm san hô.",
+        "Ngày 4: Mua đặc sản – bay về TP.HCM."
+      ]
     },
     {
       "id": "205",
@@ -260,13 +400,20 @@
       "code": "INT-KH-205",
       "name": "Tour Campuchia",
       "price": 5600000,
-      "duration": " 3N2Đ",
+      "duration": "3N2Đ",
+      "days": 3,
       "departure": "TP.HCM",
       "departureDate": "27/09/2025",
       "availableSeats": 27,
       "description": "Tham quan Angkor Wat, Angkor Thom và thủ đô Phnom Penh.",
       "rating": 4.5,
-      "image": "https://r2.nucuoimekong.com/wp-content/uploads/tour-du-lich-campuchia-4-ngay-3-dem-vuong-quoc-campuchia-1-1280x720.jpg"
+      "image": "https://r2.nucuoimekong.com/wp-content/uploads/tour-du-lich-campuchia-4-ngay-3-dem-vuong-quoc-campuchia-1-1280x720.jpg",
+      "surcharge": 2500000,
+      "itinerary": [
+        "Ngày 1: TP.HCM – Phnom Penh – Hoàng Cung.",
+        "Ngày 2: Siem Reap – Angkor Wat – Angkor Thom.",
+        "Ngày 3: Chợ trung tâm – về TP.HCM."
+      ]
     },
     {
       "id": "102",
@@ -275,13 +422,22 @@
       "name": "Tour Thái Lan",
       "price": 7500000,
       "feature": true,
-      "duration": " 5N4Đ",
+      "duration": "5N4Đ",
+      "days": 5,
       "departure": "TP.HCM",
       "departureDate": "05/10/2025",
       "availableSeats": 24,
       "description": "Bangkok - Pattaya, chùa Vàng, đảo San Hô và chợ nổi Thái Lan.",
       "rating": 4.7,
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMyCMwBolZmIjtj7jWQ-oJFpt6qFu8rTDsqA&s"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMyCMwBolZmIjtj7jWQ-oJFpt6qFu8rTDsqA&s",
+      "surcharge": 2800000,
+      "itinerary": [
+        "Ngày 1: TP.HCM – Bangkok – chùa Vàng.",
+        "Ngày 2: Safari World – show cá heo.",
+        "Ngày 3: Pattaya – đảo San Hô.",
+        "Ngày 4: Chợ nổi – Trung tâm đá quý.",
+        "Ngày 5: Mua sắm – bay về."
+      ]
     },
     {
       "id": "202",
@@ -290,13 +446,21 @@
       "name": "Tour Malaysia",
       "price": 8800000,
       "feature": true,
-      "duration": " 4N3Đ",
+      "duration": "4N3Đ",
+      "days": 4,
       "departure": "TP.HCM",
       "departureDate": "18/10/2025",
       "availableSeats": 23,
       "description": "Kuala Lumpur, tháp đôi Petronas, động Batu và cao nguyên Genting.",
       "rating": 4.6,
-      "image": "https://newlifetravel.vn/wp-content/uploads/2019/07/Tour-Singapore-malaysia-tu-Nha-Trang-10-1024x683.jpg"
+      "image": "https://newlifetravel.vn/wp-content/uploads/2019/07/Tour-Singapore-malaysia-tu-Nha-Trang-10-1024x683.jpg",
+      "surcharge": 3000000,
+      "itinerary": [
+        "Ngày 1: TP.HCM – Kuala Lumpur – thành phố mới Putrajaya.",
+        "Ngày 2: Tháp đôi Petronas – Batu Cave.",
+        "Ngày 3: Cao nguyên Genting – mua sắm.",
+        "Ngày 4: Tự do – bay về Việt Nam."
+      ]
     },
     {
       "id": "201",
@@ -305,13 +469,21 @@
       "name": "Tour Singapore",
       "price": 9900000,
       "feature": true,
-      "duration": " 4N3Đ",
+      "duration": "4N3Đ",
+      "days": 4,
       "departure": "TP.HCM",
       "departureDate": "12/10/2025",
       "availableSeats": 19,
-      "description": "Khám phá Marina Bay Sands, Vườn bên Vịnh, Sentosa và Universal Studios.",
+      "description": "Khám phá Marina Bay Sands, Gardens by the Bay, Sentosa và Universal Studios.",
       "rating": 4.9,
-      "image": "https://bizweb.dktcdn.net/thumb/grande/100/101/075/products/sing.jpg?v=1605176919373"
+      "image": "https://bizweb.dktcdn.net/thumb/grande/100/101/075/products/sing.jpg?v=1605176919373",
+      "surcharge": 3500000,
+      "itinerary": [
+        "Ngày 1: TP.HCM – Singapore – Marina Bay Sands.",
+        "Ngày 2: Universal Studios – Sentosa.",
+        "Ngày 3: Gardens by the Bay – Merlion Park.",
+        "Ngày 4: Mua sắm – bay về Việt Nam."
+      ]
     }
   ],
   "users": [
@@ -339,116 +511,167 @@
   ],
   "orders": [
     {
-      "id": "c3e5",
-      "userid": "133a",
-      "customer": {
-        "fullName": "Nguyễn Huy Hoàng",
-        "phoneNumber": "0326893368",
-        "email": "hoang@gmail.com",
-        "address": "Cẩm Thủy"
+      "id": "7a79",
+      "userid": "f3c5",
+      "date": "2025-12-05T11:16:34.713Z",
+      "addTour": {
+        "id": "208",
+        "categoryid": 2,
+        "code": "INT-DU-208",
+        "name": "Tour Dubai",
+        "price": 25900000,
+        "duration": "5N4Đ",
+        "departure": "TP.HCM",
+        "departureDate": "01/12/2025",
+        "availableSeats": 16,
+        "description": "Khám phá thành phố xa hoa Dubai, sa mạc Safari và Burj Khalifa.",
+        "rating": 4.9,
+        "image": "https://danatravel.vn/data/tour/900/du-lich-dubai-1658998081.jpg",
+        "surcharge": 5200000,
+        "itinerary": [
+          "Ngày 1: TP.HCM – Dubai, khám phá phố cổ Old Dubai.",
+          "Ngày 2: Chợ vàng Gold Souk – sa mạc Safari.",
+          "Ngày 3: Burj Khalifa – Dubai Mall – nhạc nước Fountain Show.",
+          "Ngày 4: Palm Jumeirah – Atlantis – Dubai Marina.",
+          "Ngày 5: Tự do mua sắm – bay về Việt Nam."
+        ]
       },
-      "items": [
+      "name": "Nguyễn Huy Hoàng",
+      "phone": "0326893368",
+      "email": "test@gmail.com",
+      "address": "Cẩm Thủy",
+      "paymentMethod": "bankTransfer",
+      "adultsInfo": [
         {
-          "id": "106",
-          "categoryid": 1,
-          "code": "VN-NT-BB-106",
-          "name": "Tour Nha Trang - Đảo Bình Ba",
-          "price": 4200000,
-          "feature": true,
-          "duration": " 3N2Đ",
-          "departure": "TP.HCM",
-          "departureDate": "02/10/2025",
-          "availableSeats": 25,
-          "description": "Tận hưởng biển xanh cát trắng tại Nha Trang và tham quan đảo Bình Ba hoang sơ.",
-          "rating": 4.6,
-          "image": "https://tiimtravel.vn/uploads/files/2023/05/11/binh-ba.jpeg"
-        },
-        {
-          "id": "203",
-          "categoryid": 2,
-          "code": "INT-KR-203",
-          "name": "Tour Hàn Quốc",
-          "price": 16900000,
-          "duration": " 6N5Đ",
-          "departure": "Hà Nội",
-          "departureDate": "01/11/2025",
-          "availableSeats": 14,
-          "description": "Seoul, đảo Nami, Everland, tháp Namsan và phố Myeongdong.",
-          "rating": 4.8,
-          "image": "https://vietmytravel.com/wp-content/uploads/2018/08/tour-du-lich-han-quoc-mua-thu-vietmytravel.jpg"
-        },
-        {
-          "id": "108",
-          "categoryid": 1,
-          "code": "VN-DL-108",
-          "name": "Tour Đà Lạt",
-          "price": 3500000,
-          "duration": " 3N2Đ",
-          "departure": "TP.HCM",
-          "departureDate": "28/09/2025",
-          "availableSeats": 15,
-          "description": "Thành phố ngàn hoa với hồ Xuân Hương, thác Datanla, vườn hoa và khí hậu mát mẻ.",
-          "rating": 4.5,
-          "image": "https://latourdalat.com/upload/images/6915220.png"
-        },
-        {
-          "id": "109",
-          "categoryid": 1,
-          "code": "VN-CT-109",
-          "name": "Tour Cần Thơ - Chợ nổi Cái Răng",
-          "price": 2900000,
-          "duration": " 2N1Đ",
-          "departure": "TP.HCM",
-          "departureDate": "18/09/2025",
-          "availableSeats": 28,
-          "description": "Khám phá miền Tây sông nước, trải nghiệm chợ nổi và ẩm thực miệt vườn.",
-          "rating": 4.4,
-          "image": "https://vietnamtouristvn.com/thumbs/1200x800x2/upload/product/cho-noi-cai-rang-con-son-5063.png"
+          "fullName": "A",
+          "birthdate": "2025-12-01"
         }
       ],
-      "total": "27.500.000 VNĐ",
-      "paymentMethod": "bank",
-      "status": "pending",
-      "createdAt": "2025-10-14T13:33:10.537Z"
+      "childsInfo": [
+        {
+          "fullName": "B",
+          "birthdate": "2025-12-02"
+        }
+      ]
     },
     {
-      "id": "d720",
-      "customer": {
-        "fullName": "Nguyễn Huy Hoàng",
-        "phoneNumber": "0326893368",
-        "email": "lamthithutrang05@gmail.com",
-        "address": "Cẩm Thủy"
+      "id": "9a0d",
+      "userid": "f3c5",
+      "date": "2025-12-05T11:24:52.524Z",
+      "addTour": {
+        "id": "109",
+        "categoryid": 1,
+        "code": "VN-CT-109",
+        "name": "Tour Cần Thơ - Chợ nổi Cái Răng",
+        "price": 2900000,
+        "duration": "2N1Đ",
+        "departure": "TP.HCM",
+        "departureDate": "18/09/2025",
+        "availableSeats": 28,
+        "description": "Khám phá miền Tây sông nước, trải nghiệm chợ nổi và ẩm thực miệt vườn.",
+        "rating": 4.4,
+        "image": "https://vietnamtouristvn.com/thumbs/1200x800x2/upload/product/cho-noi-cai-rang-con-son-5063.png",
+        "surcharge": 800000,
+        "itinerary": [
+          "Ngày 1: TP.HCM – Cần Thơ, tham quan bến Ninh Kiều – cầu Cần Thơ.",
+          "Ngày 2: Chợ nổi Cái Răng – miệt vườn – về TP.HCM."
+        ]
       },
-      "items": [
+      "name": "Nguyễn Văn Tí",
+      "phone": "0123456789",
+      "email": "t",
+      "address": "ABC",
+      "paymentMethod": "vnpayTransfer",
+      "adultsInfo": [
         {
-          "id": "207",
-          "categoryid": 2,
-          "code": "INT-CN-207",
-          "name": "Tour Trung Quốc",
-          "price": 15800000,
-          "duration": " 6N5Đ",
-          "departure": "Hà Nội",
-          "departureDate": "15/11/2025",
-          "availableSeats": 21,
-          "description": "Bắc Kinh, Vạn Lý Trường Thành, Tử Cấm Thành và Thượng Hải.",
-          "rating": 4.7,
-          "image": "https://dulichcoguu.com/wp-content/uploads/2024/02/tour-trung-quoc-7n7d-5-sao-toan-chang.jpg"
+          "fullName": "C",
+          "birthdate": "2025-12-04"
         }
       ],
-      "total": "15.800.000 VNĐ",
-      "paymentMethod": "momo",
-      "status": "pending",
-      "createdAt": "2025-11-13T15:11:31.459Z"
+      "childsInfo": [
+        {
+          "fullName": "D",
+          "birthdate": "2025-12-03"
+        }
+      ]
+    },
+    {
+      "id": "2b5e",
+      "userid": "a235",
+      "date": "2025-12-09T11:29:43.587Z",
+      "addTour": {
+        "id": "109",
+        "categoryid": 1,
+        "code": "VN-CT-109",
+        "name": "Tour Cần Thơ - Chợ nổi Cái Răng",
+        "price": 2900000,
+        "duration": "2N1Đ",
+        "days": 2,
+        "departure": "TP.HCM",
+        "departureDate": "18/09/2025",
+        "availableSeats": 28,
+        "description": "Khám phá miền Tây sông nước, trải nghiệm chợ nổi và ẩm thực miệt vườn.",
+        "rating": 4.4,
+        "image": "https://vietnamtouristvn.com/thumbs/1200x800x2/upload/product/cho-noi-cai-rang-con-son-5063.png",
+        "surcharge": 800000,
+        "itinerary": [
+          "Ngày 1: TP.HCM – Cần Thơ, tham quan bến Ninh Kiều – cầu Cần Thơ.",
+          "Ngày 2: Chợ nổi Cái Răng – miệt vườn – về TP.HCM."
+        ]
+      },
+      "name": "Nguyễn Huy Hoàng",
+      "phone": "0326893368",
+      "email": "test@gmail.com",
+      "address": "Cẩm Thủy",
+      "paymentMethod": "vnpayTransfer",
+      "adultsInfo": [
+        {
+          "fullName": "A",
+          "birthdate": "2025-12-04"
+        }
+      ],
+      "childsInfo": [
+        {
+          "fullName": "B",
+          "birthdate": "2025-12-01"
+        }
+      ]
+    },
+    {
+      "id": "e546",
+      "userid": "a235",
+      "date": "2025-12-10T16:43:10.547Z",
+      "addTour": {
+        "id": "203",
+        "categoryid": 2,
+        "code": "INT-KR-203",
+        "name": "Tour Hàn Quốc",
+        "price": 16900000,
+        "duration": "6N5Đ",
+        "days": 6,
+        "departure": "Hà Nội",
+        "departureDate": "01/11/2025",
+        "availableSeats": 14,
+        "description": "Seoul, đảo Nami, Everland, tháp Namsan và phố Myeongdong.",
+        "rating": 4.8,
+        "image": "https://vietmytravel.com/wp-content/uploads/2018/08/tour-du-lich-han-quoc-mua-thu-vietmytravel.jpg",
+        "surcharge": 3800000,
+        "itinerary": [
+          "Ngày 1: Hà Nội – Seoul, tham quan suối Cheonggyecheon.",
+          "Ngày 2: Đảo Nami – Tháp Namsan.",
+          "Ngày 3: Công viên Everland – Safari World.",
+          "Ngày 4: Cung điện Gyeongbok – bảo tàng truyền thống.",
+          "Ngày 5: Mua sắm tại Myeongdong – chợ Dongdaemun.",
+          "Ngày 6: Tự do – bay về Việt Nam."
+        ]
+      },
+      "name": "Nguyễn Huy Hoàng",
+      "phone": "0326893368",
+      "email": "hoang@gmail.com",
+      "address": "Cẩm Thủy",
+      "paymentMethod": "momoTransfer",
+      "adultsInfo": [],
+      "childsInfo": []
     }
-  ],
-  "payment": {
-    "method": "COD",
-    "status": "pending"
-  },
-  "total": {
-    "subtotal": 797000,
-    "shippingFee": 30000,
-    "discount": 0,
-    "grandTotal": 827000
-  }
+  ]
 }

@@ -2,126 +2,36 @@
 <html lang="vi">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vietravel - Tour Du Lịch & Vé Máy Bay Giá Rẻ</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kết Quả Tìm Kiếm Tour</title>
+    <link rel="stylesheet" href="search.css">
 </head>
 
-<div id="promo-bg"></div>
-
-<!-- Popup chính -->
-<div id="promo-popup">
-    <div class="promo-container">
-        <img src="https://media.vietravel.com/images/news/960-640119.png" alt="popup image" class="promo-img">
-        <button class="close-btn" id="closeBtn">Đóng</button>
-    </div>
-</div>
-
-<header class="header">
-    <div class="container">
-        <div class="logo">
-            <a href="index.html">Vietravel</a>
+<body>
+    <header class="header">
+        <div class="container1">
+            <div class="logo">
+                <a href="index.html">Vietravel</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="alltour.html">Tour Du Lịch</a></li>
+                    <li><a href="#">Combo & Khuyến Mãi</a></li>
+                    <li><a href="#">Tin Tức</a></li>
+                    <li><a href="#">Liên Hệ</a></li>
+                    <li><a href="login.html" id="account">Đăng Nhập</a></li>
+                    <li><a href="register.html" id="register">Đăng Ký</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html">Trang Chủ</a></li>
-                <li><a href="alltour.html">Tour Du Lịch</a></li>
-                <li><a href="#">Combo & Khuyến Mãi</a></li>
-                <li><a href="#">Tin Tức</a></li>
-                <li><a href="#">Liên Hệ</a></li>
-                <li><a href="login.html" id="account">Đăng Nhập</a></li>
-                <li><a href="register.html" id="register">Đăng Ký</a></li>
-            </ul>
-        </nav>
+    </header>
+    <div class="container2">
+        <h2>Kết Quả Tìm Kiếm</h2>
+        <div id="results"></div>
     </div>
-</header>
-<main>
-
-    </section>
-    <section class="hero-banner"></section>
-    <section class="tour-search-container">
-        <div class="search-box">
-            <div class="search-tabs">
-                <div class="tab-item"><i class="fas fa-passport"></i><span>Visa</span></div>
-                <div class="tab-item active"><i class="fas fa-suitcase-rolling"></i><span>Tour trọn gói</span>
-                </div>
-                <div class="tab-item"><i class="fas fa-hotel"></i><span>Khách sạn</span></div>
-                <div class="tab-item"><i class="fas fa-plane"></i><span>Vé máy bay</span></div>
-                <div class="tab-item"><i class="fas fa-car"></i><span>Xe</span></div>
-                <div class="tab-item"><i class="fas fa-plus"></i><span>Combo</span></div>
-                <div class="tab-item"><i class="fas fa-ellipsis-h"></i><span>Dịch vụ thêm</span></div>
-            </div>
-
-            <div class="search-form">
-                <div class="form-group destination">
-                    <label for="destination">Bạn muốn đi đâu?</label>
-                    <select id="destination" placeholder="Nhập điểm đến...">
-                        <option value="">Chọn điểm đến</option>
-                        <option value="Tour Hà Nội">Hà Nội</option>
-                        <option value="Tour Phú Quốc">Phú Quốc</option>
-                        <option value="Tour Nha Trang">Nha Trang</option>
-                        <option value="Tour Hạ Long">Hạ Long</option>
-                        <option value="Tour Huế">Huế</option>
-                        <option value="Tour Sapa">Sapa</option>
-                        <option value="Tour Trung Quốc">Trung Quốc</option>
-                        <option value="Tour Hàn Quốc">Hàn Quốc</option>
-                        <option value="Tour Nhật Bản">Nhật Bản</option>
-                        <option value="Tour Thái Lan">Thái Lan</option>
-                        <option value="Tour Dubai">Dubai</option>
-                        <option value="Tour Lào">Lào</option>
-                    </select>
-                </div>
-
-                <div class="form-group departure">
-                    <label for="departure">Khởi hành từ</label>
-                    <select id="departure">
-                        <option value="">Chọn nơi khởi hành</option>
-                        <option value="TP.HCM">TP.HCM</option>
-                        <option value="Hà Nội">Hà Nội</option>
-                        <option value="Đà Nẵng">Đà Nẵng</option>
-                        <option value="Cần Thơ">Cần Thơ</option>
-                    </select>
-                </div>
-
-                <div class="form-group departure-date">
-                    <label for="departure-date">Ngày đi</label>
-                    <input type="date" id="departure-date">
-                </div>
-
-                <div class="search-btn-wrapper">
-                    <button type="button" class="search-btn" id="searchTour">
-                        <i class="fas fa-search"></i> Tìm tour
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <div class="running-text-container">
-        <p class="running-text">Lựa chọn của bạn chính là trách nhiệm của chúng tôi - Nếu bạn chưa biết những
-            ngày
-            nghỉ phải làm gì, Hãy đến với chúng tôi - Vietravel nơi đem lại niềm tin cho bạn ✈️🎉</p>
-    </div>
-
-    <section class="tour-list">
-        <div class="container">
-            <h2>Tour Du Lịch Nổi Bật</h2>
-            <div id="tour-noi-bat" class="tours-grid">
-            </div>
-            <h2>Tour Du Lịch Trong Nước</h2>
-            <div id="tour-trong-nuoc" class="tours-grid">
-            </div>
-            <h2>Tour Du Lịch Nước Ngoài</h2>
-            <div id="tour-nuoc-ngoai" class="tours-grid">
-            </div>
-        </div>
-    </section>
-</main>
-<!-- Footer -->
+    <!-- Footer -->
 <footer class="vietravel-footer">
     <div class="footer-top">
         <div class="footer-column">
@@ -253,7 +163,6 @@
         <p>Số giấy phép kinh doanh lữ hành quốc tế: 79-234/2022/TCDL-GP LHQT.</p>
     </div>
 </footer>
-<script src="main.js"></script>
 </body>
-
+<script src="search.js"></script>
 </html>

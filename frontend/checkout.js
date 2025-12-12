@@ -1,177 +1,170 @@
 const user = JSON.parse(localStorage.getItem("user"));
-const account = document.getElementById("account");
+console.log(user);
+
+const account = document.getElementById('account');
+const register = document.getElementById('register');
+const shop = document.getElementById('shop');
 
 if (user) {
-    account.innerHTML = user.fullname;
-    account.setAttribute("href", "profile.html");
+    account.innerHTML = "Tài khoản của tôi";
+    account.setAttribute('href', 'profile.html')
+
+    register.innerHTML = "Đăng xuất";
+    register.setAttribute('href', '#');
+    register.addEventListener("click", () => {
+        localStorage.removeItem("user");
+        alert("Bạn đã đăng xuất thành công");
+        window.location.href = "login.html";
+    });
+
 } else {
-    window.location.href = "login.html";
+    if (shop) shop.style.display = "none";
 }
 
-function getCart() {
-    return JSON.parse(localStorage.getItem("gio-hang")) || [];
-}
+
+const addTour = JSON.parse(localStorage.getItem("addTour"));
 
 function renderOrderSummary() {
-    const cart = getCart();
     const summaryItemsContainer = document.getElementById("summary-items");
-    const summaryTotal = document.getElementById("total-price");
-    let total = 0;
+    if (!summaryItemsContainer || !addTour) return;
 
-    if (!summaryItemsContainer) return;
-    summaryItemsContainer.innerHTML = "";
+    summaryItemsContainer.innerHTML = `
+        <div class="summary-item">
+            <img src="${addTour.image}" alt="${addTour.name}">
+            <div class="summary-item-info">
+                <p class="summary-item-name">${addTour.name}</p>
+                <p class="summary-item-price">${addTour.price.toLocaleString()} VNĐ</p>
+            </div>
+        </div>
+    `;
+}
+renderOrderSummary();
 
-    if (cart.length === 0) {
-        summaryItemsContainer.innerHTML = "<p>Giỏ hàng trống.</p>";
-        summaryTotal.innerText = "0 VNĐ";
+
+const formAdult = document.getElementById('form-adult');
+const formChild = document.getElementById('form-child');
+const child = document.getElementById('child');
+const adult = document.getElementById('adult');
+
+const adultInformation = document.getElementById('adultInformation');
+const childInformation = document.getElementById('childInformation');
+
+adult.addEventListener('input', () => {
+    const numberOfAdults = adult.value;
+
+    adultInformation.style.display = numberOfAdults ? 'block' : 'none';
+
+    let html = "";
+    for (let i = 0; i < numberOfAdults; i++) {
+        html += `
+        <div class="form-row">
+            <div class="form-group">
+                <label>Họ và tên người lớn ${i + 1}</label>
+                <input type="text" id="full-name-adult-${i + 1}" placeholder="Nhập họ và tên" required>
+            </div>
+            <div class="form-group">
+                <label>Ngày sinh người lớn ${i + 1}</label>
+                <input type="date" id="birthdate-adult-${i + 1}" required>
+            </div>
+        </div>`;
+    }
+
+    formAdult.innerHTML = html;
+});
+
+child.addEventListener('input', () => {
+    const numberOfChilds = child.value;
+
+    childInformation.style.display = numberOfChilds ? 'block' : 'none';
+
+    let html = "";
+    for (let i = 0; i < numberOfChilds; i++) {
+        html += `
+        <div class="form-row">
+            <div class="form-group">
+                <label>Họ và tên trẻ em ${i + 1}</label>
+                <input type="text" id="full-name-child-${i + 1}" placeholder="Nhập họ và tên" required>
+            </div>
+            <div class="form-group">
+                <label>Ngày sinh trẻ em ${i + 1}</label>
+                <input type="date" id="birthdate-child-${i + 1}" required>
+            </div>
+        </div>`;
+    }
+
+    formChild.innerHTML = html;
+});
+
+// sumbit check out form
+const nextBtn = document.getElementById("next-btn");
+nextBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    // Kiểm tra phương thức thanh toán đã chọn chưa
+    const paymentSelected = document.querySelector('input[name="paymentMethod"]:checked');
+    if (!paymentSelected) {
+        alert("Vui lòng chọn phương thức thanh toán!");
         return;
     }
 
-    cart.forEach(item => {
-        const price = Number(item.price);
-        if (isNaN(price)) return;
-        total += price;
+    // Lấy số lượng người lớn/trẻ em
+    const numberOfAdults = adult.value || 0;
+    const numberOfChilds = child.value || 0;
 
-        summaryItemsContainer.innerHTML += `
-            <div class="summary-item">
-                <img src="${item.image}" alt="${item.name}">
-                <div class="summary-item-info">
-                    <p class="summary-item-name">${item.name}</p>
-                    <p class="summary-item-price">${price.toLocaleString()} VNĐ</p>
-                </div>
-            </div>
-        `;
-    });
+    let adultsInfo = [];
+    let childsInfo = [];
 
-    summaryTotal.innerText = total.toLocaleString() + " VNĐ";
-}
-
-let currentStep = 1;
-let selectedPaymentMethod = null;
-let customerInfo = {};
-
-function setupStepNavigation() {
-    const steps = document.querySelectorAll(".booking-process-bar .step");
-    const stepContents = document.querySelectorAll(".step-content");
-    const nextBtn = document.getElementById("next-btn");
-
-    nextBtn.addEventListener("click", () => {
-        const formSection = document.getElementById(`step-${currentStep}`);
-        const inputs = formSection.querySelectorAll("input[required]");
-        let valid = true;
-
-        inputs.forEach(input => {
-            if (!input.checkValidity()) {
-                input.reportValidity();
-                valid = false;
-            }
+    for (let i = 0; i < numberOfAdults; i++) {
+        adultsInfo.push({
+            fullName: document.getElementById(`full-name-adult-${i + 1}`).value,
+            birthdate: document.getElementById(`birthdate-adult-${i + 1}`).value
         });
-
-        if (!valid) return;
-
-        if (currentStep === 1) {
-            customerInfo.fullName = document.getElementById("full-name").value;
-            customerInfo.phoneNumber = document.getElementById("phone").value;
-            customerInfo.email = document.getElementById("email").value;
-            customerInfo.address = document.getElementById("address").value;
-            localStorage.setItem("customerInfo", JSON.stringify(customerInfo));
-
-            currentStep = 2;
-            updateStepUI(steps, stepContents, nextBtn);
-            return;
-        }
-
-        if (currentStep === 2) {
-            if (!selectedPaymentMethod) {
-                alert("Vui lòng chọn phương thức thanh toán.");
-                return;
-            }
-
-            currentStep = 3;
-            updateStepUI(steps, stepContents, nextBtn);
-            handleOrderFinish();
-            return;
-        }
-
-    });
-}
-
-function updateStepUI(steps, stepContents, nextBtn) {
-    steps.forEach(step => step.classList.remove("active"));
-    const currentStepEl = document.querySelector(`.step[data-step="${currentStep}"]`);
-    if (currentStepEl) currentStepEl.classList.add("active");
-
-    stepContents.forEach(content => content.classList.remove("active"));
-    const activeContent = document.getElementById(`step-${currentStep}`);
-    if (activeContent) activeContent.classList.add("active");
-
-    if (currentStep === 1) {
-        nextBtn.innerText = "Tiếp tục";
-    } else if (currentStep === 2) {
-        nextBtn.innerText = "Thanh toán";
-    } else {
-        nextBtn.innerText = "Hoàn tất";
     }
 
-    showPaymentContent(selectedPaymentMethod);
-}
+    for (let i = 0; i < numberOfChilds; i++) {
+        childsInfo.push({
+            fullName: document.getElementById(`full-name-child-${i + 1}`).value,
+            birthdate: document.getElementById(`birthdate-child-${i + 1}`).value
+        });
+    }
 
-const paymentOptions = document.querySelectorAll(".payment-option");
+    const name = document.getElementById("full-name").value;
+    const phone = document.getElementById("phone").value;
+    const email = document.getElementById("email").value;
+    const address = document.getElementById("address").value;
 
-paymentOptions.forEach(option => {
-    option.addEventListener("click", () => {
-        paymentOptions.forEach(o => o.classList.remove("active"));
-        option.classList.add("active");
-        selectedPaymentMethod = option.dataset.method;
-        showPaymentContent(selectedPaymentMethod);
-    });
-});
+    if (!name || !phone || !email) {
+        alert("Vui lòng nhập đầy đủ thông tin liên lạc!");
+        return;
+    }
 
-function showPaymentContent(method) {
-    const bankContent = document.getElementById("bankContent");
-    const momoContent = document.getElementById("momoContent");
-
-    bankContent.style.display = "none";
-    momoContent.style.display = "none";
-
-    if (method === "bank") bankContent.style.display = "block";
-    if (method === "momo") momoContent.style.display = "block";
-}
-
-async function handleOrderFinish() {
-    const customerInfo = JSON.parse(localStorage.getItem("customerInfo"));
-    const cart = getCart();
-    const total = document.getElementById("total-price").innerText;
-
-    const orderData = {
-        customer: customerInfo,
-        items: cart,
-        total: total,
-        paymentMethod: selectedPaymentMethod,
-        status: "pending",
-        createdAt: new Date().toISOString()
+    const checkoutInfo = {
+        userid: user ? user.id : null,
+        date: new Date().toISOString(),
+        addTour,
+        name,
+        phone,
+        email,
+        address,
+        paymentMethod: paymentSelected.value,
+        adultsInfo,
+        childsInfo
     };
 
-    try {
-        const res = await fetch("http://localhost:3000/orders", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(orderData)
+    localStorage.setItem("checkoutInfo", JSON.stringify(checkoutInfo));
+
+    fetch('http://localhost:3000/orders', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(checkoutInfo),
+    })
+        .then(res => res.json())
+        .then(data => {
+            console.log("Order saved:", data);
+            window.location.href = 'payment.html';
+        })
+        .catch(err => {
+            console.error('Error:', err);
+            alert("Có lỗi xảy ra khi tạo đơn.");
         });
-
-        if (res.ok) {
-            localStorage.removeItem("gio-hang");
-            localStorage.removeItem("customerInfo");
-            alert("Đặt tour thành công! Cảm ơn bạn đã tin tưởng Vietravel ❤️");
-        } else {
-            alert("Có lỗi khi gửi đơn hàng!");
-        }
-    } catch (err) {
-        console.error("Lỗi khi gửi đơn hàng:", err);
-    }
-}
-
-window.onload = () => {
-    renderOrderSummary();
-    setupStepNavigation();
-};
+});

@@ -6,7 +6,13 @@ const shop = document.getElementById('shop')
 if (user) {
     account.innerHTML = "Tài khoản của tôi";
     account.setAttribute('href', 'profile.html')
-    register.style.display = "none";
+    register.innerHTML = "Đăng xuất";
+    register.setAttribute('href', '#');
+    register.addEventListener("click", () => {
+        localStorage.removeItem("user");
+        alert("Bạn đã đăng xuất thành công")
+        window.location.href = "login.html"
+    });
 } else {
     shop.style.display = "none";
 }
@@ -53,19 +59,39 @@ laySanPham('http://localhost:3000/products?categoryid=2&_limit=6').then(tours =>
 let cart = JSON.parse(localStorage.getItem("gio-hang"));
 // console.log(cart);
 
-window.onload = function() {
-    if (!sessionStorage.getItem('promo_popup_shown')) {
+window.onload = function () {
+    if (!localStorage.getItem('promo_popup_shown')) {
         document.getElementById('promo-popup').style.display = 'block';
         document.getElementById('promo-bg').style.display = 'block';
     }
 };
 
-document.getElementById('closeBtn').onclick = function() {
+document.getElementById('closeBtn').onclick = function () {
     document.getElementById('promo-popup').style.display = 'none';
     document.getElementById('promo-bg').style.display = 'none';
-    sessionStorage.setItem('promo_popup_shown', 'yes');
+    localStorage.setItem('promo_popup_shown', 'yes');
 };
 
 
-
+const searchTour = document.getElementById('searchTour');
+searchTour.addEventListener('click', () => {
+    let destination = document.getElementById('destination').value || '';
+    let departure = document.getElementById('departure').value || '';
+    let departureDate = document.getElementById('departure-date').value  || '';
+    function formatDate(dateString) {
+        const [year, month, day] = dateString.split('-');
+        return `${day}/${month}/${year}`;
+    }
+    if(departureDate !== '') {
+        departureDate = formatDate(departureDate);
+    }
+    console.log(destination, departure, departureDate);
+    fetch(`http://localhost:3000/products?departure=${departure}&departureDate=${departureDate}&name=${destination}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            localStorage.setItem('searchResults', JSON.stringify(data));
+            window.location.href = 'search.html';
+        })
+});
 

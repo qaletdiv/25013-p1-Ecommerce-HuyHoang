@@ -2,7 +2,7 @@ const user = JSON.parse(localStorage.getItem("user"));
 console.log(user);
 const account = document.getElementById('account');
 if (user) {
-    account.innerHTML = user.fullname;
+    account.innerHTML = "Tài khoản của tôi";
     account.setAttribute('href', 'profile.html')
 }
 const registerForm = document.getElementById("registerForm");
@@ -53,9 +53,8 @@ registerForm.addEventListener("submit", async (event) => {
             },
             body: JSON.stringify({ fullname, email, password, "role": "customer" })
         });
-        const result = await response2.json();
 
-        if (response.ok) {
+        if (response2.ok) {
             // Xử lý khi đăng ký thành công
             msg.textContent = 'Đăng ký thành công! Chúc mừng bạn đã có tài khoản.';
             window.location.href = 'login.html';

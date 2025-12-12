@@ -2,8 +2,8 @@ const user = JSON.parse(localStorage.getItem("user"));
 console.log(user);
 const account = document.getElementById('account');
 if (user) {
-    account.innerHTML = "Tài khoản của tôi";
-    account.setAttribute('href', 'profile.html')
+  account.innerHTML = "Tài khoản của tôi";
+  account.setAttribute('href', 'profile.html')
 }
 
 const params = new URLSearchParams(window.location.search);
@@ -26,9 +26,17 @@ async function laySanPham(api) {
 }
 
 const renderProducts = (tour, listTour) => {
+  const lichTrinh = document.getElementById("Lich_Trinh");
   const tourDetails = document.getElementById(listTour);
   console.log(tourDetails);
   console.log(tour);
+
+  tour.itinerary.forEach((item, index) => {
+    lichTrinh.innerHTML += `
+      <h4>Ngày ${index + 1}</h4>
+      <p>${item}</p>
+    `;
+  });
   tourDetails.innerHTML = `
     <div class="slider">
             <button class="prev">&#10094;</button>
@@ -55,19 +63,95 @@ const renderProducts = (tour, listTour) => {
 
             <div class="price-actions">
                 <button class="btn-secondary">Ngày khác</button>
-                <button onclick='addCart(${JSON.stringify(tour)})' class="btn-primary">Đặt ngay</button>
+                <button onclick='addTour(${JSON.stringify(tour)})' class="btn-primary">Đặt ngay</button>
             </div>
         </section>
   `
+laySanPham(`http://localhost:3000/products?categoryid=${tour.categoryid}`).then(relatedTours => {
+    const relatedContainer = document.getElementById("product-suggestions");
+    relatedTours.slice(0,5).forEach(relatedTour => {
+      if (relatedTour.id !== tour.id) {
+        relatedContainer.innerHTML += `
+          <div class="product-card">
+            <a href="product.html?id=${relatedTour.id}">
+              <img src="${relatedTour.image}" alt="${relatedTour.name}">
+              <h3>${relatedTour.name}</h3>
+              <p>Giá: ${relatedTour.price.toLocaleString()} VNĐ</p>
+            </a>
+          </div>
+        `;
+      }
+    });
+  });
+
 }
 laySanPham(`http://localhost:3000/products/${productId}`).then(tour => renderProducts(tour, "tour-details"))
 
-const cart = JSON.parse(localStorage.getItem("gio-hang")) || [];
-const addCart = (tour) => {
-  cart.push(tour);
-  console.log(cart);
-  localStorage.setItem("gio-hang", JSON.stringify(cart));
-} 
+const addTour = (tour) => {
+  localStorage.setItem("addTour", JSON.stringify(tour));
+  window.location.href = "checkout.html";
+}
+function openPage(pageName, elmnt, color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
 
 
+// Render tab Giá & Phụ thu
+function renderGiaVaPhuThu() {
+    const tab = document.getElementById("Gia_Va_Phu_Thu");
 
+    tab.innerHTML = `
+        <h3>Giá & Phụ Thu</h3>
+        <ul>
+            <li><strong>Giá tour:</strong> ${tourData.price.toLocaleString()} VNĐ</li>
+            <li><strong>Phụ thu phòng đơn:</strong> ${tourData.surcharge.singleRoom.toLocaleString()} VNĐ</li>
+            <li><strong>Phụ thu trẻ em:</strong> ${tourData.surcharge.child.toLocaleString()} VNĐ</li>
+            <li><strong>Phụ thu không bao gồm vé tham quan:</strong> ${tourData.surcharge.notIncludeTicket.toLocaleString()} VNĐ</li>
+        </ul>
+
+        <h4>Giải thích phụ thu</h4>
+        <p>Phụ thu phòng đơn: áp dụng cho khách đi một mình và không ghép phòng.</p>
+        <p>Phụ thu trẻ em: tuỳ theo độ tuổi và quy định ngủ chung/ăn uống.</p>
+        <p>Phụ thu không bao gồm vé tham quan: áp dụng cho các điểm ngoài chương trình hoặc tự túc.</p>
+    `;
+}
+
+
+// Render tab Chính sách
+function renderChinhSach() {
+    const tab = document.getElementById("Chinh_Sach");
+
+    tab.innerHTML = `
+        <h3>Chính Sách</h3>
+
+        <h4>Chính sách trẻ em</h4>
+        <ul>
+            ${tourData.policy.child.map(item => `<li>${item}</li>`).join("")}
+        </ul>
+
+        <h4>Quy định chung</h4>
+        <ul>
+            ${tourData.policy.general.map(item => `<li>${item}</li>`).join("")}
+        </ul>
+    `;
+}
+
+
+// Gọi render khi load trang
+window.onload = function () {
+    renderGiaVaPhuThu();
+    renderChinhSach();
+};
