@@ -65,6 +65,7 @@ body {
     padding: 100px 20px;
     margin-bottom: 20px;
     background-image: url('https://s3.hcm-1.cloud.cmctelecom.vn/vtv-image/Images/SlideShow/sl_250825_kvthuwebtop-destop-1915-4601.webp');
+    width: 100%;
     height: 400px;
 }
 
@@ -510,3 +511,156 @@ h2 {
     background: #e47c00;
 }
 
+/* --- Ẩn nút menu trên máy tính --- */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #007bff;
+}
+
+/* =========================================
+   RESPONSIVE: TABLET & MOBILE (Dưới 768px)
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* 1. Header & Nút Menu */
+    .header .container {
+        position: relative; /* Để định vị menu con */
+    }
+
+    .menu-toggle {
+        display: block; /* Hiện nút 3 gạch */
+    }
+
+    /* 2. Menu chính (Navigation) */
+    .main-nav ul {
+        flex-direction: column; /* Xếp dọc */
+        position: absolute;
+        top: 100%; /* Đẩy xuống dưới header */
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        max-height: 0; /* Mặc định ẩn bằng chiều cao 0 */
+        overflow: hidden; /* Giấu nội dung thừa */
+        transition: max-height 0.3s ease-out; /* Hiệu ứng trượt */
+        z-index: 999;
+    }
+
+    /* Class này sẽ được thêm bằng JavaScript khi bấm nút */
+    .main-nav ul.active {
+        max-height: 500px; /* Mở rộng chiều cao để hiện menu */
+    }
+
+    .main-nav ul li {
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+
+    .main-nav ul li a {
+        display: block;
+        padding: 15px;
+    }
+
+    .main-nav ul li:last-child {
+        border-bottom: none;
+    }
+}
+
+/* =========================================
+   RESPONSIVE: MOBILE NHỎ (Dưới 480px)
+   ========================================= */
+@media (max-width: 480px) {
+    .logo a {
+        font-size: 1.4rem; /* Giảm cỡ chữ Logo */
+    }
+    
+    .hero-banner {
+        height: 100px; /* Giảm chiều cao banner */
+    }
+}
+
+/* =========================================
+   RESPONSIVE: SEARCH TABS
+   ========================================= */
+
+/* Tablet (Màn hình vừa): Chia làm 2 dòng dễ nhìn hơn */
+@media (max-width: 768px) {
+    .search-tabs {
+        gap: 10px; /* Tạo khoảng cách giữa các ô */
+    }
+
+    .tab-item {
+        /* Mỗi item chiếm tối thiểu 20% chiều rộng để không bị ép quá nhỏ */
+        min-width: 20%; 
+    }
+}
+
+/* Mobile (Màn hình nhỏ): Chuyển sang dạng lưới chia cột */
+@media (max-width: 480px) {
+    .search-tabs {
+        display: grid; /* Thay vì flex, dùng grid để căn ô đều hơn */
+        grid-template-columns: repeat(4, 1fr); /* Chia thành 4 cột bằng nhau */
+        gap: 10px 5px; /* Khoảng cách: 10px hàng dọc, 5px hàng ngang */
+        margin-bottom: 15px;
+    }
+
+    .tab-item {
+        display: flex;
+        flex-direction: column; /* Icon nằm trên, chữ nằm dưới */
+        align-items: center;
+        justify-content: center;
+        padding: 8px 2px;
+        border: 1px solid #eee; /* Thêm viền mờ cho giống nút bấm */
+        border-radius: 8px;
+        background-color: #fafafa;
+    }
+
+    /* Hiệu ứng khi bấm vào trên mobile */
+    .tab-item:active {
+        background-color: #e6f2ff;
+        border-color: #007bff;
+    }
+
+    /* Chỉnh sửa icon nhỏ lại một chút cho cân đối */
+    .tab-item i {
+        font-size: 1.2rem; 
+        margin-bottom: 5px;
+    }
+
+    /* Chỉnh sửa chữ nhỏ lại để không bị tràn dòng */
+    .tab-item span {
+        font-size: 11px;
+        line-height: 1.2;
+        display: block; /* Đảm bảo chữ xuống dòng nếu quá dài */
+    }
+    
+    /* Riêng mục "Dịch vụ thêm" icon to hơn xíu cho cân đối */
+    .tab-item i.fa-ellipsis-h {
+        margin-top: 5px;
+    }
+}
+
+/* Tìm đến đoạn @media (max-width: 768px) và sửa lại class .menu-toggle */
+
+@media (max-width: 768px) {
+    
+    /* 1. Đặt container làm mốc toạ độ */
+    .header .container {
+        position: relative; 
+    }
+
+    /* 2. Căn nút menu tuyệt đối sang phải */
+    .menu-toggle {
+        display: block;
+        position: absolute;  /* Tách khỏi dòng chảy văn bản để tự do di chuyển */
+        right: 20px;         /* Cách lề phải 20px (bằng padding của container) */
+        top: 50%;            /* Đặt ở giữa theo chiều dọc */
+        transform: translateY(-50%); /* Căn chỉnh chính xác tâm giữa dọc */
+        z-index: 1001;       /* Đảm bảo nút luôn nổi lên trên cùng */
+    }
+
+    /* ... Giữ nguyên các phần khác ... */
+}

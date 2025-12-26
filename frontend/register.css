@@ -108,89 +108,483 @@ body {
   font-weight: bold;
 }
 
-.vietravel-footer {
-    background-color: #e3f2fd;
-    color: #333;
-    font-family: Arial, sans-serif;
-    padding: 40px 20px 20px;
+/* ===== Reset & Base ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.footer-top,
-.footer-bottom {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 1200px;
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Support both container and container1 used across pages */
+.container, .container1 {
+    max-width: 1100px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
-.column-content ul li a {
+/* ===== Header / Nav ===== */
+.header {
+    background-color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header .container, .header .container1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* mốc cho menu-toggle và dropdown */
+}
+
+.logo a {
+    display: flex;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #007bff;
     text-decoration: none;
+    height: 50px;
+}
+
+/* Desktop nav */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background .15s, color .15s;
+}
+
+.main-nav ul li a:hover {
+    background: #007bff;
+    color: #fff;
+}
+
+/* Menu toggle (hamburger) - hidden on desktop */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #007bff;
+    background: transparent;
+    border: none;
+    padding: 6px;
+}
+
+/* ===== Hero / Search area ===== */
+.hero-banner {
+    background: url('https://s3.hcm-1.cloud.cmctelecom.vn/vtv-image/Images/SlideShow/sl_250825_kvthuwebtop-destop-1915-4601.webp') no-repeat center center/cover;
+    text-align: center;
+    padding: 100px 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Search area / boxes */
+.tour-search-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+/* Tabs */
+.search-tabs {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.tab-item {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 10px 8px;
+    cursor: pointer;
+    color: #666;
+    transition: 0.2s;
+    min-width: 90px;
+}
+
+.tab-item.active,
+.tab-item:hover {
+    color: #007bff;
+    font-weight: 600;
+}
+
+/* Search form grid */
+.search-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    align-items: end;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 6px;
     color: #333;
 }
 
-hr {
-    border: 0;
-    border-top: 1px solid #c9e2f5;
-    margin: 30px auto;
-    max-width: 1200px;
-}
-
-/* Cột "Ứng dụng di động" */
-.qr-codes {
-    display: flex;
-    gap: 20px;
-}
-
-.qr-code-item img:first-child {
-    display: flex;
-    margin-bottom: 5px;
-}
-
-.qr-code-item img:last-child {
-    width: 200px;
-    height: 200px;
-}
-
-/* Cột "Liên hệ" */
-.contact-column p {
-    margin: 0 0 5px;
+input,
+select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
     font-size: 14px;
 }
 
-.social-icons i {
-    width: 30px;
-    height: 20px;
-    margin-right: 10px;
+/* Search button wrapper */
+.search-btn-wrapper {
+    display: flex;
+    align-items: end;
 }
 
-.footer-column, .info-column ul li a {
-    text-decoration: none;
-    color: #333;
+.search-btn {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
 }
 
-/* Cột "Chứng nhận" */
-.certification-column img {
-    display: block;
-    margin-bottom: 10px;
-    max-width: 120px;
+.search-btn:hover {
+    background-color: #0056b3;
 }
 
-/* Cột "Chấp nhận thanh toán" */
-.payment-methods img {
-    width: 50px;
-    margin: 5px;
-}
-
-/* Copyright */
-.footer-copyright {
-    text-align: center;
+/* Running text / marquee */
+.running-text-container {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    background-color: #f0f4f9;
+    padding: 10px 0;
     margin-top: 20px;
-    padding-top: 10px;
-    border-top: 1px solid #c9e2f5;
 }
 
-.footer-copyright p {
-    font-size: 12px;
-    margin: 5px 0;
+.running-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 15s linear infinite;
+    font-weight: bold;
+    color: #007bff;
+    font-size: 1.05rem;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* ===== Tours / Cards ===== */
+.tour-list {
+    padding: 40px 0;
+    background-color: #c9e2f5;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 40px 16px;
+    color: #0056b3;
+}
+
+.tours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 0 16px 40px;
+}
+
+.tour-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(16,74,177,0.06);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.tour-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 36px rgba(16,74,177,0.12);
+}
+
+.tour-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.card-content h3 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: #1560cc;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #404850;
+    margin: 0 0 8px 0;
+}
+
+.price {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #e63946;
+    margin: 8px 0;
+}
+
+.btn-detail {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 14px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color .18s, transform .12s;
+}
+
+.btn-detail:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* ===== Footer (giữ nguyên giao diện, thêm responsive stacking) ===== */
+.vietravel-footer {
+    background: #f2f5fb;
+    color: #000;
+    padding: 40px 20px 10px;
+    font-family: Arial, sans-serif;
+    border-top: 3px solid #1e4fa0;
+}
+
+.vietravel-footer a { color: #000; text-decoration: none; }
+.vietravel-footer a:hover { color: #1e4fa0; }
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 25px;
+}
+
+.footer-column { flex: 1; min-width: 220px; }
+.footer-column h4 { margin-bottom: 15px; font-size: 18px; font-weight: bold; color: #1e4fa0; }
+.column-content { display: flex; gap: 25px; }
+.column-content ul { list-style: none; padding: 0; }
+.column-content li { margin-bottom: 8px; }
+
+.mobile-app-column .qr-codes { display: flex; gap: 20px; flex-wrap: wrap; }
+.qr-code-item img { width: 120px; max-width: 100%; height: auto; }
+
+.footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-top: 25px; }
+.footer-bottom p, .footer-bottom li { font-size: 14px; color: #000; }
+.social-icons a { font-size: 22px; margin-right: 10px; color: #1e4fa0; }
+.social-icons a:hover { color: #004aad; }
+
+/* Utility images/links */
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+
+/* ===== Popup / Promo styles (kept) ===== */
+#promo-bg {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    animation: fadeInBg 0.4s;
+}
+@keyframes fadeInBg { from { opacity: 0; } to { opacity: 0.6; } }
+
+#promo-popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 1001;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.28);
+    overflow: hidden;
+    max-width: 600px;
+    width: 95vw;
+    animation: fadeInPopup 0.35s;
+}
+@keyframes fadeInPopup { from { opacity: 0; transform: translate(-50%, 60%);} to { opacity: 1; transform: translate(-50%, -50%);} }
+
+.promo-container { display: flex; flex-direction: column; align-items: center; background: #fff; padding: 0; border-radius: 14px; }
+.promo-img { max-width: 100%; height: auto; display: block; }
+
+.close-btn {
+    margin: 0 auto 22px auto;
+    margin-top: 10px;
+    background: #ff9600;
+    color: white;
+    border: none;
+    font-size: 18px;
+    border-radius: 8px;
+    padding: 10px 32px;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+}
+.close-btn:hover { background: #e47c00; }
+
+/* ===== Mobile / Responsive adjustments ===== */
+
+/* Large tablets */
+@media (max-width: 1024px) {
+    .hero-banner { height: 320px; padding: 60px 16px; }
+    h2 { font-size: 1.8rem; margin: 30px 12px; }
+    .tours-grid { gap: 18px; }
+}
+
+/* Tablet & small laptops */
+@media (max-width: 768px) {
+    /* Show hamburger and make nav a dropdown (JS toggles .active) */
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1200;
+    }
+
+    .main-nav ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.28s ease;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        z-index: 1100;
+    }
+
+    .main-nav ul.active { max-height: 520px; }
+
+    .main-nav ul li a {
+        padding: 12px 16px;
+        border-bottom: 1px solid #f1f1f1;
+    }
+
+    /* Hero smaller */
+    .hero-banner {
+        height: 220px;
+        padding: 40px 14px;
+        background-position: center top;
+    }
+
+    /* Search form stacks better */
+    .search-form {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .tour-search-container { margin: 20px 12px; padding: 16px; }
+
+    /* Tours grid -> 2 columns */
+    .tours-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        padding: 0 12px 30px;
+    }
+
+    .tour-card img { height: 170px; }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .logo a { font-size: 1.4rem; }
+
+    .menu-toggle { right: 12px; }
+
+    .hero-banner {
+        height: 120px;
+        padding: 18px 10px;
+        background-position: center;
+    }
+
+    /* Tabs -> grid 2 columns for better tap targets */
+    .search-tabs {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .tab-item { padding: 8px; font-size: 0.95rem; }
+
+    .search-form {
+        grid-template-columns: 1fr;
+    }
+
+    .tour-search-container { margin: 12px 10px; padding: 12px; border-radius: 10px; }
+
+    /* Tours -> single column */
+    .tours-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 0 10px 20px;
+    }
+
+    .tour-card img { height: 150px; }
+
+    .card-content { padding: 12px; }
+    .btn-detail { width: 100%; text-align: center; }
+
+    /* Footer stacks vertically */
+    .footer-top, .footer-bottom { flex-direction: column; gap: 12px; }
+    .footer-column { width: 100%; }
+}
+
+/* Accessibility: focus outlines */
+a:focus, button:focus, input:focus {
+    outline: 3px solid rgba(0,123,255,0.12);
+    outline-offset: 2px;
 }

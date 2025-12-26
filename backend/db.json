@@ -672,6 +672,118 @@
       "paymentMethod": "momoTransfer",
       "adultsInfo": [],
       "childsInfo": []
+    },
+    {
+      "id": "4fe0",
+      "userid": "a235",
+      "date": "2025-12-21T07:12:13.891Z",
+      "addTour": {
+        "id": "209",
+        "categoryid": 2,
+        "code": "INT-EU-209",
+        "name": "Tour Pháp - Ý - Thụy Sĩ",
+        "price": 49900000,
+        "duration": "10N9Đ",
+        "days": 10,
+        "departure": "Hà Nội",
+        "departureDate": "10/12/2025",
+        "availableSeats": 10,
+        "description": "Paris, Rome, Venice và dãy Alps tuyệt đẹp.",
+        "rating": 5,
+        "image": "https://hanhhuonghoasen.com.vn/upload/product/tour-phap-thuy-si-y-2024-5580.jpg",
+        "surcharge": 6500000,
+        "itinerary": [
+          "Ngày 1: Hà Nội – Paris.",
+          "Ngày 2: Tháp Eiffel – Khải Hoàn Môn – Champs-Élysées.",
+          "Ngày 3: Louvre – du thuyền sông Seine.",
+          "Ngày 4: Rome – đấu trường Colosseum.",
+          "Ngày 5: Vatican – quảng trường Thánh Peter.",
+          "Ngày 6: Venice – đảo Murano.",
+          "Ngày 7: Milan – nhà thờ Duomo.",
+          "Ngày 8: Thụy Sĩ – dãy Alps – hồ Lucerne.",
+          "Ngày 9: Tự do mua sắm – chuẩn bị về.",
+          "Ngày 10: Bay về Việt Nam."
+        ]
+      },
+      "name": "Nguyễn Huy Hoàng",
+      "phone": "0326893368",
+      "email": "test@gmail.com",
+      "address": "Cẩm Thủy",
+      "paymentMethod": "bankTransfer",
+      "adultsInfo": [],
+      "childsInfo": []
+    },
+    {
+      "id": "9c80",
+      "userid": "a235",
+      "date": "2025-12-21T09:47:43.241Z",
+      "addTour": {
+        "id": "203",
+        "categoryid": 2,
+        "code": "INT-KR-203",
+        "name": "Tour Hàn Quốc",
+        "price": 16900000,
+        "duration": "6N5Đ",
+        "days": 6,
+        "departure": "Hà Nội",
+        "departureDate": "01/11/2025",
+        "availableSeats": 14,
+        "description": "Seoul, đảo Nami, Everland, tháp Namsan và phố Myeongdong.",
+        "rating": 4.8,
+        "image": "https://vietmytravel.com/wp-content/uploads/2018/08/tour-du-lich-han-quoc-mua-thu-vietmytravel.jpg",
+        "surcharge": 3800000,
+        "itinerary": [
+          "Ngày 1: Hà Nội – Seoul, tham quan suối Cheonggyecheon.",
+          "Ngày 2: Đảo Nami – Tháp Namsan.",
+          "Ngày 3: Công viên Everland – Safari World.",
+          "Ngày 4: Cung điện Gyeongbok – bảo tàng truyền thống.",
+          "Ngày 5: Mua sắm tại Myeongdong – chợ Dongdaemun.",
+          "Ngày 6: Tự do – bay về Việt Nam."
+        ]
+      },
+      "name": "Nguyễn Huy Hoàng",
+      "phone": "0326893368",
+      "email": "test@gmail.com",
+      "address": "Cẩm Thủy",
+      "paymentMethod": "bankTransfer",
+      "adultsInfo": [],
+      "childsInfo": []
+    },
+    {
+      "id": "da3c",
+      "userid": "a235",
+      "date": "2025-12-21T10:00:10.375Z",
+      "addTour": {
+        "id": "207",
+        "categoryid": 2,
+        "code": "INT-CN-207",
+        "name": "Tour Trung Quốc",
+        "price": 15800000,
+        "duration": "6N5Đ",
+        "days": 6,
+        "departure": "Hà Nội",
+        "departureDate": "15/11/2025",
+        "availableSeats": 21,
+        "description": "Bắc Kinh, Vạn Lý Trường Thành, Tử Cấm Thành và Thượng Hải.",
+        "rating": 4.7,
+        "image": "https://dulichcoguu.com/wp-content/uploads/2024/02/tour-trung-quoc-7n7d-5-sao-toan-chang.jpg",
+        "surcharge": 3500000,
+        "itinerary": [
+          "Ngày 1: Hà Nội – Bắc Kinh, thăm Quảng trường Thiên An Môn.",
+          "Ngày 2: Khám phá Tử Cấm Thành – Di Hòa Viên.",
+          "Ngày 3: Tham quan Vạn Lý Trường Thành – sân vận động Tổ Chim.",
+          "Ngày 4: Bay đến Thượng Hải – tham quan Bến Thượng Hải.",
+          "Ngày 5: Tháp truyền hình Đông Phương Minh Châu – phố Nam Kinh.",
+          "Ngày 6: Tự do mua sắm – bay về Việt Nam."
+        ]
+      },
+      "name": "Nguyễn Huy Hoàng",
+      "phone": "0326893368",
+      "email": "hoang@gmail.com",
+      "address": "Cẩm Thủy",
+      "paymentMethod": "bankTransfer",
+      "adultsInfo": [],
+      "childsInfo": []
     }
   ]
 }

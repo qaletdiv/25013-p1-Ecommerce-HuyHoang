@@ -1,97 +1,4 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
-}
-
-.account-page {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 24px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
-
-.account-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
-}
-
-.account-header h2 {
-  font-size: 22px;
-  margin: 0;
-}
-
-.logout-btn {
-  background: #6ba6ff;
-  color: #fff;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.2s;
-}
-
-.logout-btn:hover {
-  background: #4772ff;
-}
-
-.account-section {
-  margin-bottom: 28px;
-}
-
-.account-section h3 {
-  margin-bottom: 10px;
-  border-left: 4px solid #6ba6ff;
-  padding-left: 10px;
-  color: #333;
-}
-
-.info-item {
-  margin: 6px 0;
-  color: #444;
-}
-
-.booking-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.booking-table th,
-.booking-table td {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: left;
-}
-
-.booking-table th {
-  background: #f8f8f8;
-}
-
-.notice {
-  text-align: center;
-  color: #777;
-  margin: 40px 0;
-}
-
-.loading {
-  text-align: center;
-  padding: 20px;
-  color: #888;
-}
-
-* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -158,106 +65,86 @@ body {
     padding: 100px 20px;
     margin-bottom: 20px;
     background-image: url('https://s3.hcm-1.cloud.cmctelecom.vn/vtv-image/Images/SlideShow/sl_250825_kvthuwebtop-destop-1915-4601.webp');
+    width: 100%;
     height: 400px;
 }
 
 .tour-search-container {
-    background-color: #f0f4f9;
-    padding-top: 50px;
-    padding-bottom: 20px;
-    position: relative;
-    z-index: 10;
-}
-
-.search-box {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: #fff;
     padding: 20px;
-    max-width: 900px;
-    margin: -100px auto 0;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 30px auto;
 }
 
 .search-tabs {
     display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid #e0e0e0;
+    justify-content: space-between;
+    flex-wrap: wrap;
     margin-bottom: 20px;
 }
 
 .tab-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 15px;
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
     cursor: pointer;
-    transition: all 0.3s ease;
-    border-bottom: 2px solid transparent;
+    color: #666;
+    transition: 0.3s;
 }
 
-.tab-item.active {
-    border-bottom: 2px solid #007bff;
-    color: #007bff;
-    font-weight: bold;
-}
-
+.tab-item.active,
 .tab-item:hover {
     color: #007bff;
-}
-
-.tab-item i {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
+    font-weight: 600;
 }
 
 .search-form {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 15px;
-    flex-wrap: wrap;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    flex: 1;
-    min-width: 200px;
 }
 
-.form-group label {
-    font-size: 0.9rem;
-    color: #666;
+label {
+    font-weight: 600;
     margin-bottom: 5px;
+    color: #333;
 }
 
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
+input,
+select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
 }
 
 .search-btn-wrapper {
-    flex-shrink: 0;
+    display: flex;
+    align-items: end;
 }
 
 .search-btn {
+    width: 100%;
     background-color: #007bff;
     color: #fff;
     border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
+    padding: 10px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 16px;
+    transition: 0.3s;
 }
 
 .search-btn:hover {
     background-color: #0056b3;
 }
-
 
 
 .running-text-container {
@@ -374,6 +261,13 @@ h2 {
 
 .btn-detail:hover {
     background-color: #0056b3;
+}
+
+.vietravel-footer {
+    background-color: #e3f2fd;
+    color: #333;
+    font-family: Arial, sans-serif;
+    padding: 40px 20px 20px;
 }
 
 /* ===== FOOTER (Vietravel Light Style) ===== */
@@ -529,4 +423,610 @@ h2 {
     .footer-bottom {
         flex-direction: column;
     }
+}
+
+
+/* Overlay mờ nền */
+#promo-bg {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    animation: fadeInBg 0.4s;
+}
+
+@keyframes fadeInBg {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.6;
+    }
+}
+
+/* Popup chính */
+#promo-popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 1001;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.28);
+    overflow: hidden;
+    max-width: 600px;
+    width: 95vw;
+    animation: fadeInPopup 0.35s;
+}
+
+@keyframes fadeInPopup {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 60%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Nội dung bên trong */
+.promo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    padding: 0;
+    border-radius: 14px;
+}
+
+.promo-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Nút Đóng */
+.close-btn {
+    margin: 0 auto 22px auto;
+    margin-top: 10px;
+    background: #ff9600;
+    color: white;
+    border: none;
+    font-size: 18px;
+    border-radius: 8px;
+    padding: 10px 32px;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+    outline: none;
+}
+
+.close-btn:hover {
+    background: #e47c00;
+}
+
+/* --- Ẩn nút menu trên máy tính --- */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #007bff;
+}
+
+/* =========================================
+   RESPONSIVE: TABLET & MOBILE (Dưới 768px)
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* 1. Header & Nút Menu */
+    .header .container {
+        position: relative; /* Để định vị menu con */
+    }
+
+    .menu-toggle {
+        display: block; /* Hiện nút 3 gạch */
+    }
+
+    /* 2. Menu chính (Navigation) */
+    .main-nav ul {
+        flex-direction: column; /* Xếp dọc */
+        position: absolute;
+        top: 100%; /* Đẩy xuống dưới header */
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        max-height: 0; /* Mặc định ẩn bằng chiều cao 0 */
+        overflow: hidden; /* Giấu nội dung thừa */
+        transition: max-height 0.3s ease-out; /* Hiệu ứng trượt */
+        z-index: 999;
+    }
+
+    /* Class này sẽ được thêm bằng JavaScript khi bấm nút */
+    .main-nav ul.active {
+        max-height: 500px; /* Mở rộng chiều cao để hiện menu */
+    }
+
+    .main-nav ul li {
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+
+    .main-nav ul li a {
+        display: block;
+        padding: 15px;
+    }
+
+    .main-nav ul li:last-child {
+        border-bottom: none;
+    }
+}
+
+/* =========================================
+   RESPONSIVE: MOBILE NHỎ (Dưới 480px)
+   ========================================= */
+@media (max-width: 480px) {
+    .logo a {
+        font-size: 1.4rem; /* Giảm cỡ chữ Logo */
+    }
+    
+    .hero-banner {
+        height: 100px; /* Giảm chiều cao banner */
+    }
+}
+
+/* =========================================
+   RESPONSIVE: SEARCH TABS
+   ========================================= */
+
+/* Tablet (Màn hình vừa): Chia làm 2 dòng dễ nhìn hơn */
+@media (max-width: 768px) {
+    .search-tabs {
+        gap: 10px; /* Tạo khoảng cách giữa các ô */
+    }
+
+    .tab-item {
+        /* Mỗi item chiếm tối thiểu 20% chiều rộng để không bị ép quá nhỏ */
+        min-width: 20%; 
+    }
+}
+
+/* Mobile (Màn hình nhỏ): Chuyển sang dạng lưới chia cột */
+@media (max-width: 480px) {
+    .search-tabs {
+        display: grid; /* Thay vì flex, dùng grid để căn ô đều hơn */
+        grid-template-columns: repeat(4, 1fr); /* Chia thành 4 cột bằng nhau */
+        gap: 10px 5px; /* Khoảng cách: 10px hàng dọc, 5px hàng ngang */
+        margin-bottom: 15px;
+    }
+
+    .tab-item {
+        display: flex;
+        flex-direction: column; /* Icon nằm trên, chữ nằm dưới */
+        align-items: center;
+        justify-content: center;
+        padding: 8px 2px;
+        border: 1px solid #eee; /* Thêm viền mờ cho giống nút bấm */
+        border-radius: 8px;
+        background-color: #fafafa;
+    }
+
+    /* Hiệu ứng khi bấm vào trên mobile */
+    .tab-item:active {
+        background-color: #e6f2ff;
+        border-color: #007bff;
+    }
+
+    /* Chỉnh sửa icon nhỏ lại một chút cho cân đối */
+    .tab-item i {
+        font-size: 1.2rem; 
+        margin-bottom: 5px;
+    }
+
+    /* Chỉnh sửa chữ nhỏ lại để không bị tràn dòng */
+    .tab-item span {
+        font-size: 11px;
+        line-height: 1.2;
+        display: block; /* Đảm bảo chữ xuống dòng nếu quá dài */
+    }
+    
+    /* Riêng mục "Dịch vụ thêm" icon to hơn xíu cho cân đối */
+    .tab-item i.fa-ellipsis-h {
+        margin-top: 5px;
+    }
+}
+
+/* Tìm đến đoạn @media (max-width: 768px) và sửa lại class .menu-toggle */
+
+@media (max-width: 768px) {
+    
+    /* 1. Đặt container làm mốc toạ độ */
+    .header .container {
+        position: relative; 
+    }
+
+    /* 2. Căn nút menu tuyệt đối sang phải */
+    .menu-toggle {
+        display: block;
+        position: absolute;  /* Tách khỏi dòng chảy văn bản để tự do di chuyển */
+        right: 20px;         /* Cách lề phải 20px (bằng padding của container) */
+        top: 50%;            /* Đặt ở giữa theo chiều dọc */
+        transform: translateY(-50%); /* Căn chỉnh chính xác tâm giữa dọc */
+        z-index: 1001;       /* Đảm bảo nút luôn nổi lên trên cùng */
+    }
+
+    /* ... Giữ nguyên các phần khác ... */
+}
+
+/* Responsive profile.css - keeps your footer and matches menu-toggle behavior with other pages */
+
+/* ===== Reset & Base ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* ===== Layout containers ===== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== Header / Nav ===== */
+.header {
+  background-color: #fff;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* anchor for menu-toggle and dropdown */
+}
+
+.logo a {
+  display: flex;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #007bff;
+  text-decoration: none;
+  height: 50px;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 700;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: background .15s, color .15s;
+}
+
+.main-nav ul li a:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+/* Hamburger toggle hidden on desktop */
+.menu-toggle {
+  display: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #007bff;
+  background: transparent;
+  border: none;
+  padding: 6px;
+}
+
+/* ===== Account page ===== */
+.account-page {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.account-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.account-header h2 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.logout-btn {
+  background: #6ba6ff;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background .18s;
+}
+
+.logout-btn:hover {
+  background: #4772ff;
+}
+
+.account-section {
+  margin-bottom: 28px;
+}
+
+.account-section h3 {
+  margin-bottom: 10px;
+  border-left: 4px solid #6ba6ff;
+  padding-left: 10px;
+  color: #333;
+}
+
+.info-item {
+  margin: 6px 0;
+  color: #444;
+  word-break: break-word;
+}
+
+/* Booking table responsive */
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+  display: block;
+}
+
+.booking-table th,
+.booking-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.booking-table th {
+  background: #f8f8f8;
+  font-weight: 700;
+}
+
+/* Loading / notice */
+.notice, .loading {
+  text-align: center;
+  color: #777;
+  margin: 20px 0;
+}
+
+/* ===== Hero / Search parts (kept but made responsive) ===== */
+.hero-banner {
+  background: url('https://s3.hcm-1.cloud.cmctelecom.vn/vtv-image/Images/SlideShow/sl_250825_kvthuwebtop-destop-1915-4601.webp') no-repeat center center/cover;
+  text-align: center;
+  padding: 80px 20px;
+  margin-bottom: 20px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Search box */
+.tour-search-container {
+  background-color: #f0f4f9;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.search-box {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  padding: 16px;
+  max-width: 900px;
+  margin: -80px auto 0;
+}
+
+/* Tabs/form */
+.search-tabs {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 12px;
+  gap: 6px;
+}
+
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: all .2s;
+  border-bottom: 2px solid transparent;
+}
+
+.tab-item.active {
+  border-bottom: 2px solid #007bff;
+  color: #007bff;
+  font-weight: 700;
+}
+
+.tab-item i { font-size: 1.25rem; margin-bottom: 5px; }
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 180px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+/* Buttons */
+.search-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ===== Footer (kept) ===== */
+/* Using the same footer styles you have; stacked on small screens */
+.vietravel-footer {
+  background: #f2f5fb;
+  color: #000;
+  padding: 40px 20px 10px;
+  font-family: Arial, sans-serif;
+  border-top: 3px solid #1e4fa0;
+}
+
+.footer-top, .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-column { flex: 1; min-width: 220px; }
+.column-content { display: flex; gap: 20px; }
+.qr-code-item img { width: 120px; max-width: 100%; height: auto; }
+
+/* ===== Utilities ===== */
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+
+/* ===== Responsive adjustments ===== */
+
+/* Large tablets */
+@media (max-width: 1024px) {
+  .hero-banner { height: 260px; padding: 40px 16px; }
+  .account-page { max-width: 820px; padding: 20px; margin: 30px auto; }
+  .booking-table th, .booking-table td { padding: 8px; }
+}
+
+/* Tablet & small laptops */
+@media (max-width: 768px) {
+
+  /* Show hamburger and make nav a dropdown (JS toggles .active) */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1200;
+  }
+
+  .main-nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .28s ease;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+    z-index: 1100;
+  }
+
+  .main-nav ul.active { max-height: 480px; }
+
+  .main-nav ul li a {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  /* Account header stacks */
+  .account-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .account-page {
+    margin: 20px 14px;
+    padding: 18px;
+  }
+
+  .search-box { margin: -60px 12px 0; padding: 14px; }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .logo a { font-size: 1.4rem; }
+  .hero-banner { height: 120px; padding: 18px 10px; background-position: center; }
+
+  .search-tabs { display: grid; grid-template-columns: repeat(2,1fr); gap: 8px; }
+  .tab-item { padding: 8px; font-size: 0.95rem; }
+
+  .search-form { flex-direction: column; gap: 10px; }
+  .form-group { min-width: 0; width: 100%; }
+
+  .account-page { margin: 12px 10px; padding: 14px; border-radius: 10px; }
+  .booking-table { display: block; overflow-x: auto; }
+
+  /* Footer stacks */
+  .footer-top, .footer-bottom { flex-direction: column; gap: 12px; }
+  .footer-column { width: 100%; }
+}
+
+/* Accessibility focus */
+a:focus, button:focus, input:focus {
+  outline: 3px solid rgba(0,123,255,0.12);
+  outline-offset: 2px;
 }

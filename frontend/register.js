@@ -66,3 +66,26 @@ registerForm.addEventListener("submit", async (event) => {
 
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Lấy phần tử nút menu và danh sách menu
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navList = document.querySelector('.main-nav ul');
+
+    if (menuToggle && navList) {
+        menuToggle.addEventListener('click', function() {
+            // Thêm hoặc bỏ class 'active' cho ul
+            navList.classList.toggle('active');
+            
+            // (Tùy chọn) Đổi icon từ 3 gạch sang dấu X
+            const icon = menuToggle.querySelector('i');
+            if (navList.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+});
