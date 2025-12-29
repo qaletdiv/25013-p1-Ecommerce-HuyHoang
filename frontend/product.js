@@ -1,9 +1,18 @@
 const user = JSON.parse(localStorage.getItem("user"));
 console.log(user);
 const account = document.getElementById('account');
+const register = document.getElementById('register')
+const shop = document.getElementById('shop')
 if (user) {
-  account.innerHTML = "Tài khoản của tôi";
-  account.setAttribute('href', 'profile.html')
+    account.innerHTML = "Tài khoản của tôi";
+    account.setAttribute('href', 'profile.html')
+    register.innerHTML = "Đăng xuất";
+    register.setAttribute('href', '#');
+    register.addEventListener("click", () => {
+        localStorage.removeItem("user");
+        alert("Bạn đã đăng xuất thành công")
+        window.location.href = "login.html"
+    });
 }
 
 const params = new URLSearchParams(window.location.search);
@@ -107,48 +116,6 @@ function openPage(pageName, elmnt, color) {
 
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
-
-
-// Render tab Giá & Phụ thu
-function renderGiaVaPhuThu() {
-    const tab = document.getElementById("Gia_Va_Phu_Thu");
-
-    tab.innerHTML = `
-        <h3>Giá & Phụ Thu</h3>
-        <ul>
-            <li><strong>Giá tour:</strong> ${tourData.price.toLocaleString()} VNĐ</li>
-            <li><strong>Phụ thu phòng đơn:</strong> ${tourData.surcharge.singleRoom.toLocaleString()} VNĐ</li>
-            <li><strong>Phụ thu trẻ em:</strong> ${tourData.surcharge.child.toLocaleString()} VNĐ</li>
-            <li><strong>Phụ thu không bao gồm vé tham quan:</strong> ${tourData.surcharge.notIncludeTicket.toLocaleString()} VNĐ</li>
-        </ul>
-
-        <h4>Giải thích phụ thu</h4>
-        <p>Phụ thu phòng đơn: áp dụng cho khách đi một mình và không ghép phòng.</p>
-        <p>Phụ thu trẻ em: tuỳ theo độ tuổi và quy định ngủ chung/ăn uống.</p>
-        <p>Phụ thu không bao gồm vé tham quan: áp dụng cho các điểm ngoài chương trình hoặc tự túc.</p>
-    `;
-}
-
-
-// Render tab Chính sách
-function renderChinhSach() {
-    const tab = document.getElementById("Chinh_Sach");
-
-    tab.innerHTML = `
-        <h3>Chính Sách</h3>
-
-        <h4>Chính sách trẻ em</h4>
-        <ul>
-            ${tourData.policy.child.map(item => `<li>${item}</li>`).join("")}
-        </ul>
-
-        <h4>Quy định chung</h4>
-        <ul>
-            ${tourData.policy.general.map(item => `<li>${item}</li>`).join("")}
-        </ul>
-    `;
-}
-
 
 // Gọi render khi load trang
 window.onload = function () {

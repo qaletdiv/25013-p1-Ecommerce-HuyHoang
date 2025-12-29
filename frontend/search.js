@@ -4,15 +4,15 @@ const account = document.getElementById('account');
 const register = document.getElementById('register')
 const shop = document.getElementById('shop')
 if (user) {
-  account.innerHTML = "Tài khoản của tôi";
-  account.setAttribute('href', 'profile.html')
-  register.innerHTML = "Đăng xuất";
-  register.setAttribute('href', '#');
-  register.addEventListener("click", () => {
-    localStorage.removeItem("user");
-    alert("Bạn đã đăng xuất thành công")
-    window.location.href = "login.html"
-  });
+    account.innerHTML = "Tài khoản của tôi";
+    account.setAttribute('href', 'profile.html')
+    register.innerHTML = "Đăng xuất";
+    register.setAttribute('href', '#');
+    register.addEventListener("click", () => {
+        localStorage.removeItem("user");
+        alert("Bạn đã đăng xuất thành công")
+        window.location.href = "login.html"
+    });
 }
 
 const resultsContainer = document.getElementById('results');

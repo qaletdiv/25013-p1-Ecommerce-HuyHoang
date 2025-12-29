@@ -1,3 +1,26 @@
+const user = JSON.parse(localStorage.getItem("user"));
+console.log(user);
+
+const account = document.getElementById('account');
+const register = document.getElementById('register');
+const shop = document.getElementById('shop');
+
+if (user) {
+    account.innerHTML = "Tài khoản của tôi";
+    account.setAttribute('href', 'profile.html')
+
+    register.innerHTML = "Đăng xuất";
+    register.setAttribute('href', '#');
+    register.addEventListener("click", () => {
+        localStorage.removeItem("user");
+        alert("Bạn đã đăng xuất thành công");
+        window.location.href = "login.html";
+    });
+
+} else {
+    if (shop) shop.style.display = "none";
+}
+
 const checkoutInfo = JSON.parse(localStorage.getItem("checkoutInfo"));
 
     const paymentInfoContainer = document.getElementById("payment-info");

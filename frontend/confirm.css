@@ -1,100 +1,43 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.header {
-    background-color: #fff;
-    padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo a {
-    display: flex;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #007bff;
-    text-decoration: none;
-    height: 50px;
-}
-
-.main-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-.main-nav ul li {
-    margin-left: 20px;
-}
-
-.main-nav ul li a {
-    text-decoration: none;
-    color: #555;
-    font-weight: 500;
-    transition: color 0.3s;
-    font-weight: bold;
-}
-
-.main-nav ul li a:hover {
-    color: #007bff;
-}
+/* confirm.css - Chỉ giữ phần nội dung xác nhận đặt tour */
 
 h2 {
     text-align: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin: 40px 0 20px;
     font-size: 28px;
+    color: #007bff;
 }
 
 .info-box {
-    padding: 15px;
+    padding: 20px;
     background: #fafafa;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
     border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .tour-img {
     width: 100%;
-    max-height: auto;
+    height: auto;
+    max-height: 400px;
     object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    border-radius: 12px;
+    margin-bottom: 16px;
 }
-
 
 .btn {
     display: block;
     width: 100%;
-    padding: 12px;
+    max-width: 400px;
+    margin: 30px auto 60px;
+    padding: 14px;
     background: #007bff;
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 17px;
+    font-weight: 600;
     cursor: pointer;
-    margin-top: 20px;
-    margin-bottom: 40px;
     transition: background 0.3s;
 }
 
@@ -102,311 +45,9 @@ h2 {
     background: #005fcc;
 }
 
-/* ===== FOOTER (Vietravel Light Style) ===== */
-.vietravel-footer {
-    background: #f2f5fb; /* xanh rất nhạt */
-    color: #000; 
-    padding: 40px 20px 10px;
-    font-family: Arial, sans-serif;
-    border-top: 3px solid #1e4fa0; /* xanh Vietravel */
-}
-
-.vietravel-footer a {
-    color: #000;
-    text-decoration: none;
-}
-
-.vietravel-footer a:hover {
-    color: #1e4fa0;
-}
-
-/* --- Footer Top Layout --- */
-.footer-top {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-bottom: 25px;
-}
-
-.footer-column {
-    flex: 1;
-    min-width: 220px;
-}
-
-.footer-column h4 {
-    margin-bottom: 15px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #1e4fa0; /* xanh đậm Vietravel */
-}
-
-/* 2 cột liên kết */
-.column-content {
-    display: flex;
-    gap: 25px;
-}
-
-.column-content ul {
-    list-style: none;
-    padding: 0;
-}
-
-.column-content li {
-    margin-bottom: 8px;
-}
-
-/* --- Mobile App QR Section --- */
-.mobile-app-column .qr-codes {
-    display: flex;
-    gap: 20px;
-}
-
-.qr-code-item {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.qr-code-item img {
-    width: 120px;
-}
-
-/* --- Footer Bottom --- */
-.footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-top: 25px;
-}
-
-.footer-bottom .footer-column {
-    min-width: 220px;
-}
-
-.footer-bottom p,
-.footer-bottom li {
-    font-size: 14px;
-    color: #000;
-}
-
-/* Contact icons */
-.social-icons {
-    margin: 10px 0;
-}
-
-.social-icons a {
-    font-size: 22px;
-    margin-right: 10px;
-    color: #1e4fa0;
-}
-
-.social-icons a:hover {
-    color: #004aad;
-}
-
-/* Payment icons */
-.payment-methods {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.payment-methods img {
-    width: 60px;
-    height: auto;
-}
-
-/* Certification images */
-.certification-column img {
-    width: 120px;
-    display: block;
-    margin-bottom: 12px;
-}
-
-/* Copyright */
-.footer-copyright {
-    margin-top: 20px;
-    text-align: center;
-    border-top: 1px solid #cbd5e1;
-    padding-top: 15px;
-    font-size: 14px;
-    color: #333;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-    .column-content {
-        flex-direction: column;
-    }
-
-    .payment-methods img {
-        width: 50px;
-    }
-
-    .qr-code-item img {
-        width: 100px;
-    }
-}
-
-@media (max-width: 500px) {
-    .footer-top,
-    .footer-bottom {
-        flex-direction: column;
-    }
-}
-
-/* --- Ẩn nút menu trên máy tính --- */
-.menu-toggle {
-    display: none;
-    font-size: 1.8rem;
-    cursor: pointer;
-    color: #007bff;
-}
-
-/* =========================================
-   RESPONSIVE: TABLET & MOBILE (Dưới 768px)
-   ========================================= */
-@media (max-width: 768px) {
-
-    /* 1. Header & Nút Menu */
-    .header .container {
-        position: relative; /* Để định vị menu con */
-    }
-
-    .menu-toggle {
-        display: block; /* Hiện nút 3 gạch */
-    }
-
-    /* 2. Menu chính (Navigation) */
-    .main-nav ul {
-        flex-direction: column; /* Xếp dọc */
-        position: absolute;
-        top: 100%; /* Đẩy xuống dưới header */
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        max-height: 0; /* Mặc định ẩn bằng chiều cao 0 */
-        overflow: hidden; /* Giấu nội dung thừa */
-        transition: max-height 0.3s ease-out; /* Hiệu ứng trượt */
-        z-index: 999;
-    }
-
-    /* Class này sẽ được thêm bằng JavaScript khi bấm nút */
-    .main-nav ul.active {
-        max-height: 500px; /* Mở rộng chiều cao để hiện menu */
-    }
-
-    .main-nav ul li {
-        margin: 0;
-        text-align: center;
-        border-bottom: 1px solid #eee;
-    }
-
-    .main-nav ul li a {
-        display: block;
-        padding: 15px;
-    }
-
-    .main-nav ul li:last-child {
-        border-bottom: none;
-    }
-}
-
-/* =========================================
-   RESPONSIVE: MOBILE NHỎ (Dưới 480px)
-   ========================================= */
+/* Responsive nhỏ */
 @media (max-width: 480px) {
-    .logo a {
-        font-size: 1.4rem; /* Giảm cỡ chữ Logo */
-    }
-    
-    .hero-banner {
-        height: 100px; /* Giảm chiều cao banner */
-    }
-}
-
-/* =========================================
-   RESPONSIVE: SEARCH TABS
-   ========================================= */
-
-/* Tablet (Màn hình vừa): Chia làm 2 dòng dễ nhìn hơn */
-@media (max-width: 768px) {
-    .search-tabs {
-        gap: 10px; /* Tạo khoảng cách giữa các ô */
-    }
-
-    .tab-item {
-        /* Mỗi item chiếm tối thiểu 20% chiều rộng để không bị ép quá nhỏ */
-        min-width: 20%; 
-    }
-}
-
-/* Mobile (Màn hình nhỏ): Chuyển sang dạng lưới chia cột */
-@media (max-width: 480px) {
-    .search-tabs {
-        display: grid; /* Thay vì flex, dùng grid để căn ô đều hơn */
-        grid-template-columns: repeat(4, 1fr); /* Chia thành 4 cột bằng nhau */
-        gap: 10px 5px; /* Khoảng cách: 10px hàng dọc, 5px hàng ngang */
-        margin-bottom: 15px;
-    }
-
-    .tab-item {
-        display: flex;
-        flex-direction: column; /* Icon nằm trên, chữ nằm dưới */
-        align-items: center;
-        justify-content: center;
-        padding: 8px 2px;
-        border: 1px solid #eee; /* Thêm viền mờ cho giống nút bấm */
-        border-radius: 8px;
-        background-color: #fafafa;
-    }
-
-    /* Hiệu ứng khi bấm vào trên mobile */
-    .tab-item:active {
-        background-color: #e6f2ff;
-        border-color: #007bff;
-    }
-
-    /* Chỉnh sửa icon nhỏ lại một chút cho cân đối */
-    .tab-item i {
-        font-size: 1.2rem; 
-        margin-bottom: 5px;
-    }
-
-    /* Chỉnh sửa chữ nhỏ lại để không bị tràn dòng */
-    .tab-item span {
-        font-size: 11px;
-        line-height: 1.2;
-        display: block; /* Đảm bảo chữ xuống dòng nếu quá dài */
-    }
-    
-    /* Riêng mục "Dịch vụ thêm" icon to hơn xíu cho cân đối */
-    .tab-item i.fa-ellipsis-h {
-        margin-top: 5px;
-    }
-}
-
-/* Tìm đến đoạn @media (max-width: 768px) và sửa lại class .menu-toggle */
-
-@media (max-width: 768px) {
-    
-    /* 1. Đặt container làm mốc toạ độ */
-    .header .container {
-        position: relative; 
-    }
-
-    /* 2. Căn nút menu tuyệt đối sang phải */
-    .menu-toggle {
-        display: block;
-        position: absolute;  /* Tách khỏi dòng chảy văn bản để tự do di chuyển */
-        right: 20px;         /* Cách lề phải 20px (bằng padding của container) */
-        top: 50%;            /* Đặt ở giữa theo chiều dọc */
-        transform: translateY(-50%); /* Căn chỉnh chính xác tâm giữa dọc */
-        z-index: 1001;       /* Đảm bảo nút luôn nổi lên trên cùng */
-    }
-
-    /* ... Giữ nguyên các phần khác ... */
+    h2 { font-size: 24px; margin: 30px 0 16px; }
+    .info-box { padding: 16px; }
+    .btn { margin: 20px auto 40px; padding: 12px; }
 }

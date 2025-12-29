@@ -17,62 +17,6 @@ body {
     padding: 0 20px;
 }
 
-.header {
-    background-color: #fff;
-    padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo a {
-    display: flex;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #007bff;
-    text-decoration: none;
-    height: 50px;
-}
-
-.main-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-.main-nav ul li {
-    margin-left: 20px;
-}
-
-.main-nav ul li a {
-    text-decoration: none;
-    color: #555;
-    font-weight: 500;
-    transition: color 0.3s;
-    font-weight: bold;
-}
-
-.main-nav ul li a:hover {
-    color: #007bff;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 10px auto;
-    padding: 0 15px;
-}
-
-.page-title {
-    text-align: center;
-    font-size: 50px;
-    margin: 20px;
-    color: #004080;
-    font-weight: 700;
-}
-
 .tour-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -228,161 +172,6 @@ body {
 .tour-info .rating i {
   color: #ff9800;
   font-size: 17px;
-}
-
-/* ===== FOOTER (Vietravel Light Style) ===== */
-.vietravel-footer {
-    background: #f2f5fb; /* xanh rất nhạt */
-    color: #000; 
-    padding: 40px 20px 10px;
-    font-family: Arial, sans-serif;
-    border-top: 3px solid #1e4fa0; /* xanh Vietravel */
-}
-
-.vietravel-footer a {
-    color: #000;
-    text-decoration: none;
-}
-
-.vietravel-footer a:hover {
-    color: #1e4fa0;
-}
-
-/* --- Footer Top Layout --- */
-.footer-top {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-bottom: 25px;
-}
-
-.footer-column {
-    flex: 1;
-    min-width: 220px;
-}
-
-.footer-column h4 {
-    margin-bottom: 15px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #1e4fa0; /* xanh đậm Vietravel */
-}
-
-/* 2 cột liên kết */
-.column-content {
-    display: flex;
-    gap: 25px;
-}
-
-.column-content ul {
-    list-style: none;
-    padding: 0;
-}
-
-.column-content li {
-    margin-bottom: 8px;
-}
-
-/* --- Mobile App QR Section --- */
-.mobile-app-column .qr-codes {
-    display: flex;
-    gap: 20px;
-}
-
-.qr-code-item {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.qr-code-item img {
-    width: 120px;
-}
-
-/* --- Footer Bottom --- */
-.footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-top: 25px;
-}
-
-.footer-bottom .footer-column {
-    min-width: 220px;
-}
-
-.footer-bottom p,
-.footer-bottom li {
-    font-size: 14px;
-    color: #000;
-}
-
-/* Contact icons */
-.social-icons {
-    margin: 10px 0;
-}
-
-.social-icons a {
-    font-size: 22px;
-    margin-right: 10px;
-    color: #1e4fa0;
-}
-
-.social-icons a:hover {
-    color: #004aad;
-}
-
-/* Payment icons */
-.payment-methods {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.payment-methods img {
-    width: 60px;
-    height: auto;
-}
-
-/* Certification images */
-.certification-column img {
-    width: 120px;
-    display: block;
-    margin-bottom: 12px;
-}
-
-/* Copyright */
-.footer-copyright {
-    margin-top: 20px;
-    text-align: center;
-    border-top: 1px solid #cbd5e1;
-    padding-top: 15px;
-    font-size: 14px;
-    color: #333;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-    .column-content {
-        flex-direction: column;
-    }
-
-    .payment-methods img {
-        width: 50px;
-    }
-
-    .qr-code-item img {
-        width: 100px;
-    }
-}
-
-@media (max-width: 500px) {
-    .footer-top,
-    .footer-bottom {
-        flex-direction: column;
-    }
 }
 
 #select-price {
@@ -621,85 +410,7 @@ h2 {
     background-color: #0056b3;
 }
 
-/* ===== Base & Reset ===== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
-body {
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-
-/* ===== Header / Nav ===== */
-.header {
-  background-color: #fff;
-  padding: 1rem 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
-}
-
-.header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative; /* mốc cho menu-toggle & nav dropdown */
-}
-
-.logo a {
-  display: flex;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #007bff;
-  text-decoration: none;
-  height: 50px;
-}
-
-/* Desktop nav */
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 14px;
-  align-items: center;
-}
-
-.main-nav ul li {
-  margin-left: 0;
-}
-
-.main-nav ul li a {
-  text-decoration: none;
-  color: #555;
-  font-weight: 700;
-  padding: 6px 8px;
-  transition: color 0.2s, background 0.15s;
-  border-radius: 6px;
-}
-
-.main-nav ul li a:hover {
-  color: #fff;
-  background: #007bff;
-}
-
-/* Menu toggle (for mobile) - add the element in HTML if not present */
-.menu-toggle {
-  display: none;
-  font-size: 1.6rem;
-  cursor: pointer;
-  color: #007bff;
-  background: transparent;
-  border: none;
-  padding: 6px;
-}
 
 /* ===== Page title ===== */
 .page-title {
@@ -883,27 +594,6 @@ body {
   border-color: #004080;
 }
 
-/* ===== Footer ===== */
-.vietravel-footer {
-  background: #f2f5fb;
-  color: #000;
-  padding: 40px 16px 10px;
-  font-family: Arial, sans-serif;
-  border-top: 3px solid #1e4fa0;
-}
-
-.footer-top, .footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-
-.footer-column {
-  flex: 1;
-  min-width: 220px;
-}
-
 /* ===== Utilities ===== */
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
@@ -923,34 +613,8 @@ a { color: inherit; }
   .tour-card img { height: 170px; }
 }
 
-/* Tablet / landscape phones */
+/* Tablet / landscape phones - Filter & Tours specific styles */
 @media (max-width: 768px) {
-  /* show hamburger if you add .menu-toggle element in HTML */
-  .menu-toggle { display: block; position: absolute; right: 12px; top: 50%; transform: translateY(-50%); z-index: 1200; }
-
-  /* hide desktop nav by default, use JS to toggle .main-nav ul.active */
-  .main-nav ul {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #fff;
-    flex-direction: column;
-    gap: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.28s ease;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    z-index: 1100;
-  }
-
-  .main-nav ul.active { max-height: 420px; }
-
-  .main-nav ul li a {
-    padding: 12px 16px;
-    border-bottom: 1px solid #f0f0f0;
-  }
-
   /* Filter becomes 2 columns */
   .filter-box {
     grid-template-columns: repeat(2, 1fr);
@@ -970,7 +634,7 @@ a { color: inherit; }
   .tour-card img { height: 180px; }
 }
 
-/* Small phones */
+/* Small phones - Filter & Tours specific styles */
 @media (max-width: 480px) {
   .page-title { font-size: 1.5rem; margin: 18px 8px; }
 
@@ -1000,9 +664,6 @@ a { color: inherit; }
   }
 
   .btn-detail { width: 100%; text-align: center; }
-
-  /* Footer stacks */
-  .footer-top, .footer-bottom { flex-direction: column; gap: 12px; }
 }
 
 /* Accessibility / focus */

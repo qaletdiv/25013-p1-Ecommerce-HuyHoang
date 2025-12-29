@@ -1,84 +1,14 @@
-/* checkout.css — updated to match profile.css header/menu behavior and responsive rules
-   Footer is kept. Layout for booking form/summary preserved but responsive breakpoints
-   and mobile nav behave like profile.css (menu-toggle + .main-nav ul.active). */
+/* checkout.css - Phiên bản đã loại bỏ trùng lặp với header_footer.css */
 
-/* ===== Reset & Base ===== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+:root {
+  --icon-size: 36px;        /* kích thước icon chính (header/shop/signup) */
+  --icon-small: 28px;       /* icon nhỏ hơn (payment, social, v.v.) */
+  --icon-radius: 8px;
+  --primary-red: #e60023;   /* màu chính của nút thanh toán */
+  --accent-blue: #005baa;
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
-}
-
-/* Container shared with other pages */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* ===== Header / Nav (match profile.css behavior) ===== */
-.header {
-  background-color: #fff;
-  padding: 1rem 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative; /* anchor for .menu-toggle and mobile nav */
-}
-
-.logo a {
-  display: flex;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #007bff;
-  text-decoration: none;
-  height: 50px;
-}
-
-/* Nav list */
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-.main-nav ul li a {
-  text-decoration: none;
-  color: #555;
-  font-weight: 700;
-  padding: 6px 8px;
-  border-radius: 6px;
-  transition: background .15s, color .15s;
-}
-.main-nav ul li a:hover {
-  background: #007bff;
-  color: #fff;
-}
-
-/* Menu toggle (hidden on desktop, shown on mobile) */
-.menu-toggle {
-  display: none;
-  font-size: 1.6rem;
-  cursor: pointer;
-  color: #007bff;
-  background: transparent;
-  border: none;
-  padding: 6px;
-}
-
-/* Quick icons (shop / signup) */
+/* ===== Quick icons (shop / signup) - chỉ dùng ở checkout ===== */
 .shop {
   position: absolute;
   top: 12px;
@@ -86,12 +16,12 @@ body {
   text-decoration: none;
   background-color: #fff;
   color: #333;
-  width: 36px;
-  height: 36px;
+  width: var(--icon-size);
+  height: var(--icon-size);
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 6px;
+  border-radius: var(--icon-radius);
   box-shadow: 0 2px 6px rgba(0,0,0,0.04);
   z-index: 1200;
 }
@@ -100,19 +30,19 @@ body {
 .signup a i {
   position: absolute;
   top: 12px;
-  right: 56px;
+  right: calc(var(--icon-size) + 20px);
   color: black;
-  width: 36px;
-  height: 36px;
+  width: var(--icon-size);
+  height: var(--icon-size);
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 6px;
+  border-radius: var(--icon-radius);
 }
 
 /* ===== Booking layout ===== */
-/* Containers use the same visual style as before, but obey profile.css breakpoints */
 .booking-container {
+  margin: 60px auto 60px;
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
@@ -120,7 +50,7 @@ body {
   align-items: flex-start;
 }
 
-/* Form & summary card visuals */
+/* Form & summary card */
 .booking-form-section,
 .booking-summary-section {
   background-color: #fff;
@@ -129,7 +59,6 @@ body {
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-/* Make sections flexible but more like profile.css widths */
 .booking-form-section {
   flex: 2;
   min-width: 320px;
@@ -147,11 +76,11 @@ body {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 12px;
-  border-bottom: 2px solid #e60023;
+  border-bottom: 2px solid var(--primary-red);
   padding-bottom: 6px;
 }
 
-/* Rows and fields */
+/* Form rows */
 .form-row {
   display: flex;
   gap: 12px;
@@ -177,7 +106,7 @@ body {
   border-radius: 6px;
 }
 
-/* Passenger counter */
+/* Passenger counter (nếu dùng sau này) */
 .passenger-counter {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -230,13 +159,13 @@ body {
 .summary-item-name { font-weight: 700; margin: 0 0 6px 0; font-size: 14px; }
 
 .summary-line { display: flex; justify-content: space-between; margin-top: 12px; }
-.summary-line.total { font-size: 18px; font-weight: 700; color: #e60023; }
+.summary-line.total { font-size: 18px; font-weight: 700; color: var(--primary-red); }
 
-/* Buttons */
+/* Continue button */
 .continue-btn {
   width: 100%;
   padding: 12px;
-  background-color: #e60023;
+  background-color: var(--primary-red);
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -252,238 +181,58 @@ body {
 .step-content { display: none; }
 .step-content.active { display: block; }
 
-/* Extra info */
+/* Extra info box */
 .extra-info {
   margin-top: 18px;
   background: #f9f9f9;
   padding: 16px;
   border-radius: 8px;
 }
-.extra-info h3 { margin: 0 0 10px; color: #005baa; }
+.extra-info h3 { margin: 0 0 10px; color: var(--accent-blue); }
 .extra-info ul { list-style: none; padding:0; margin:0; }
 .extra-info ul li { margin-bottom:6px; font-size:14px; }
 
-/* Booking progress (kept) */
+/* Booking progress bar */
 .booking-process-bar {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:8px;
-  margin-bottom:24px;
-  flex-wrap:wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
 }
-.booking-process-bar .step { display:flex; flex-direction:column; align-items:center; color:#999; font-size:13px; min-width:72px; }
-.booking-process-bar .step.active { color:#e60023; }
-.booking-process-bar .step .icon { width:32px; height:32px; background:#ccc; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:6px; }
-.booking-process-bar .step.active .icon { background:#e60023; }
-.booking-process-bar .separator { width:48px; height:2px; background:#e6e6e6; margin:0 6px; }
-@media (min-width:900px){ .booking-process-bar .separator { width:100px; margin:0 10px; } }
-
-/* ===== Footer (kept) ===== */
-.vietravel-footer {
-  background: #f2f5fb;
-  color: #000;
-  padding: 40px 20px 10px;
-  font-family: Arial, sans-serif;
-  border-top: 3px solid #1e4fa0;
+.booking-process-bar .step { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  color: #999; 
+  font-size: 13px; 
+  min-width: 72px; 
 }
-.footer-top { display:flex; justify-content:space-between; flex-wrap:wrap; gap:40px; margin-bottom:25px; }
-.footer-column { flex:1; min-width:220px; }
-.footer-bottom { display:flex; justify-content:space-between; flex-wrap:wrap; gap:40px; margin-top:25px; }
-
-/* Utilities */
-img { max-width:100%; height:auto; display:block; }
-a { color: inherit; }
-
-/* ===== Responsive adjustments (match profile.css breakpoints + behaviors) ===== */
-
-/* Medium tablets */
-@media (max-width: 900px) {
-  .booking-container { gap: 18px; }
-  .booking-form-section, .booking-summary-section { padding: 18px; }
-  .summary-item img { width: 90px; height: 64px; }
-  .booking-process-bar .separator { width: 72px; }
+.booking-process-bar .step.active { color: var(--primary-red); }
+.booking-process-bar .step .icon { 
+  width: 32px; 
+  height: 32px; 
+  background: #ccc; 
+  color: #fff; 
+  border-radius: 50%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  margin-bottom: 6px; 
+}
+.booking-process-bar .step.active .icon { background: var(--primary-red); }
+.booking-process-bar .separator { 
+  width: 48px; 
+  height: 2px; 
+  background: #e6e6e6; 
+  margin: 0 6px; 
+}
+@media (min-width: 900px) { 
+  .booking-process-bar .separator { width: 100px; margin: 0 10px; } 
 }
 
-/* Tablet & small laptops: mobile nav become dropdown like profile.css */
-@media (max-width: 768px) {
-  /* Show hamburger (profile.css pattern) */
-  .menu-toggle {
-    display: block;
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1200;
-  }
-
-  /* Mobile nav: hidden by default, JS toggles .active */
-  .main-nav ul {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #fff;
-    flex-direction: column;
-    gap: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .28s ease;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.06);
-    z-index: 1100;
-  }
-  .main-nav ul.active { max-height: 480px; }
-
-  .main-nav ul li a { padding: 12px 16px; border-bottom: 1px solid #f1f1f1; }
-
-  /* Booking layout stacks vertically (profile.css style) */
-  .booking-container {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .booking-form-section { min-width: 100%; order: 1; }
-  .booking-summary-section { min-width: 100%; order: 2; }
-
-  .passenger-counter { grid-template-columns: 1fr 1fr; }
-  .form-row { gap: 10px; }
-}
-
-/* Small phones */
-@media (max-width: 480px) {
-  .container { padding: 12px; }
-  .logo a { font-size: 1.4rem; }
-
-  .shop { right: 8px; top: 8px; width: 32px; height: 32px; }
-  .signup a i { right: 44px; top: 8px; width: 32px; height: 32px; }
-
-  .booking-container { gap: 12px; }
-  .booking-form-section, .booking-summary-section { padding: 12px; border-radius: 8px; }
-  .booking-summary-section { order: 2; }
-
-  .summary-item { gap: 8px; }
-  .summary-item img { width: 84px; height: 64px; }
-  .summary-line.total { font-size: 16px; }
-
-  .form-row { flex-direction: column; }
-  .form-group { min-width: 0; width: 100%; }
-  .passenger-counter { grid-template-columns: 1fr; }
-
-  .payment-methods { grid-template-columns: repeat(2,1fr); gap: 10px; }
-
-  .booking-process-bar { flex-direction: row; gap: 6px; align-items: center; justify-content: flex-start; overflow-x: auto; padding: 6px 0; }
-
-  .continue-btn { font-size: 15px; padding: 12px; border-radius: 8px; }
-
-  /* Footer stacks */
-  .footer-top, .footer-bottom { flex-direction: column; gap: 12px; }
-  .footer-column { width: 100%; }
-}
-
-/* Accessibility focus */
-button:focus, input:focus, a:focus {
-  outline: 3px solid rgba(0,123,255,0.12);
-  outline-offset: 2px;
-}
-/* checkout.css - Adjusted: fixed small icon sizes + footer styles aligned with other pages */
-
-/* ===== Variables for easy tuning ===== */
-:root{
-  --icon-size: 36px;        /* primary icon size (header/shop/signup) */
-  --icon-small: 28px;       /* smaller icons (payment icons, social icons) */
-  --icon-radius: 8px;
-  --footer-bg: #f2f5fb;
-  --footer-accent: #1e4fa0;
-}
-
-/* ===== Reset & Base ===== */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* ===== Header / icons (fixed sizes) ===== */
-.header .container {
-    position: relative; /* anchor */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Logo */
-.logo a {
-    display: flex;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #007bff;
-    text-decoration: none;
-    height: 50px;
-}
-
-/* Shop & Signup icons: fixed square */
-.shop,
-.signup a i {
-    width: var(--icon-size);
-    height: var(--icon-size);
-    min-width: var(--icon-size);
-    min-height: var(--icon-size);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--icon-radius);
-    background: #fff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-    color: #333;
-    z-index: 1200;
-}
-
-/* flip icon if needed but keep size consistent */
-.shop i { transform: scaleX(-1); font-size: 1rem; }
-
-/* Ensure signup icon positioned consistently */
-.signup a i {
-    position: absolute;
-    right: calc(var(--icon-size) + 24px); /* keep spacing from .shop */
-    top: 12px;
-    font-size: 1rem;
-}
-
-/* Nav */
-.main-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 12px;
-    align-items: center;
-}
-
-.main-nav ul li a {
-    text-decoration: none;
-    color: #555;
-    font-weight: 700;
-    padding: 6px 8px;
-    border-radius: 6px;
-    transition: background .15s, color .15s;
-}
-.main-nav ul li a:hover {
-    background: #007bff;
-    color: #fff;
-}
-
-/* ===== Payment icons: keep small fixed size inside icon-box ===== */
+/* ===== Payment methods (chỉ phần đặc thù của checkout) ===== */
 .payment-methods {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -506,7 +255,6 @@ body {
   min-height: 100px;
 }
 
-/* icon box is slightly larger than the image to center it */
 .payment-option .icon-box {
   width: calc(var(--icon-small) + 12px);
   height: calc(var(--icon-small) + 12px);
@@ -518,7 +266,6 @@ body {
   margin-bottom: 8px;
 }
 
-/* Force payment images to exact small size */
 .payment-option img {
   width: var(--icon-small) !important;
   height: var(--icon-small) !important;
@@ -527,246 +274,59 @@ body {
   display: block;
 }
 
-/* Keep label text readable */
 .payment-option span {
   font-size: 14px;
   line-height: 1.4;
   color: #333;
 }
 
-/* Hover / active states */
 .payment-option:hover {
-  border-color: #005baa;
+  border-color: var(--accent-blue);
   background: #f0f7ff;
 }
 .payment-option.active {
-  border-color: #005baa;
+  border-color: var(--accent-blue);
   background: #e6f0ff;
 }
 
-/* ===== Small inline icons used in summary / UI (fixed small size) ===== */
-.summary-item img {
-  width: 84px;
-  height: 64px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-/* If you use font icons inside UI (fa-*), make them consistent */
-.header .fa, .shop .fa, .signup .fa, .social-icons i {
-  font-size: 0.95rem;
-  width: var(--icon-small);
-  height: var(--icon-small);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ===== Booking layout (kept) ===== */
-.booking-container {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.booking-form-section,
-.booking-summary-section {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.booking-form-section {
-    flex: 2;
-    min-width: 320px;
-    max-width: 900px;
-}
-
-.booking-summary-section {
-    flex: 1;
-    min-width: 260px;
-    max-width: 380px;
-}
-
-/* Continue button */
-.continue-btn {
-    width: 100%;
-    padding: 12px;
-    background-color: #e60023;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 12px;
-    font-size: 15px;
-    font-weight: 700;
-    display: none;
-}
-.continue-btn.active { display: block; }
-
-/* ===== Footer: match other pages (profile/alltour/search/style) ===== */
-.vietravel-footer {
-    background: var(--footer-bg);
-    color: #000;
-    padding: 40px 20px 10px;
-    font-family: Arial, sans-serif;
-    border-top: 3px solid var(--footer-accent);
-}
-
-.vietravel-footer a {
-    color: #000;
-    text-decoration: none;
-}
-
-.vietravel-footer a:hover {
-    color: var(--footer-accent);
-}
-
-/* Footer layout */
-.footer-top {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-bottom: 25px;
-}
-
-.footer-column {
-    flex: 1;
-    min-width: 220px;
-}
-
-.footer-column h4 {
-    margin-bottom: 15px;
-    font-size: 18px;
-    font-weight: bold;
-    color: var(--footer-accent);
-}
-
-/* Links columns */
-.column-content {
-    display: flex;
-    gap: 25px;
-}
-
-.column-content ul {
-    list-style: none;
-    padding: 0;
-}
-
-.column-content li {
-    margin-bottom: 8px;
-}
-
-/* QR codes */
-.mobile-app-column .qr-codes { display:flex; gap:20px; flex-wrap:wrap; }
-.qr-code-item img { width: 120px; max-width:100%; height:auto; }
-
-/* Footer bottom */
-.footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-top: 25px;
-}
-
-.footer-bottom p,
-.footer-bottom li {
-    font-size: 14px;
-    color: #000;
-}
-
-/* Social icons in footer - fixed small circle style */
-.social-icons a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: var(--icon-small);
-    height: var(--icon-small);
-    border-radius: 50%;
-    background: #fff;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.04);
-    color: var(--footer-accent);
-    text-decoration: none;
-    margin-right: 8px;
-    font-size: 0.9rem;
-}
-.social-icons a:hover { color: #004aad; transform: translateY(-2px); }
-
-/* Copyright area */
-.footer-copyright {
-    margin-top: 20px;
-    text-align: center;
-    border-top: 1px solid #cbd5e1;
-    padding-top: 15px;
-    font-size: 14px;
-    color: #333;
-}
-
-/* ===== Responsive adjustments - keep behavior like profile.css ===== */
+/* ===== Responsive adjustments (chỉ phần liên quan đến checkout) ===== */
 @media (max-width: 900px) {
-    .booking-container { gap: 18px; }
-    .booking-form-section, .booking-summary-section { padding: 18px; }
-    .summary-item img { width: 90px; height: 64px; }
+  .booking-container { gap: 18px; }
+  .booking-form-section, .booking-summary-section { padding: 18px; }
+  .summary-item img { width: 90px; height: 64px; }
 }
 
-/* Tablet & small laptops */
 @media (max-width: 768px) {
-    /* show hamburger (profile.css style) */
-    .menu-toggle { display: block; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); z-index:1200; }
+  .booking-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .booking-form-section { order: 1; }
+  .booking-summary-section { order: 2; }
 
-    /* mobile nav */
-    .main-nav ul {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #fff;
-        flex-direction: column;
-        gap: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height .28s ease;
-        box-shadow: 0 8px 22px rgba(0,0,0,0.06);
-        z-index: 1100;
-    }
-    .main-nav ul.active { max-height: 480px; }
-
-    .main-nav ul li a { padding: 12px 16px; border-bottom: 1px solid #f1f1f1; }
-
-    /* icon sizes slightly smaller on tablet */
-    :root { --icon-size: 34px; --icon-small: 26px; }
-    .signup a i { right: calc(var(--icon-size) + 20px); top: 10px; }
-    .shop { right: 10px; top: 10px; }
+  :root { --icon-size: 34px; --icon-small: 26px; }
+  .signup a i { right: calc(var(--icon-size) + 20px); top: 10px; }
+  .shop { right: 10px; top: 10px; }
 }
 
-/* Small phones */
 @media (max-width: 480px) {
-    :root { --icon-size: 32px; --icon-small: 22px; }
+  :root { --icon-size: 32px; --icon-small: 22px; }
 
-    .container { padding: 12px; }
-    .logo a { font-size: 1.4rem; }
+  .shop { right: 8px; top: 8px; width: var(--icon-size); height: var(--icon-size); }
+  .signup a i { right: calc(var(--icon-size) + 16px); top: 8px; width: var(--icon-size); height: var(--icon-size); }
 
-    .shop { right: 8px; top: 8px; width: var(--icon-size); height: var(--icon-size); }
-    .signup a i { right: calc(var(--icon-size) + 16px); top: 8px; width: var(--icon-size); height: var(--icon-size); }
+  .booking-container { gap: 12px; }
+  .booking-form-section, .booking-summary-section { padding: 12px; }
 
-    .booking-container { gap: 12px; }
-    .booking-form-section, .booking-summary-section { padding: 12px; border-radius: 8px; }
-
-    .summary-item img { width: 84px; height: 64px; }
-    .payment-methods { grid-template-columns: repeat(2,1fr); gap: 10px; }
-
-    /* Footer stacks vertically */
-    .footer-top, .footer-bottom { flex-direction: column; gap: 12px; }
-    .footer-column { width: 100%; }
+  .summary-item img { width: 84px; height: 64px; }
+  .form-row { flex-direction: column; }
+  .form-group { min-width: 0; width: 100%; }
+  .payment-methods { grid-template-columns: repeat(2,1fr); gap: 10px; }
 }
 
-/* Accessibility focus */
+/* Accessibility */
 button:focus, input:focus, a:focus {
-    outline: 3px solid rgba(0,123,255,0.12);
-    outline-offset: 2px;
+  outline: 3px solid rgba(0,123,255,0.12);
+  outline-offset: 2px;
 }
+
