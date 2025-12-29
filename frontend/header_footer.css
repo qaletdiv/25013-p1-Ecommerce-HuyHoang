@@ -1,0 +1,293 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header {
+    background: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo a {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #007bff;
+}
+
+/* Navigation */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 20px;
+}
+
+.main-nav ul li a {
+    font-weight: bold;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.main-nav ul li a:hover {
+    color: #007bff;
+}
+
+/* Menu mobile */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #007bff;
+}
+
+/* ======================================================
+   HERO BANNER
+   ====================================================== */
+.hero-banner {
+    width: 100%;
+    height: 400px;
+    background: url('https://s3.hcm-1.cloud.cmctelecom.vn/vtv-image/Images/SlideShow/sl_250825_kvthuwebtop-destop-1915-4601.webp') no-repeat center / cover;
+}
+
+/* ======================================================
+   FOOTER – VIETRAVEL STYLE (FULL)
+   ====================================================== */
+.vietravel-footer {
+    background: #f2f5fb;
+    border-top: 3px solid #1e4fa0;
+    font-family: Arial, sans-serif;
+    color: #000;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* ---------- Links ---------- */
+.vietravel-footer a {
+    color: #000;
+    transition: color 0.3s;
+}
+
+.vietravel-footer a:hover {
+    color: #1e4fa0;
+}
+
+/* ---------- Footer Top ---------- */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 40px 60px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 220px;
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1e4fa0;
+    margin-bottom: 15px;
+}
+
+/* 2 column link */
+.column-content {
+    display: flex;
+    gap: 30px;
+}
+
+.column-content ul {
+    list-style: none;
+}
+
+.column-content li {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* ---------- Mobile App ---------- */
+.mobile-app-column .qr-codes {
+    display: flex;
+    gap: 20px;
+}
+
+.qr-code-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.qr-code-item img {
+    width: 110px;
+}
+
+/* ---------- Divider ---------- */
+.vietravel-footer hr {
+    border: none;
+    border-top: 1px solid #cbd5e1;
+    margin: 0 60px;
+}
+
+/* ---------- Footer Bottom ---------- */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 35px 60px;
+}
+
+.footer-bottom p,
+.footer-bottom li {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Contact */
+.social-icons {
+    margin: 12px 0;
+}
+
+.social-icons a {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #1e4fa0;
+}
+
+.social-icons a:hover {
+    color: #004aad;
+}
+
+/* Certification */
+.certification-column img {
+    width: 120px;
+    margin-bottom: 12px;
+}
+
+/* Payment */
+.payment-methods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.payment-methods img {
+    width: 55px;
+    background: #ffffff;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+/* ---------- Copyright ---------- */
+.footer-copyright {
+    text-align: center;
+    padding: 15px 20px 25px;
+    border-top: 1px solid #cbd5e1;
+    font-size: 13px;
+    color: #333;
+}
+
+.footer-copyright p {
+    margin: 4px 0;
+}
+
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1001;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        z-index: 999;
+    }
+
+    .main-nav ul.active {
+        max-height: 500px;
+    }
+
+    .main-nav ul li {
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+
+    .main-nav ul li a {
+        display: block;
+        padding: 15px;
+    }
+
+    .footer-top,
+    .footer-bottom {
+        padding: 30px 25px;
+    }
+
+    .column-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-banner {
+        height: 120px;
+    }
+
+    .footer-top,
+    .footer-bottom {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .payment-methods img {
+        width: 48px;
+    }
+}
